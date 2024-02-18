@@ -20,6 +20,26 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <link rel="stylesheet" href="css/ie-base.css">
 <![endif]-->
+<script>
+  // 現在の年度を取得する関数
+  function getCurrentYear() {
+    return new Date().getFullYear();
+  }
+
+  // フッターの著作権情報を更新する関数
+  function updateCopyright() {
+    var currentYear = getCurrentYear();
+    var copyrightElement = document.getElementById('copyright');
+    if (copyrightElement) {
+      copyrightElement.innerHTML = '&copy;' + currentYear + ' Light Yield Co., Ltd.';
+    }
+  }
+
+  // ページが読み込まれた時に著作権情報を更新する
+  window.onload = function() {
+    updateCopyright();
+  };
+</script>
 </head>
 <body>
 <header id="header">
@@ -56,7 +76,7 @@
       <dt>所在地</dt>
       <dd>〒564-0051 大阪府吹田市豊津町1-18 エクラート江坂ビル3階</dd>
       <dt>役員構成</dt>
-      <dd>代表取締役　中山 洋一</dd>
+      <dd>代表取締役 中山 洋一</dd>
       <dt>事業内容</dt>
       <dd>
         - システム開発とカスタマイズ<br>
@@ -71,8 +91,11 @@
   </div>
 </div></section>
 
-<footer id="footer"><div class="footer_wrapper"><!--↓footer↓-->
-  <p class="copyRight">&copy;2016　Light Yield Co., Ltd.</p>
-</div></footer><!--↑footer↑-->
+<footer id="footer"><div class="footer_wrapper">
+<!--
+  <p class="copyRight" id="copyright">&copy;2016 Light Yield Co., Ltd.</p>
+-->
+<p class="copyRight" id="copyright"></p>
+</div></footer>
 </body>
 </html>
