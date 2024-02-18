@@ -1,0 +1,112 @@
+/*reset*/
+article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section{display:block}a,hr{padding:0}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}ins,mark{background-color:#ff9;color:#000}body{line-height:1}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;font-size:100%;vertical-align:baseline;background:0 0}ins{text-decoration:none}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{height:1px;border:0;border-top:1px solid #ccc;margin:1em 0}input,select{vertical-align:middle}
+/*element*/
+body{background: #fff;color:#333;font-size:16px;font-size:1rem;font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, "Lucida Grande", "Lucida Sans Unicode",sans-serif;line-height:1.8;}
+
+a{outline: none;color:#09f;}
+a img{border:none;}
+img{max-width: 100%;height: auto;width /***/:auto;}
+svg{max-width: 100%;height: auto;width /***/:auto;}
+/*svg用*/
+.fbh{fill:#4D4D4D;}.fbf{fill:#ccc;}.hl0{fill:#333;}.st0{fill:#ccc;}
+
+.clearfix:before,.clearfix:after {content:"";display:table;} 
+.clearfix:after {clear:both;} 
+.clearfix { zoom:1;}
+
+/*header*/
+.header_cont{position: relative;max-width: 1200px;width: 100%;margin:40px auto 16px;}
+.header_cont:before,.header_cont:after {content:"";display:table;} 
+.header_cont:after {clear:both;} 
+.header_cont { zoom:1;}
+.header_nav{float:left;}
+.header_nav:before,.header_nav:after {content:"";display:table;} 
+.header_nav:after {clear:both;} 
+.header_nav { zoom:1;}
+.header_nav a{text-decoration:none;color:#333;}
+.header_nav li{width: 110px;margin:0 30px 7px;text-align: center;line-height:1.8;float:left;list-style-type:none;}
+.header_nav_cont_current{border-bottom:5px solid #4d4d4d;}
+.header_heading{width:84px;height:94px;padding:0 12px;float:left;overflow:hidden;}
+.header_link-fb{position: absolute;width: 38px;height: 38px;bottom:0;right:16px;padding:0 14px;overflow:hidden;}
+.header_img{position: relative;max-width: 1200px;width: 100%;margin:0 auto;}
+.comment_cont{position: absolute;bottom:20px;left:10px;width:530px;padding:20px;margin: 0;background-color:#fff;background-color:rgba(255,255,255,0.85);line-height:1.6;}
+.comment-level01{font-size: 24px;font-size: 1.5rem;font-weight: bolder;}
+.comment-level02{font-size: 16px;font-size: 1rem;padding-top:12px;}
+.comment-level03{font-size: 14px;font-size: 0.875rem;padding-top:12px;}
+
+/*main*/
+.main_cont{position: relative;max-width: 1200px;width: 98%;margin:30px auto;padding:14px 0 70px;border-top:#999 1px solid;}
+.section_heading{display: table;margin:0 0 60px;text-align: center;}
+.section_heading-works{line-height: 0.95;}
+.section_heading-blog{line-height: 1.25;}
+.section_heading_en{display: table-row;font-size: 36px;font-family: Arial;font-weight: normal;}
+.section_heading_ja{display: table-row;font-size: 14px;font-family: "メイリオ", Meiryo;font-weight: normal;}
+
+/*works*/
+.works_wrapper{max-width:900px;width:100%;margin:0 auto;}
+.works_wrapper:before,.works_wrapper:after {content:"";display:table;} 
+.works_wrapper:after {clear:both;} 
+.works_wrapper{ zoom:1;}
+.works_cont{width:40%;margin:0 0 0 5%;padding:0 0 10px;border:1px #666 solid;border-bottom:10px #666 solid;float:left;}
+.works_img{text-align: center;}
+.works_cont_heading{padding:5px 10px;}
+.works_cont_description{padding:5px 10px;}
+.works_cont_key{display: inline-block;margin:5px 10px;padding:5px;font-size: 12px;font-size: 0.75rem;background-color: #eee;border-radius:5px;}
+
+/*blog*/
+.blog_h2{font-size: 24px;font-size: 1.5rem;padding-bottom: 10px;font-weight:normal;text-align: center;}
+.blog_h2 a{text-decoration: none;color:#333;}
+.blog_hr{border:none;border-top:#999 1px dotted;margin:60px 0 60px;}
+.blog_cont_wrapper{overflow: hidden;width:100%;}
+.blog_cont{position:relative;background-color:#eee;z-index:0;width:100%;margin:50px auto 0;padding:0;}
+.blog_img{position:absolute;width:100%;top:-50px;z-index:1;margin:auto;text-align: center;}
+.blog_img img{display: block;margin:0 auto;}
+.blog_profile{position:absolute;width:39%;max-width:none;bottom:40px;margin:auto;padding:20px 1%;background-color: #fff;background-color:rgba(255,255,255,0.85);z-index:2;border:none;}
+.blog_description{position: relative;width:45%;max-width:none;margin:15px auto 0;padding:280px 0 30px;z-index:3;overflow: hidden;}
+.blog_profile-d{left:5%;}
+.blog_description-d{margin:0 0 0 50%;}
+.blog_profile-e{right:5%;}
+.blog_description-e{margin:0 0 0 5%;}
+
+/*about*/
+.about_wrapper{max-width: 700px;width: 98%;margin:0 auto;padding-left: 10px;}
+.about_cont:before,.about_cont:after {content:"";display:table;} 
+.about_cont:after {clear:both;} 
+.about_cont { zoom:1;}
+.about_cont dt{width: 20% ;float:left;padding:10px 0;font-weight: bold;border:none;border-top:1px #999 dotted;}
+.about_cont dd{width: 77%;float:left;margin-left:1%;padding:10px 0;border:none;border-top:1px #999 dotted;}
+
+/*map*/
+.map_canvas{max-width:1200px;width: 100%;height:500px;margin:0 auto;}
+.map_cont{padding-bottom:40px;}
+
+/*footer*/
+.footer_wrapper{background-color: #4d4d4d;color:#ccc;margin-top:80px;padding:15px 0 10px;}
+.footer_cont{max-width:1200px;width:98%;margin:0 auto;line-height:1.4;}
+.footer_cont:before,.footer_cont:after {content:"";display:table;} 
+.footer_cont:after {clear:both;} 
+.footer_cont { zoom:1;}
+.footer_heading{display: block;width:56px;height:62px;padding:0 20px 0 10px;float:left;overflow:hidden;}
+.footer_add{width:550px;float:left;}
+.footer_nav{width:360px;float:left;}
+.footer_nav:before,.footer_nav:after {content:"";display:table;} 
+.footer_nav:after {clear:both;} 
+.footer_nav{ zoom:1;}
+.footer_nav li{padding:15px 50px 0 0;float:left;list-style-type:none;}
+.footer_nav li:last-child{padding:15px 0 0 0;}
+.footer_nav a{text-decoration:none;color:#ccc;}
+.footer_link-fb{width:29px;height:29px;padding:16px 20px 0;float:left;overflow:hidden;}
+.copyRight{padding:30px 0 0;text-align: center;font-size: 12px;font-size: 0.75rem;}
+
+/*contact*/
+.contact_wrapper{max-width: 625px;width: 100%;margin:0 auto;}
+.contact_wrapper p{padding:10px 0;}
+input:required, textarea:required {-moz-box-shadow:none;-webkit-box-shadow:none;-o-box-shadow:none;box-shadow:none;}
+input:not([type="submit"]), textarea{box-sizing:border-box;outline:none;display:block;width:100%;padding:4px 8px;border:1px solid #ccc;color:#3F3F3F;font-size:14px;border-radius:2px;transition:background 0.2s linear,box-shadow 0.6s linear;}
+input:not([type="submit"]):active, textarea:active, input:not([type="submit"]):focus, textarea:focus{background:#F7F7F7;border:1px solid #ccc;box-shadow:2px 2px 7px #E8E8E8 inset;}
+input:not([type="submit"]){height: 30px;}
+textarea{min-height:150px;resize:vertical}
+::-webkit-input-placeholder  {color:#BABABA;font-style:italic;}
+input:-moz-placeholder,textarea:-moz-placeholder{color:#BABABA;font-style:italic;}
+.required{color:#f00;}
+.submit_btn{border:solid 1px #ccc;padding:15px 30px;margin:0 0 20px;font-size:16px;font-size:1rem;background-color:#eee;color:#333;cursor:pointer;}
