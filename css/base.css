@@ -1,13 +1,16 @@
 /*reset*/
 article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section{display:block}a,hr{padding:0}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}ins,mark{background-color:#ff9;color:#000}body{line-height:1}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;font-size:100%;vertical-align:baseline;background:0 0}ins{text-decoration:none}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{height:1px;border:0;border-top:1px solid #ccc;margin:1em 0}input,select{vertical-align:middle}
+
 /*element*/
 body{background: #fff;color:#333;font-size:14px;font-size:0.875rem;font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3","ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, "Lucida Grande", "Lucida Sans Unicode",sans-serif;line-height:1.8;}
 a{outline: none;color:#09f;}
 a img{border:none;}
 img{max-width: 100%;height: auto;width /***/:auto;}
 svg{max-width: 100%;height: auto;width /***/:auto;}
+
 /*svg用*/
 .fbh{fill:#4d4d4d;}.fbf{fill:#ccc;}.hl0{fill:#333;}.st0{fill:#ccc;}
+
 /*header*/
 .header_cont{position: relative;max-width: 1200px;width: 100%;margin:20px auto 16px;display:-webkit-flex;display:flex;-webkit-align-items: flex-end;align-items: flex-end;-webkit-flex-wrap: wrap; flex-wrap:wrap;}
 .header_heading{width: 40px;height:45px;padding:0 8px;}
@@ -16,15 +19,22 @@ svg{max-width: 100%;height: auto;width /***/:auto;}
 .comment-level01{font-size: 18px;font-size: 1.125rem;font-weight: bolder;}
 .comment-level02{font-size: 16px;font-size: 1rem;padding-top:12px;}
 .comment-level03{font-size: 14px;font-size: 0.875rem;padding-top:12px;}
+
 /*main*/
 .main_cont{position: relative;max-width: 1200px;width: 98%;margin:30px auto;padding:14px 0 30px;border-top:#999 1px solid;}
 .section_heading{display: table;margin:0 0 60px;text-align: center;}
 .section_heading_en{display: table-row;font-size: 36px;font-family: Arial;font-weight: normal;}
 .section_heading_ja{display: table-row;font-size: 14px;font-family: "メイリオ", Meiryo;font-weight: normal;}
+
 /*about*/
 .about_wrapper{padding-left: 10px;}
 .about_cont dt{font-weight: bold;padding-top:10px;}
 .about_cont dd{padding-bottom:10px;}
+
+/*map*/
+.map_canvas{max-width:1200px;width: 100%;height:300px;margin:0 auto;}
+.map_cont{padding-bottom:40px;}
+
 /*footer*/
 .footer_wrapper{background-color: #4d4d4d;color:#ccc;margin-top:20px;padding:15px 0 10px;}
 .copyRight{padding:30px 0 0;text-align: center;font-size: 12px;font-size: 0.75rem;}
@@ -36,10 +46,13 @@ svg{max-width: 100%;height: auto;width /***/:auto;}
 
 @media screen and ( min-width : 768px ) {
 body{font-size:16px;font-size:1rem;}
+
 /*header*/
 .header_cont{margin:30px auto 16px;}
+
 /*main*/
 .main_cont{padding:14px 0 70px;}
+
 /*about*/
 .about_wrapper{max-width: 700px;width: 98%;margin:0 auto;}
 .about_cont{display:-webkit-flex;display:flex;-webkit-flex-wrap: wrap;flex-wrap: wrap;-webkit-justify-content: space-between; justify-content: space-between;}
@@ -53,6 +66,10 @@ body{font-size:16px;font-size:1rem;}
 .header_heading{width:84px;height:94px;padding:0 12px;}
 .comment_cont{position: absolute;bottom:20px;left:10px;width:530px;padding:20px;margin: 0;background-color:#fff;background-color:rgba(255,255,255,0.85);line-height:1.6;}
 .comment-level01{font-size: 24px;font-size: 1.5rem;font-weight: bolder;}
+
+/*map*/
+.map_canvas{width: 100%;height:500px;}
+
 /*footer*/
 .footer_wrapper{margin-top:80px;}
 }
