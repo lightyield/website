@@ -14,30 +14,24 @@
 <meta content="株式会社ライトイールド" name="title">
 <meta content="株式会社ライトイールドは、システムエンジニアリング（SE）サービスを専門に提供している会社です。" name="description">
 <meta content='システム開発,プロジェクト管理' name='keywords'>
-
 <link rel="stylesheet" href="css/base.css">
 <!--[if lte IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <link rel="stylesheet" href="css/ie-base.css">
 <![endif]-->
 <script>
-  // 現在の年度を取得する関数
+  document.addEventListener('DOMContentLoaded', function() {
+      updateCopyright();
+  });
   function getCurrentYear() {
-    return new Date().getFullYear();
+      return new Date().getFullYear();
   }
-
-  // フッターの著作権情報を更新する関数
   function updateCopyright() {
-    var currentYear = getCurrentYear();
-    var copyrightElement = document.getElementById('copyright');
-    if (copyrightElement) {
-      copyrightElement.innerHTML = '&copy;' + currentYear + ' Light Yield Co., Ltd.';
-    }
-  }
-
-  // ページが読み込まれた時に著作権情報を更新する
-  window.onload = function() {
-    updateCopyright();
+      var currentYear = getCurrentYear();
+      var copyrightElement = document.getElementById('copyright');
+      if (copyrightElement) {
+          copyrightElement.innerHTML = '&copy;' + currentYear + ' Light Yield Co., Ltd.';
+      }
   };
 </script>
 </head>
