@@ -218,9 +218,23 @@ footer {
 }
 
 @media (max-width: 768px) {
+  /* 1. 全体の高さを「画面いっぱい」から「中身に合わせる」に変更 */
+  #hero { 
+    height: auto; 
+    min-height: 550px; /* ある程度の高さは確保 */
+    padding-top: 100px; /* ロゴの分だけ上に余白を作る */
+    padding-bottom: 60px;
+  }
+
   .header_logo_wrapper { top: 25px; left: 25px; }
   .header_logo_wrapper svg { width: 50px; }
-  .hero_content { padding: 0 25px; margin-top: 80px; }
+
+  /* 2. コンテンツ自体の上の余白を削って上に詰める */
+  .hero_content { 
+    padding: 0 25px; 
+    margin-top: 20px; /* 80pxから20pxに短縮 */
+  }
+
   .hero_title { font-size: 2.8rem; }
   .hero_message_container { padding-left: 20px; }
   .hero_skills { flex-wrap: wrap; gap: 10px; }
