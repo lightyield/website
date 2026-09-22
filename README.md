@@ -49,7 +49,7 @@ npx serve .
 1. **記事フォルダの作成**:
    `blog/<article-slug>/` ディレクトリを作成します（例: `blog/gantt-chart-leveling/`）。
 2. **画像・HTMLファイルの作成**:
-   - `blog/<article-slug>/images/` に記事内で使用する画像を配置。
+   - `blog/<article-slug>/images/` に記事内で使用する画像を配置（命名規則: `<slug>_fig1_xxx.jpg` 等のプレフィックス推奨）。
    - `blog/<article-slug>/index.html` を作成（既存の `blog/wbs-essentials/index.html` をテンプレートとして活用）。
 3. **ブログ一覧・トップページへの追加**:
    - `blog/index.html` の `.blog_grid` 内に新しい記事カードを追加。
