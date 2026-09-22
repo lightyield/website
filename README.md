@@ -19,7 +19,10 @@
 │   └── blog.css                   # ブログ・ナレッジ関連スタイル
 └── blog/
     ├── index.html                 # ブログ・知見 記事一覧ページ
-    └── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ
+    ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ
+    │   ├── index.html             # 記事本文
+    │   └── images/                # 記事内画像
+    └── gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事ディレクトリ
         ├── index.html             # 記事本文
         └── images/                # 記事内画像
 ```
