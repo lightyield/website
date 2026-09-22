@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>株式会社を設立するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社を設立するプロジェクトのWBS（作業分解構造）を作成。全体の工期、社長1人で全作業を行った場合の工期延伸、各タスクにかかるリアルな費用まで、実体験を元に詳しく解説します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="株式会社を設立するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="株式会社を設立するプロジェクトのWBS（作業分解構造）を作成。全体の工期、社長1人で全作業を行った場合の工期延伸、各タスクにかかるリアルな費用まで、実体験を元に詳しく解説します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/incorporation-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>株式会社を設立するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2018-12-15">2018.12.15</time>
+          <span class="article_category">Peek into WBS</span>
+          <span class="article_category">WBS</span>
+        </div>
+        <h1 class="article_title">株式会社を設立するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 株式会社設立プロジェクトのWBSを作る</a></li>
+          <li><a href="#section-2">2. 全ての作業を社長がやってみる</a></li>
+          <li><a href="#section-3">3. 各タスクにかかる費用を計上する</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」として、私が株式会社ライトイールドを設立した際の経験を振り返りながら「株式会社を設立するWBS」をご紹介します。役所手続きや法人口座開設など、会社設立に必要な全作業の洗い出しから、1人で作業した場合の工期の変化、実際にかかるリアルな費用まで、WBSを通じて詳しく検証していきます。</p>
+
+        <p class="article_note_lead">※そもそも「WBSとは何か？」について詳しく知りたい方は、こちらの記事「<a href="../wbs-essentials/">WBSの勘所</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 株式会社設立プロジェクトのWBSを作る</h2>
+        <p>会社設立の手続きは専門用語も多く、自力ですべて行うには敷居が高い作業ですが、クラウドサービスを活用することでスムーズに進めることができます。今回は以下の記事を参考に、定款や登記書類の作成に「freee会社設立」を利用した前提でWBSを作成しました。</p>
+
+        <p><a href="https://liginc.co.jp/254166" target="_blank" rel="noopener noreferrer">会社設立freeeを使って会社を設立してみた（LIGブログ）</a></p>
+
+        <p>作成した会社設立プロジェクトのWBSがこちらです。</p>
+
+        <figure class="article_figure">
+          <img src="images/incorporation_fig1_wbs_all.jpg" alt="株式会社設立プロジェクトのWBS（全体工期17日）" loading="lazy">
+          <figcaption>図1: 株式会社設立プロジェクトのWBS（最短ラインでの作業分解）</figcaption>
+        </figure>
+
+        <p>改めて見ても作業量が多いことが分かります。支援サービスを活用してもこのボリュームですから、事前の計画がいかに重要かが実感できます。プロジェクトの工期は<strong>全体で17日</strong>。ただし、これは法人口座の開設に日数を要しているためであり、実質的には<strong>7日で登記手続きが完了</strong>となります。「1週間で会社が設立できる」という表現も、最短スケジュールとしては妥当なラインと言えます。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. 全ての作業を社長がやってみる</h2>
+        <p>続けて、すべての作業を発起人である社長1人が担当した場合をシミュレーションしてみました。ガントチャートの「平準化」を行い、作業の重複を解消して1人体制の現実的なスケジュールを算出します。</p>
+
+        <figure class="article_figure">
+          <img src="images/incorporation_fig2_wbs_president.jpg" alt="全ての作業を社長1人が担当した場合のWBS（工期21日）" loading="lazy">
+          <figcaption>図2: 社長1人にリソースを集中させた場合のWBS（平準化による工期延伸）</figcaption>
+        </figure>
+
+        <p>平準化を行った結果、17日だった全体の工期が<strong>21日</strong>まで延伸しました。登記手続きにかかる工期も7日から<strong>11日</strong>へ延びています。</p>
+
+        <p>一般的な解説記事などで見かける「○日でできる」という表現は、多くの場合<strong>「複数人で手分けして最短並行作業を行った場合の理論値」</strong>です。1人で全作業を担当する場合、当然ながらタスクが直列化するため、予想以上に期間が必要となります。あらかじめ「1人で進めるなら20日前後はかかる」と把握しておくことで、無理のない現実的なスケジュールを立てることができます。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. 各タスクにかかる費用を計上する</h2>
+        <p>会社を設立する際には、登録免許税や定款認証手数料など、各工程で様々な法定費用や諸経費が発生します。そこで今回は、作業にかかる<strong>コスト</strong>も一緒にWBS上で管理・可視化してみました。</p>
+
+        <figure class="article_figure">
+          <img src="images/incorporation_fig3_wbs_cost.jpg" alt="各タスクに発生する費用を計上したWBS" loading="lazy">
+          <figcaption>図3: 各タスクにかかる費用を計上したWBS（資本金1円＋諸費用）</figcaption>
+        </figure>
+
+        <p>WBSによる試算では、会社の資本金を1円とした場合の総額は<strong>269,001円</strong>となりました。ここには交通費や証明書の発行手数料、印鑑作成代などは含めていないため、実際にはもう少し費用がかかります。資本金以外にも初期費用として相応の準備が必要であることが分かります。</p>
+
+        <hr>
+
+        <h2 class="article_closing_title">終わりに</h2>
+        <p>いかがでしたでしょうか。WBSは作業の分解だけでなく、担当者の割り当て（リソース平準化）やコストの掛け合わせを行うことで、プロジェクトの見通しを劇的に向上させることができるツールです。</p>
+
+        <p>「自分1人で進めるとどれくらい期間が延びるのか」「総額でいくら必要なのか」といった疑問も、WBSで構造化してシミュレーションすることで事前に正確に把握できます。</p>
+
+        <p>今回の記事が、これから起業を考えている方やプロジェクトの計画づくりに悩む皆さんにとっての気付きになれば幸いです。また、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方については、「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
