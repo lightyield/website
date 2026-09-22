@@ -272,6 +272,33 @@ html {
   font-style: italic;
 }
 
+/* --- Article Author --- */
+.article_author {
+  margin: 40px 0 20px;
+  padding: 16px 22px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author_label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.author_name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
 /* --- Post Footer Actions --- */
 .article_footer_nav {
   margin-top: 50px;
@@ -527,6 +554,15 @@ html {
 
   .category_block_title {
     font-size: 1.25rem;
+  }
+
+  .article_author {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .author_name {
+    font-size: 0.98rem;
   }
 }
 
