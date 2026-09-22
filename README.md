@@ -22,7 +22,10 @@
     ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ
     │   ├── index.html             # 記事本文
     │   └── images/                # 記事内画像
-    └── gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事ディレクトリ
+    ├── gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事ディレクトリ
+    │   ├── index.html             # 記事本文
+    │   └── images/                # 記事内画像
+    └── software-estimation-accuracy/ # 「ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜」個別記事ディレクトリ
         ├── index.html             # 記事本文
         └── images/                # 記事内画像
 ```
