@@ -17,17 +17,20 @@
 ├── css/
 │   ├── base.css                   # 全体共通ベーススタイル
 │   └── blog.css                   # ブログ・ナレッジ関連スタイル
-└── blog/
-    ├── index.html                 # ブログ・知見 記事一覧ページ
-    ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ
-    │   ├── index.html             # 記事本文
-    │   └── images/                # 記事内画像
-    ├── gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事ディレクトリ
-    │   ├── index.html             # 記事本文
-    │   └── images/                # 記事内画像
-    └── software-estimation-accuracy/ # 「ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜」個別記事ディレクトリ
-        ├── index.html             # 記事本文
-        └── images/                # 記事内画像
+├── blog/
+│   ├── index.html                 # ブログ・知見 記事一覧ページ（カテゴリ別表示）
+│   ├── incorporation-wbs/         # 「株式会社を設立するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
+│   │   ├── index.html             # 記事本文
+│   │   └── images/                # 記事内画像
+│   ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ（知見・コラム）
+│   │   ├── index.html             # 記事本文
+│   │   └── images/                # 記事内画像
+│   ├── gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事ディレクトリ（知見・コラム）
+│   │   ├── index.html             # 記事本文
+│   │   └── images/                # 記事内画像
+│   └── software-estimation-accuracy/ # 「ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜」個別記事ディレクトリ（知見・コラム）
+│       ├── index.html             # 記事本文
+│       └── images/                # 記事内画像
 ```
 
 ---
