@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>【Windows95の父こと中島聡さんに聞いてみた】ソフトウェア開発の見積り精度を上げたい | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="今回はソフトウェア開発における見積り精度について、Windows 95のチーフアーキテクトなどを務められた中島聡さんのメールマガジンでお伺いしたQAと、それを踏まえたプロジェクトマネジメント実務における考察をご紹介します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="【Windows95の父こと中島聡さんに聞いてみた】ソフトウェア開発の見積り精度を上げたい | 株式会社ライトイールド"/>
+  <meta property="og:description" content="今回はソフトウェア開発における見積り精度について、Windows 95のチーフアーキテクトなどを務められた中島聡さんのメールマガジンでお伺いしたQAと、それを踏まえたプロジェクトマネジメント実務における考察をご紹介します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/software-estimation-accuracy/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>ソフトウェア開発の見積り精度を上げたい</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2019-03-18">2019.03.18</time>
+          <span class="article_category">Project Management</span>
+          <span class="article_category">Estimation</span>
+        </div>
+        <h1 class="article_title">【Windows95の父こと中島聡さんに聞いてみた】ソフトウェア開発の見積り精度を上げたい</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 中島聡氏のご紹介</a></li>
+          <li><a href="#section-2">2. ソフトウェア開発の見積り精度を上げるには（QA）</a></li>
+          <li><a href="#section-3">3. いただいた回答の取り扱いについて</a></li>
+          <li><a href="#section-4">4. 考察：見積りの世界に「打ち出の小槌」は存在しない</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回はソフトウェア開発における見積り精度について、Windows 95のチーフアーキテクトなどを務められた中島聡さんのメールマガジンでお伺いしたQAと、それを踏まえたプロジェクトマネジメント実務における考察をご紹介します。</p>
+
+        <p class="article_note_lead">※プロジェクト管理の基本となるWBSについては、こちらの記事「<a href="../wbs-essentials/">WBSの勘所</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 中島聡氏のご紹介</h2>
+        <p>中島聡さんは言わずと知れたWindows 95の父です。以下は、<a href="https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%B3%B6%E8%81%A1" target="_blank" rel="noopener noreferrer">Wikipedia</a>からの引用です。</p>
+
+        <blockquote>
+          <p>中島 聡（なかじま さとし、1960年 - ）は、日本のコンピュータ技術者、プログラマ。早稲田大学高等学院、早稲田大学大学院理工学研究科修了。現在はUIEvolution（スクウェア・エニックスの子会社）のチーフソフトウェアアーキテクト。マイクロソフトでWindows 95、Windows 98、Internet Explorer 3.0/4.0のチーフアーキテクトなどを務めた。<br>
+          （Wikipedia「中島聡」より）</p>
+        </blockquote>
+
+        <p>また、本QAの舞台となった中島さんのメールマガジンについてもご紹介します。今回ご紹介する内容は、すべてメールマガジンに掲載された本文そのままを引用しています。</p>
+
+        <p><a href="https://www.mag2.com/m/0001323030.html" target="_blank" rel="noopener noreferrer"><strong>週刊 Life is beautiful（まぐまぐ！）</strong></a></p>
+
+        <figure class="article_figure">
+          <img src="images/software_fig1_mag2_life_is_beautiful.png" alt="中島聡氏のメールマガジン 週刊 Life is beautiful" loading="lazy">
+          <figcaption>図1: 中島聡氏のメールマガジン「週刊 Life is beautiful」</figcaption>
+        </figure>
+
+        <hr>
+
+        <h2 id="section-2">2. ソフトウェア開発の見積り精度を上げるには（QA）</h2>
+        <p>それでは、実際の質問と回答をご紹介します。</p>
+
+        <h3 class="article_subheading">質問</h3>
+        <blockquote>
+          <p>日本のソフトウェア開発にて主にプロジェクトマネージャーを担当している者です。</p>
+          <p>受託開発の見積り精度を上げたいのですが、どうしても上手く行きません。<a href="../wbs-essentials/">WBS</a>を洗い出し、様々な見積り手法を試すのですが、往々にして見積り工数をオーバーします。</p>
+          <p>もちろん、見積り結果に対してバッファを設ければ工数オーバーを防ぐことが可能なのですが、個人的な考えとして、根拠のないバッファを設けることがどうしても後ろめたい、というか納得できません。というのも、それはソフトウェア本来の価値（適正価格）ではないと考えるからです。</p>
+          <p>お客様が納得すればそれで良し、と割り切ればそれまでですが、ぜひ一度、日本、海外のソフトウェア開発に精通された中島さんのご意見を伺えればと思います。</p>
+        </blockquote>
+
+        <h3 class="article_subheading">回答</h3>
+        <blockquote>
+          <p>ソフトウェア開発の見積もりは本当に難しいですよね。難しそうなものがアッサリと動いてしまうこともあれば、たった一つの問題が解決しないために、予定よりも何倍の時間がかかってしまうことがあります。特に大勢の開発者が関わっている場合、エンジニアごとの開発効率が大きく異なるため、工数を単純に頭数で割って納期を割り出すことは、ほぼ不可能です。</p>
+          <p>結局のところは十分なバッファを設けて、見積もりを出すしかないと私は思います。約束した納期に遅れたり、納期に間に合わせるためにクオリティを落としたり、という仕事を続けていれば、顧客は離れて行きます。</p>
+          <p>私自身が仕事をする場合には、正式な納期を決める前に「準備期間」をもらい、その準備期間に少数精鋭で、顧客が欲しがっているものを、ある程度ハリボテでも良いので作ってしまい、その期間中に「大まかな設計をする」「プロジェクトの難易度を肌感覚で知る」ことをした上で、より確実性のある開発コストを算定し、さらにそれに多少のバッファを設けて納期として提出します。</p>
+          <p>ちなみに、このテクニックは、受注開発であっても、自社製品・サービス向けの開発でも使える手法なので、覚えておくと良いと思います。私が世の中に送り出したソフトウェアは、いずれもこの手法で開発しています。</p>
+        </blockquote>
+
+        <p>以上が中島さんからのご回答です。多忙を極める中、非常に丁寧かつ本質的なアドバイスをいただくことができました。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. いただいた回答の取り扱いについて</h2>
+        <p>なお、今回のQAではいただいた回答のWeb上での取り扱いについても確認を行いました。念のために掲載許可に関するQAもご紹介します。</p>
+
+        <h3 class="article_subheading">質問</h3>
+        <blockquote>
+          <p>先日、質問をさせて頂いたものです。この度は回答有難うございました。</p>
+          <p>頂いた回答は私の考える手法とも近しく、何やらそれだけで安心してしまいました。結局の所、信用を得る為には自分のやり方を地道にやるのが一番だな、そう考えさせられた次第です。</p>
+          <p>ところで、頂いた回答についてですが、宜しければ私のブログ等にて公開させて頂きたく。原文そのままの掲載について可能かどうか、お手数ですがお返事頂けないでしょうか？</p>
+        </blockquote>
+
+        <h3 class="article_subheading">回答</h3>
+        <blockquote>
+          <p>私のメルマガの回答やコメントなどを、note やブログで公開することは、引用元（このメルマガ）を明確にしていただける限り歓迎です。唯一迷惑なのは、このメルマガの全文を単にコピペしただけのブログのようなものですが、「こんな質問に対してこんな回答があった」、「この記事に関して、こんなコメントがあった」などの引用であれば、自由にしていただいて結構です。</p>
+        </blockquote>
+
+        <p>当初はメルマガ掲載ではなく運営側への確認としてお送りした質問でしたが、翌週のメルマガ誌面で取り上げていただく形となりました。中島さんご自身にとっても、読者のエンジニアやマネージャーに向けて広く共有する価値のあるテーマだったのだと感じています。</p>
+
+        <hr>
+
+        <h2 id="section-4">4. 考察：見積りの世界に「打ち出の小槌」は存在しない</h2>
+        <p>今回のQAでは、見積りの精度を上げる方法として<strong>「バッファは積むしかないのか」</strong>という問いに対し、<strong>「バッファを積むのはやむを得ない（不可欠である）」</strong>とご回答をいただきました。これには正直ホッとした部分があり、第一線で活躍されてきたトップアーキテクトの方でも同じ結論に至るのだと深く共感しました。</p>
+
+        <p>また、<strong>「少数精鋭でハリボテ（モックアップ・プロトタイプ）を作る」</strong>というアプローチについても強く同意します。私自身、要件定義の段階でモックアップを作成することに注力しています。初期段階で動くモックアップを作成し、顧客や開発メンバーと共通の認識を持つことで、<strong>認識の齟齬を防ぎ、プロジェクトのゴールを常に明確に保つ</strong>ことができるからです。</p>
+
+        <p>いただいた回答を咀嚼していくと、結局のところ<strong>「見積りの世界に打ち出の小槌など存在しない」</strong>という結論に行き着きます。見積りの精度を高めるためには、地道な準備と検証を積み重ね、その上でリスクや不確実性に応じた適切なバッファを設けることが不可欠です。</p>
+
+        <p>もちろん、プロジェクトマネジメントは見積りを作って終わりではありません。見積りを実際の形に変えていく実行力が求められます。計画が絵に描いた餅とならないよう、技術力の高いエンジニアと強固なチームを組み、<a href="../gantt-chart-leveling/">ガントチャートによる平準化</a>や進捗管理を適切に行うことが重要です。メンバーが数十人、数百人といった大規模な体制下であっても、高い精度でプロジェクトを推進していくことこそが、プロジェクトマネージャーの腕の見せ所であり、挑み続けるべきテーマだと考えています。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
