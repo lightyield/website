@@ -272,6 +272,63 @@ html {
   font-style: italic;
 }
 
+/* --- Article Author Box --- */
+.article_author {
+  margin: 45px 0 20px;
+  padding: 22px 26px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.author_avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.12), rgba(44, 62, 80, 0.08));
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(30, 144, 255, 0.2);
+}
+
+.author_info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.author_label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.author_name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--main-color);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.author_role {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
 /* --- Post Footer Actions --- */
 .article_footer_nav {
   margin-top: 50px;
@@ -527,6 +584,20 @@ html {
 
   .category_block_title {
     font-size: 1.25rem;
+  }
+
+  .article_author {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .author_avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .author_name {
+    font-size: 1.05rem;
   }
 }
 
