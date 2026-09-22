@@ -22,6 +22,9 @@
 │   ├── incorporation-wbs/         # 「株式会社を設立するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
 │   │   ├── index.html             # 記事本文
 │   │   └── images/                # 記事内画像
+│   ├── ramen-wbs/                 # 「豚骨ラーメンを作るWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
+│   │   ├── index.html             # 記事本文
+│   │   └── images/                # 記事内画像
 │   ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ（知見・コラム）
 │   │   ├── index.html             # 記事本文
 │   │   └── images/                # 記事内画像
