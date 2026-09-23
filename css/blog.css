@@ -258,6 +258,13 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
   border: 1px solid #e2e8f0;
   display: inline-block;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article_figure img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 /* 図1（タスク洗い出しリスト）専用のコンパクト表示 */
@@ -270,6 +277,98 @@ html {
   color: var(--text-secondary);
   margin-top: 10px;
   font-style: italic;
+}
+
+/* --- Image Modal / Lightbox --- */
+.image_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out;
+}
+
+.image_modal.is_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image_modal_inner {
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: default;
+}
+
+.image_modal_img {
+  max-width: 92vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  background: #fff;
+  cursor: zoom-out;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+}
+
+.image_modal.is_active .image_modal_img {
+  transform: scale(1);
+}
+
+.image_modal_caption {
+  margin-top: 14px;
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+  font-family: var(--font-main);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.image_modal_close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 2010;
+}
+
+.image_modal_close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
 }
 
 /* --- Article Author --- */
