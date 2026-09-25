@@ -30,6 +30,9 @@
 │   ├── guitar-wbs/                # 「ギターを作るWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
 │   │   ├── index.html             # 記事本文
 │   │   └── images/                # 記事内画像
+│   ├── passport-wbs/              # 「パスポートを作成するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
+│   │   ├── index.html             # 記事本文
+│   │   └── images/                # 記事内画像
 │   ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ（知見・コラム）
 │   │   ├── index.html             # 記事本文
 │   │   └── images/                # 記事内画像
