@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>年越し手打ち蕎麦を作るWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大晦日の「年越し手打ち蕎麦づくり」を題材にWBSを作成。素のWBSから父1人のワンオペ逆算（23時完了）、母の参戦による並行分業とクリティカルパス短縮、バッファ設計、対外マイルストーン共有までを詳しく解説します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="年越し手打ち蕎麦を作るWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="大晦日の「年越し手打ち蕎麦づくり」を題材にWBSを作成。素のWBSから父1人のワンオペ逆算（23時完了）、母の参戦による並行分業とクリティカルパス短縮、バッファ設計、対外マイルストーン共有までを詳しく解説します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/soba-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  <meta property="og:image" content="https://lightyield.co.jp/blog/soba-wbs/images/soba_eyecatch.png" />
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>年越し手打ち蕎麦を作るWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-09-26">2026.09.26</time>
+          <span class="article_category">Peek into WBS</span>
+          <span class="article_category">WBS</span>
+        </div>
+        <h1 class="article_title">年越し手打ち蕎麦を作るWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 年越し手打ち蕎麦プロジェクトのWBSを作る（素のWBS）</a></li>
+          <li><a href="#section-2">2. お父さん1人に全て作らせてみる（23時完了からの逆算）</a></li>
+          <li><a href="#section-3">3. お母さん（天ぷら・厨房担当）を追加してみる（並行化とクリティカルパス短縮）</a></li>
+          <li><a href="#section-4">4. 予期せぬトラブルに備えてバッファを設けてみる（CCPM的アプローチ）</a></li>
+          <li><a href="#section-5">5. 対外的にはマイルストーンのみを共有する（見える化と調整コスト削減）</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、<strong>「年越し手打ち蕎麦を作るWBS」</strong>を作成しました。</p>
+
+        <p>プロジェクトマネジメントの現場では、「リソースの平準化」「クリティカルパス」「逆算思考（バックワード・スケジューリング）」「バッファ管理」「ステークホルダーコミュニケーション」といった様々な概念が登場します。しかし、理論だけではなかなか直感的に理解しにくいものです。</p>
+
+        <p>そこで今回は、誰にとっても身近で、かつ絶対に失敗が許されない**「大晦日の23:00（除夜の鐘の前）に家族全員で食べ終えて片付けまで完了する」**という年越し蕎麦プロジェクトを題材に、WBSを通じてプロジェクトマネジメントの真髄を検証していきます。</p>
+
+        <p class="article_note_lead">※そもそも「WBSとは何か？」について詳しく知りたい方は、こちらの記事「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 年越し手打ち蕎麦プロジェクトのWBSを作る（素のWBS）</h2>
+        <p>まずは本格的な十割手打ち蕎麦の工程を参考に、食材調達から出汁取り、天ぷら、蕎麦打ち、実食・片付けまでの全作業を洗い出し、タスクの前後関係（依存関係）のみを定義した「素のWBS」を作成してみます。</p>
+
+        <figure class="article_figure">
+          <img src="images/soba_fig1_pure_wbs.png" alt="年越し手打ち蕎麦プロジェクトの素のWBS（リソース未設定）" loading="lazy">
+          <figcaption>図1: 素のWBS（リソース未設定・理論上の最短並行実行）</figcaption>
+        </figure>
+
+        <p>このガントチャートを見ると、前日の食材調達を除いた当日の調理から片付けまでの総所要時間は、なんと<strong>わずか「2時間45分」</strong>となっています。「これなら20時過ぎから作業を始めても余裕で23時に間に合う」と思えるかもしれません。</p>
+
+        <p>しかし、タイムラインをよく見てみると、出汁を取りながら蕎麦粉を練り、蕎麦を切るのと同時に天ぷらを揚げるという<strong>「完全並行稼働」</strong>が前提になっています。</p>
+
+        <div class="article_point">
+          <strong>⚠️ PMの現場あるある：リソースを考慮しないファンタジー計画</strong><br>
+          「誰が蕎麦を打ちながら同時に天ぷらを揚げて出汁を取っているのか？」<br>
+          担当者（リソース）の人数や稼働上限を無視したWBSは、どれほど美しく見えても<strong>ただの絵に描いた餅（ファンタジー）</strong>です。
+        </div>
+
+        <hr>
+
+        <h2 id="section-2">2. お父さん1人に全て作らせてみる（23時完了からの逆算）</h2>
+        <p>現実を直視し、「今年の年越し蕎麦は父が一人ですべて担当する」として、全タスクに<strong>「お父さん（100%）」</strong>を割り当ててみます。</p>
+
+        <p>お父さんの身体は1つしかないため、リソース競合が発生し、並行していたタスクがすべて直列化（平準化）されます。ここで、「大晦日 23:00（年越し前）に片付けまで完了する」という固定納期から<strong>逆算（バックワード・スケジューリング / ALAP: As Late As Possible）</strong>を行います。</p>
+
+        <figure class="article_figure">
+          <img src="images/soba_fig2_single_father.png" alt="お父さん1人に作業を担当させた場合のWBS（23時完了逆算）" loading="lazy">
+          <figcaption>図2: お父さん1人作業（完全直列化・23時完了からの逆算）</figcaption>
+        </figure>
+
+        <p>平準化と逆算を行った結果、衝撃のタイムラインが浮かび上がりました。</p>
+
+        <ul>
+          <li><strong>当日の実作業時間</strong>: 休憩なしで<strong>4時間45分</strong>連続の重労働</li>
+          <li><strong>必須開始時刻</strong>: 23時に終わるためには、なんと<strong>夕方 18:15</strong>にスタートしなければならない</li>
+          <li><strong>全タスクがクリティカルパス</strong>: ピンク色で示された全工程に余裕（フロート）が一切なく、1つの工程でも10分遅れれば年越し（23:00）に間に合わない</li>
+        </ul>
+
+        <p>お父さんは年末特番を見る余裕もなく、夕方前からずっと台所に缶詰めとなり、年越しの瞬間には力尽きてしまいます。これがIT現場で起きる<strong>「属人化・ワンオペ・デスマーチ」</strong>の正体です。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. お母さん（天ぷら・厨房担当）を追加してみる（並行化とクリティカルパス短縮）</h2>
+        <p>この危機を回避するため、厨房統括として<strong>「お母さん」</strong>に参戦してもらい、2名体制で役割を分担します。</p>
+
+        <ul>
+          <li><strong>父（蕎麦打ち専門職人）</strong>: のし板セッティング、水回し、延ばし、切り、茹で上げ</li>
+          <li><strong>母（厨房統括・調理）</strong>: 本返し、出汁取り、天ぷら下処理、湯沸かし、天ぷら揚げ、配膳</li>
+          <li><strong>共同作業</strong>: 実食、後片付け</li>
+        </ul>
+
+        <figure class="article_figure">
+          <img src="images/soba_fig3_two_person.png" alt="お母さんを追加して二人体制で分業したWBS" loading="lazy">
+          <figcaption>図3: 二人作業（並行分業によるクリティカルパス短縮）</figcaption>
+        </figure>
+
+        <p>分業と並行化を行ったことで、スケジュールは劇的に改善しました。</p>
+
+        <ul>
+          <li><strong>必要開始時刻</strong>: 母 <strong>19:40</strong> / 父 <strong>20:15</strong> スタート！</li>
+          <li><strong>ゆとりの創出</strong>: 一人作業（18:15）と比べて<strong>約1時間30分〜2時間の余裕</strong>が生まれ、夕方の時間を家族でゆったり過ごせる</li>
+          <li><strong>クリティカルパスの局所化</strong>: クリティカルパスは「母の出汁＆天ぷらライン」に集約され、父の蕎麦打ちラインには余裕（トータルフロート）が生まれた</li>
+        </ul>
+
+        <p>人を追加する真の価値は、単に全体の工数を減らすことではなく、<strong>「依存関係を解消してタスクを並行稼働させ、クリティカルパスを短縮すること」</strong>にあることがよく分かります。</p>
+
+        <hr>
+
+        <h2 id="section-4">4. 予期せぬトラブルに備えてバッファを設けてみる（CCPM的アプローチ）</h2>
+        <p>しかし、実際のプロジェクトは計画通りには進みません。「蕎麦粉の水加減が合わず練り直しが発生した（+15分）」「天ぷら油の温度が上がらない（+10分）」といった予期せぬトラブルが必ず起きます。</p>
+
+        <p>そこで、各工程の合流ポイントに<strong>「明示的なバッファ（緩衝）」</strong>を配置します（CCPM: クリティカルチェーン・プロジェクトマネジメントの考え方）。</p>
+
+        <figure class="article_figure">
+          <img src="images/soba_fig4_buffer.png" alt="バッファを組み込んだ年越し蕎麦WBS" loading="lazy">
+          <figcaption>図4: バッファ設計（リスクヘッジ・CCPM的アプローチ）</figcaption>
+        </figure>
+
+        <p>出汁調整バッファ（15分）、蕎麦打ち調整バッファ（15分）、油温バッファ（10分）、全体合流バッファ（10分）を明示的に組み込むことで、<strong>19:00スタート</strong>という「安全な開始時刻」が導き出されました。</p>
+
+        <p>トラブルが起きなければ22時前に前倒しで食べ始めることができ、仮にトラブルが連発しても<strong>23:00のデッドラインを100%死守</strong>できます。バッファは「サボるための時間」ではなく、「品質と納期を守るための投資」です。</p>
+
+        <hr>
+
+        <h2 id="section-5">5. 対外的にはマイルストーンのみを共有する（見える化と調整コスト削減）</h2>
+        <p>WBSとバッファが完成したら、最後に重要なのが<strong>「ステークホルダー（家族・食べる側の子どもたちや来客）とのコミュニケーション」</strong>です。</p>
+
+        <p>ここで詳細なWBSをそのまま家族に見せてしまうと、「20:30なのにまだ粉混ぜてるの？」「天ぷらの下処理30分は長くない？」といったマイクロマネジメントや過剰な口出しが発生し、作業者の集中が妨げられてしまいます。</p>
+
+        <p>食べる側が本当に知りたいのは「誰がどの手順で粉を練っているか」ではなく、<strong>「何時に美味しい蕎麦が食べられるのか（いつ終わるのか）」</strong>だけです。そのため、対外的には<strong>マイルストーン（主要な達成ポイント）のみを共有</strong>します。</p>
+
+        <figure class="article_figure">
+          <img src="images/soba_fig5_milestone.png" alt="ステークホルダー向けマイルストーン共有ビュー" loading="lazy">
+          <figcaption>図5: 対外向けマイルストーン共有ビュー（調整コスト削減）</figcaption>
+        </figure>
+
+        <p>共有するマイルストーン：</p>
+        <ul>
+          <li><strong>🏁 12/30 12:00</strong> 【事前準備】食材・そば粉 買い出し完了</li>
+          <li><strong>🏁 12/31 20:40</strong> 【出汁つゆ】特製かえし＆極上出汁 完成</li>
+          <li><strong>🏁 12/31 21:10</strong> 【生蕎麦】十割手打ち蕎麦 切り上がり</li>
+          <li><strong>🏁 12/31 21:45</strong> 【揚げ物】揚げたて海老天・野菜天 完成</li>
+          <li><strong>🏁 12/31 22:00</strong> 【配膳実食】茹でたて年越し蕎麦「いただきます！」</li>
+          <li><strong>🏁 12/31 23:00</strong> 【完了】年越し蕎麦ミッション完了・良いお年を！</li>
+        </ul>
+
+        <div class="article_point">
+          <strong>💡 見える化の黄金律：チーム内は「WBS」、対外共有は「マイルストーン」</strong><br>
+          チーム内（父・母）では詳細なタスクとバッファをWBSで緻密に追跡し、対外（家族・ステークホルダー）にはマイルストーンの達成予測だけをシンプルに共有する。この使い分けが、現場の心理的安全性を守り、無駄な調整コストをゼロにします。
+        </div>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>身近な「年越し手打ち蕎麦づくり」であっても、WBSに落とし込んでリソース配分、逆算、バッファ、マイルストーンを検証することで、プロジェクトマネジメントの本質が鮮明に見えてきます。</p>
+
+        <ol>
+          <li><strong>リソースのないWBSは幻想</strong>（工数と体制は必ずセット）</li>
+          <li><strong>デッドラインから逆算し、ワンオペの限界とクリティカルパスを直視する</strong></li>
+          <li><strong>ボトルネックを特定し、並行化でクリティカルパスを短縮する</strong></li>
+          <li><strong>バッファは隠さず、明示的に設計してリスクを吸収する</strong></li>
+          <li><strong>チーム内はWBSで緻密に、対外共有はマイルストーンでシンプルに</strong></li>
+        </ol>
+
+        <p>日々の開発やプロジェクト管理でも、「このWBSは一人で蕎麦打ちながら天ぷら揚げていないか？」「外部に見せるべきは詳細タスクか、マイルストーンか？」と意識することで、より見通しの良いプロジェクト運営ができるようになります。</p>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../js/blog.js?v=2"></script>
+</body>
+</html>
