@@ -75,5 +75,5 @@ npx serve .
    - `blog/<article-slug>/images/` に記事内で使用する画像を配置（命名規則: `<slug>_fig1_xxx.jpg` 等のプレフィックス推奨）。
    - `blog/<article-slug>/index.html` を作成（既存の `blog/wbs-essentials/index.html` をテンプレートとして活用）。
 3. **ブログ一覧・トップページへの追加**:
-   - `blog/index.html` の `.blog_grid` 内に新しい記事カードを追加。
-   - 必要に応じて `index.html` の `.blog_grid` 内の最新記事表示を更新。
+   - `blog/index.html` の `.blog_grid` 内に新しい記事カードを追加（全記事を掲載）。
+   - トップページ（`index.html`）の `.blog_grid` 内を更新。**トップページは各カテゴリ新着2件のみ表示**するため、新着記事を追加した際は3件目となる最古の記事カードを削除してください。
