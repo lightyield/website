@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>夏の琵琶湖ファミリーキャンプ設営のWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="夏の琵琶湖ファミリーキャンプにおける「チェックインから湖へ泳ぎに行くまで」の設営・準備工程を題材にWBSを作成。リソース未割り当ての状態から、父1人の平準化、母も協力した2名体制での並行化、子どもの追加に伴う工期延伸、そして育成・並行化・合流バッファを組み込んだ最適解までを詳しく検証します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="夏の琵琶湖ファミリーキャンプ設営のWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="夏の琵琶湖ファミリーキャンプにおける「チェックインから湖へ泳ぎに行くまで」の設営・準備工程を題材にWBSを作成。リソース未割り当ての状態から、父1人の平準化、母も協力した2名体制での並行化、子どもの追加に伴う工期延伸、そして育成・並行化・合流バッファを組み込んだ最適解までを詳しく検証します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/camp-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>夏の琵琶湖ファミリーキャンプ設営のWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-02">2026.10.02</time>
+          <span class="article_category">Peek into WBS</span>
+          <span class="article_category">WBS</span>
+        </div>
+        <h1 class="article_title">夏の琵琶湖ファミリーキャンプ設営のWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 割り当てなし</a></li>
+          <li><a href="#section-2">2. 父のみを設定し平準化した場合</a></li>
+          <li><a href="#section-3">3. 母を追加した場合</a></li>
+          <li><a href="#section-4">4. 子どもを追加した場合</a></li>
+          <li><a href="#section-5">5. 最適解のWBS</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、我が家が夏に行う琵琶湖ファミリーキャンプを題材に「キャンプ設営のWBS」を作成しました。</p>
+
+        <p>舞台は滋賀県の琵琶湖畔にあるキャンプ場です。アーリーチェックインを利用して朝9:00にサイトへ到着した時点からプロジェクトがスタートします。ゴールは、テントやタープの設営を終え、水着への着替えと浮き輪の準備を完了して、目の前の湖へ泳ぎに出ることです。</p>
+
+        <p>加えて、今回は「お手伝いしたい」という子どもの参画をどう扱うかもポイントです。</p>
+
+        <p>本記事では、この設営工程をWBSに落とし込み、リソース未割り当ての状態から、父1人の平準化、母も協力した2名体制での並行化、子どもの追加に伴う工期延伸、そして合流バッファを組み込んだ最適解まで、5つのステップでシミュレーションしていきます。</p>
+
+        <p class="article_note_lead">※そもそも「WBSとは何か？」「平準化とは何か？」について詳しく知りたい方は、こちらの記事「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 割り当てなし</h2>
+        <p>まずは、サイト到着（AM 9:00）から湖へ泳ぎに行くまでに必要な全作業を洗い出し、タスクの前後関係のみを定義したWBSを作成してみます。</p>
+
+        <p>虫除けやサイトの環境確認、荷降ろしから始まり、タープ設営、テント設営、寝室（エアーベッドやシュラフ）のセッティング、キッチン・小物設営、そして水遊び道具の準備や着替えまで、合計25個のタスクを定義しました。</p>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig1_pure_wbs.png" alt="割り当てなしのガントチャート" loading="lazy">
+          <figcaption>図1: 割り当てなし</figcaption>
+        </figure>
+
+        <p>このガントチャートを見ると、全体の完了時刻は <strong>10:05</strong>（所要時間：1時間05分）となっています。</p>
+
+        <p>しかし、タイムラインを確認すると、9:00〜9:10の時点で虫除け、環境確認、荷降ろし、整地など、最大9個のタスクが同時に進行しています。担当者（リソース）の制約を考慮していないため、理論上の最短時間を示すスケジュールとなります。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. 父のみを設定し平準化した場合</h2>
+        <p>続いて、すべての作業を父1人が担当した場合をシミュレーションしてみます。全タスクに父（稼働率100%）を割り当て、作業の重複を解消する平準化を行いました。</p>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig2_father_solo.png" alt="すべての作業を父1人が担当した場合のWBS" loading="lazy">
+          <figcaption>図2: 父のみを設定し平準化した場合</figcaption>
+        </figure>
+
+        <p>平準化を行った結果、並行していたすべてのタスクが直列化し、完了時刻は <strong>12:30</strong>（所要時間：3時間30分）となりました。ステップ1の理論値と比べて3倍以上の工期となります。</p>
+
+        <p>父がボトルネックとなり、車からの荷降ろし、タープ・テントの組み立て、寝具の設置、浮き輪の準備までを1人で順番にこなす必要があります。特定のリソースに作業が集中すると作業が直列化し、スケジュールが大幅に延びることが分かります。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. 母を追加した場合</h2>
+        <p>そこで、母にも作業に加わってもらい、父母2名体制（父100%、母100%）で分業体制を組みました。</p>
+
+        <p>タープやテントの立ち上げなど2名での作業が適している工程は共同で行い、それ以外は役割を分担します。父がペグ打ちやテントのフレーム組み立て、寝室構築などを担当し、母がテーブルやチェアの展開、水分補給の準備、キッチン設置、浮き輪の準備などを並行して進めます。</p>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig3_parents_collab.png" alt="母を追加して2名体制で分業したガントチャート" loading="lazy">
+          <figcaption>図3: 母を追加した場合のガントチャート</figcaption>
+        </figure>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig4_parents_resource.png" alt="父母2名体制におけるリソース稼働タイムライン" loading="lazy">
+          <figcaption>図4: 父母2名体制のリソース稼働状況</figcaption>
+        </figure>
+
+        <p>2名体制で平準化した結果、完了時刻は <strong>11:00</strong>（所要時間：2時間00分）となりました。ステップ2の12:30から1時間30分短縮され、午前中のうちに湖へ泳ぎに行けるスケジュールになります。</p>
+
+        <p>図4のリソースタイムラインを見ると、父が9:00の開始から11:00の完了まで隙間なく稼働し続けていることが分かります。一方で母は10:35頃に担当作業が完了しており、時間に余裕が生じています。このように、最も稼働負荷の高い父の作業が、プロジェクト全体の完了時刻を左右するボトルネックになっていることが確認できます。</p>
+
+        <hr>
+
+        <h2 id="section-4">4. 子どもを追加した場合</h2>
+        <p>設営を進める中で、子どもから手伝いたいという希望があったため、子どもを新たなリソースとして投入してみます。</p>
+
+        <p>子どもが手伝える作業として、以下の4タスクを割り当てました。</p>
+        <ul>
+          <li>テント・タープスペースの整地（石拾い・地面ならし）</li>
+          <li>組み立てチェア・テーブルの展開</li>
+          <li>エアーベッドの設置（空気入れ・配置）</li>
+          <li>寝具（シュラフ、まくら等）の設置・展開</li>
+        </ul>
+
+        <p>子どもの作業能力は大人の半分（稼働率0.5）として設定しました。また、子どもに作業を任せるには事前の説明と、作業後の受け入れ検査（確認・手直し）が必要となります。その説明と検査を母が担当する前提でWBSを再構築し、平準化を行いました。</p>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig5_kids_onboarding.png" alt="子どもを追加した場合のWBS" loading="lazy">
+          <figcaption>図5: 子どもを追加した場合のガントチャート</figcaption>
+        </figure>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig6_kids_resource.png" alt="子ども追加時のリソース稼働タイムライン" loading="lazy">
+          <figcaption>図6: 子ども追加時のリソース稼働状況</figcaption>
+        </figure>
+
+        <p>平準化した結果、完了時刻は <strong>11:20</strong>（所要時間：2時間20分）となりました。大人2名体制（ステップ3の11:00完了）と比べて、工期が20分延びる結果となっています。</p>
+
+        <p>図6のリソースタイムラインを見ると、子どもへの作業説明や仕上がりの確認が発生したことで、母自身の担当作業が後ろ倒しになっています。その結果、母の作業が新たなボトルネックとなり、プロジェクト全体の完了時刻が延びる要因となりました。作業人数を増やしても、説明や確認の負担によって全体の進捗が遅れる場合があることを示しています。</p>
+
+        <hr>
+
+        <h2 id="section-5">5. 最適解のWBS</h2>
+        <p>子どもの自立や体験の共有といった観点からも、子どもの参画を取りやめるのではなく、子どもの参加（4タスクの分担・説明・受け入れ検査）を維持したまま、タスクの順序やスケジューリングを見直した最適解のWBSを設計しました。</p>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig7_optimal_wbs.png" alt="適材適所の分担と並行化を実現した最適解のWBS" loading="lazy">
+          <figcaption>図7: 最適解のWBS</figcaption>
+        </figure>
+
+        <figure class="article_figure">
+          <img src="images/camp_fig8_optimal_resource.png" alt="最適解におけるリソース稼働タイムライン" loading="lazy">
+          <figcaption>図8: 最適解のリソース稼働状況</figcaption>
+        </figure>
+
+        <p>このスケジュールでは、母の受け入れ検査と設営作業の順序を整理し、父のメイン作業（テント設営や寝具設置）と並行して効率よく進むように配置しています。</p>
+
+        <p>その結果、完了時刻は <strong>11:05</strong>（所要時間：2時間05分）となりました。ステップ4から15分短縮され、大人2名体制（ステップ3の11:00）と比較しても5分の差にとどめています。</p>
+
+        <p>また、図8のリソースタイムラインを見ると、母の作業ラインは <strong>10:45</strong> に完了しており、父の作業完了（11:05）までの間に約20分の空き時間が確保されています。</p>
+
+        <p>この空き時間は、作業の合流地点にあらかじめ確保された余裕時間（バッファ）として機能します。不確実性の高い子どもの作業において遅れが生じた場合でも、この20分のバッファが遅れを吸収するため、全体の完了時刻（11:05）に影響を与えることなく進めることができます。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>キャンプの設営工程をWBSに落とし込み、リソース平準化を行うことで、以下のようなプロジェクトマネジメントの観点を整理することができました。</p>
+
+        <ul>
+          <li>リソースを考慮しない計画は理論値にとどまること</li>
+          <li>特定の担当者に作業が集中すると直列化して工期が延びること</li>
+          <li>稼働負荷の高い担当者の作業が全体のボトルネックになること</li>
+          <li>メンバーの追加には説明や確認の時間が伴うこと</li>
+          <li>遅れが出やすい作業の合流地点にはあらかじめ余裕（バッファ）を確保しておくこと</li>
+        </ul>
+
+        <p>実際のプロジェクトや現場作業においても、リソースの負荷状況や不確実性を可視化し、適切なバッファを組み込むことが安定したスケジュール管理につながります。</p>
+
+        <p>日常の業務やプロジェクト計画におけるスケジュール設計の参考にしていただければ幸いです。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../js/blog.js?v=2"></script>
+</body>
+</html>
