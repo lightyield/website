@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>オリジナルクラフトビールを委託醸造するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="小規模醸造所（マイクロブルワリー）への委託によるオリジナルクラフトビール製造を題材にWBSを作成。企画・レシピ確定から仕込み、発酵・熟成、ラベル資材制作、パッケージング、配送に至る全42タスクの洗い出しとスケジュールについて淡々と検証します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="オリジナルクラフトビールを委託醸造するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="小規模醸造所（マイクロブルワリー）への委託によるオリジナルクラフトビール製造を題材にWBSを作成。企画・レシピ確定から仕込み、発酵・熟成、ラベル資材制作、パッケージング、配送に至る全42タスクの洗い出しとスケジュールについて淡々と検証します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/craft-beer-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>オリジナルクラフトビールを委託醸造するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-04">2026.10.04</time>
+          <span class="article_category">Peek into WBS</span>
+          <span class="article_category">WBS</span>
+        </div>
+        <h1 class="article_title">オリジナルクラフトビールを委託醸造するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 目指すビールのイメージと前提条件</a></li>
+          <li><a href="#section-2">2. タスクの洗い出しと所要時間の見積もり</a></li>
+          <li><a href="#section-3">3. 依存関係の設定とスケジュールの確定</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、小規模醸造所（マイクロブルワリー）へ委託してオリジナルクラフトビールを製造する工程を題材に「クラフトビール委託醸造のWBS」を作成しました。</p>
+
+        <p>本プロジェクトの発端は、「自分が普段から愛飲している大好きなビールを、いつか自分でも作ってみたい」という個人的な興味からです。今回、目標とする味の基準として引き合いに出したビールは、私のお気に入りの銘柄である『SPRING VALLEY（スプリングバレー）豊潤＜496＞』です。</p>
+
+        <p>ただし、私自身はビールの醸造や委託製造を実際に体験したことはありません。そのため、必要となる一連のタスクの洗い出しや関与する外部リソース、自分以外の工程にかかる作業時間については、AIを活用して整理を依頼し、WBSとして組み立てました。</p>
+
+        <p>なお、今回の記事は「オリジナルビールを委託醸造する場合、具体的にどのような手順や期間が必要になるのか」という作業手順の興味を形にした程度のものであり、プロジェクト管理上の深い要素や学びはありません。全工程の流れをWBSで俯瞰する一例として、淡々とご紹介します。</p>
+
+        <p class="article_note_lead">※そもそも「WBSとは何か？」「平準化とは何か？」について詳しく知りたい方は、こちらの記事「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 目指すビールのイメージと前提条件</h2>
+        <p>まずは、今回目標としたビールのイメージと製造の前提条件を整理します。</p>
+
+        <p>目指す味のベースとしたのは、冒頭でも触れたお気に入りのクラフトビール『SPRING VALLEY 豊潤＜496＞』です。きめ細やかな濃密な泡、複数の麦芽による深いコクと美しい琥珀色、そしてホップの華やかな香りと心地よい苦味が特徴のビールです。</p>
+
+        <figure class="article_figure figure_sm">
+          <img src="images/craft-beer_fig1_spring_valley.jpg" alt="目標とするSPRING VALLEY 豊潤＜496＞のイメージイラスト" loading="lazy">
+          <figcaption>図1: 目標とするビールのイメージ（SPRING VALLEY 豊潤＜496＞風イラスト）</figcaption>
+        </figure>
+
+        <p>この味を念頭に、個人や小規模事業者がマイクロブルワリーのOEM（委託醸造）サービスを利用して、小ロットでオリジナルビールを製造するケースを想定しました。設定した基本スペックおよび前提は以下の通りです。</p>
+
+        <ul>
+          <li><strong>製造規模</strong>: 1バッチ（仕込み量 約100L〜200L / 330ml瓶 約300〜600本程度）</li>
+          <li><strong>目標スタイル</strong>: アンバーエール（またはIPL）</li>
+          <li><strong>目標スペック</strong>: アルコール度数 約6.0% / 苦味（IBU） 約30 / 赤みがかった琥珀色</li>
+          <li><strong>役割分担</strong>: 酒類製造免許と醸造設備を持つブルワリーに醸造実務を一任し、自分は企画、要件提示、契約、ラベル等の資材手配、受取・評価を担当</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="section-2">2. タスクの洗い出しと所要時間の見積もり</h2>
+        <p>次に、AIを活用して企画から納品・テイスティングまでに必要な作業項目を分解し、WBSの初期構造を作成しました。</p>
+
+        <p>全体は以下の9つのフェーズ（工程グループ）に大別され、計42件のタスクで構成されています。</p>
+
+        <ol>
+          <li><strong>企画・要件定義</strong>（飲用シーンの言語化、目標スペック設定、ロット決定、予算試算など）</li>
+          <li><strong>ブルワリー選定・契約</strong>（ブルワリー調査、条件ヒアリング、レシピ設計、契約締結など）</li>
+          <li><strong>仕込み準備</strong>（原料調達リードタイム、特殊副原料の手配など）</li>
+          <li><strong>仕込み当日（醸造実務）</strong>（釜場での麦汁仕込み・煮沸・冷却・酵母投入など一式）</li>
+          <li><strong>発酵・熟成</strong>（主発酵7日間、ドライホップ4日間、冷温熟成14日間）</li>
+          <li><strong>資材制作・法務</strong>（ネーミング、ラベルデザイン、法定表記審査、耐水印刷、工場納品）</li>
+          <li><strong>パッケージング</strong>（炭酸調整、ボトリング充填・打栓・ラベル貼り・箱詰め）</li>
+          <li><strong>物流・納品・受取</strong>（出荷手配、クール便輸送、受取検品、冷蔵静置）</li>
+          <li><strong>リリース・評価</strong>（開栓、スプリングバレーとの飲み比べ検証、振り返りメモ作成）</li>
+        </ol>
+
+        <p>関与するリソース（担当者）としては、「自分」のほかに「ブルワリー（窓口・管理）」「ブルワリー(醸造)」「デザイナー」「印刷所」「運送会社」の計6者を定義しました。</p>
+
+        <p>まずは、タスク間の依存関係（先行タスク）を設定せず、すべての作業が初日から並列に配置された状態のWBSを確認します。</p>
+
+        <figure class="article_figure">
+          <img src="images/craft-beer_fig2_wbs_no_dependencies.png" alt="タスク洗い出し段階のWBS（依存関係未設定）" loading="lazy">
+          <figcaption>図2: タスク洗い出し段階のWBS（依存関係未設定・工数見積もり段階）</figcaption>
+        </figure>
+
+        <p>この段階では、個々のタスクにかかる所要時間の長さが把握できます。ブルワリーによる「原料調達（10日）」や「冷温熟成（14日）」、印刷所での「耐水ラベル本印刷（5日）」など、日単位を要する外部作業が視覚的に際立ちます。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. 依存関係の設定とスケジュールの確定</h2>
+        <p>洗い出した各タスクに先行関係（依存関係）を付与し、スケジュールの全体像を確定させます。</p>
+
+        <p>ビールの委託醸造においては、工程の順序が厳密に決まっている部分と、並行して進められる部分が存在します。</p>
+
+        <p>特に重要なのが、醸造現場で行われる<strong>「発酵・熟成（計25日間）」</strong>と、自分側で進める<strong>「資材制作・法務（ラベル手配：23日12時間）」</strong>の並行ラインです。仕込みが終わってタンクでビールが発酵している間に、ラベルのグラフィックデザイン作成、酒税法・食品表示基準に基づく法定表記の審査、耐水ユポ紙での印刷を進め、瓶詰め（パッケージング）の直前までに工場へラベルを届ける必要があります。</p>
+
+        <p>依存関係を設定した完成版のWBSがこちらです。</p>
+
+        <figure class="article_figure">
+          <img src="images/craft-beer_fig3_wbs_final.png" alt="依存関係・スケジュール確定後の完成版WBS" loading="lazy">
+          <figcaption>図3: 依存関係・スケジュール確定後の完成版WBS（全体所要期間：62日15時間 / T日〜T+58d）</figcaption>
+        </figure>
+
+        <p>先行タスクと各工程グループの連動により、初日（T日）から完成ビールの受取・開栓（T+58d）に至るまでの全体所要期間は<strong>「62日 15時間」</strong>（約9週間）となりました。</p>
+
+        <p>ガントチャートを見ると、原料調達から仕込みを経て、発酵・熟成の完了マイルストーンに至る経路がクリティカルパス（プロジェクト全体の工期を決定づける最長経路）を形成していることが確認できます。ラベル制作が多少遅延しても、発酵・熟成の期間内（約3〜4週間）に納品できれば全体の納期には影響しないという時間的余裕（トータル・スラック）の存在も読み取れます。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>今回は、自分が体験したことのない「クラフトビールの委託醸造」を題材に、作業手順への興味からAIを活用してWBSを作成してみました。</p>
+
+        <p>プロジェクト管理としての特別なノウハウや深い学びがあるわけではありませんが、未知の分野であっても工程を分解し、リソースと先行関係を整理することで、「何にどれくらいの期間がかかり、どの作業が並行して進むのか」という全体像を淡々と視覚化することができました。</p>
+
+        <p>身近な「やってみたいこと」をスケジュールや手順の観点から整理してみる際の参考になれば幸いです。</p>
+
+        <p>なお、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../js/blog.js?v=2"></script>
+</body>
+</html>
