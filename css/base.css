@@ -23,7 +23,7 @@ body {
   position: relative;
   height: 100vh;
   min-height: 650px;
-  background: radial-gradient(circle at center, #2c3e50 0%, #1a1a1a 100%);
+  background: radial-gradient(circle at 75% 50%, #1a2736 0%, #0c1219 100%);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -39,6 +39,31 @@ body {
   opacity: 0.1;
   z-index: 1;
   pointer-events: none;
+}
+
+/* 幾何学ポリゴンリング背景（右側配置・静止） */
+.hero_arcs_bg,
+.hero_geometric_bg {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+  width: 900px;
+  height: 900px;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 40px rgba(100, 181, 246, 0.22));
+  opacity: 0.88;
+}
+
+@media (max-width: 1024px) {
+  .hero_arcs_bg,
+  .hero_geometric_bg {
+    right: -240px;
+    width: 720px;
+    height: 720px;
+    opacity: 0.6;
+  }
 }
 
 .header_logo_wrapper {
@@ -72,11 +97,13 @@ body {
   letter-spacing: -0.02em;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero_message_container {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(100, 181, 246, 0.45);
   padding-left: 30px;
+  backdrop-filter: blur(4px);
 }
 
 .hero_message_main {
@@ -100,12 +127,13 @@ body {
 .skill_tag {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 5px 15px;
+  border: 1px solid rgba(100, 181, 246, 0.4);
+  background: rgba(100, 181, 246, 0.08);
+  padding: 6px 16px;
   border-radius: 2px;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  opacity: 0.8;
+  color: #e0f2fe;
 }
 
 /* --- Section Common --- */
@@ -224,6 +252,15 @@ footer {
     min-height: 550px; /* ある程度の高さは確保 */
     padding-top: 100px; /* ロゴの分だけ上に余白を作る */
     padding-bottom: 60px;
+  }
+
+  .hero_arcs_bg,
+  .hero_geometric_bg {
+    right: -200px;
+    top: 60%;
+    width: 560px;
+    height: 560px;
+    opacity: 0.4;
   }
 
   .header_logo_wrapper { top: 25px; left: 25px; }
