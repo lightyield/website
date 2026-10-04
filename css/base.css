@@ -23,7 +23,7 @@ body {
   position: relative;
   height: 100vh;
   min-height: 650px;
-  background: radial-gradient(circle at center, #2c3e50 0%, #1a1a1a 100%);
+  background: radial-gradient(circle at 75% 50%, #203144 0%, #111720 100%);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -72,11 +72,13 @@ body {
   letter-spacing: -0.02em;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero_message_container {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(100, 181, 246, 0.45);
   padding-left: 30px;
+  backdrop-filter: blur(4px);
 }
 
 .hero_message_main {
@@ -224,6 +226,14 @@ footer {
     min-height: 550px; /* ある程度の高さは確保 */
     padding-top: 100px; /* ロゴの分だけ上に余白を作る */
     padding-bottom: 60px;
+  }
+
+  .hero_geometric_bg {
+    right: -200px;
+    top: 60%;
+    width: 560px;
+    height: 560px;
+    opacity: 0.38;
   }
 
   .header_logo_wrapper { top: 25px; left: 25px; }
