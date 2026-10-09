@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WBSの進め 電子書籍（Kindle）を出版するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="電子書籍の企画から執筆、表紙作成、校正、KDP登録・販売開始に至る全工程をWBSに分解。完全1人で外部委託ゼロで出版する場合のタスク依存関係や、リソース平準化によるスケジュールの変化、費用の構造について詳しく解説します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="WBSの進め 電子書籍（Kindle）を出版するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="電子書籍の企画から執筆、表紙作成、校正、KDP登録・販売開始に至る全工程をWBSに分解。完全1人で外部委託ゼロで出版する場合のタスク依存関係や、リソース平準化によるスケジュールの変化、費用の構造について詳しく解説します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/kindle-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>WBSの進め 電子書籍（Kindle）を出版するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-09">2026.10.09</time>
+        </div>
+        <h1 class="article_title">WBSの進め 電子書籍（Kindle）を出版するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 想定した書籍の目次構成と前提条件</a></li>
+          <li><a href="#section-2">2. 依存関係の定義と全体フロー</a></li>
+          <li><a href="#section-3">3. 全作業を自分1人に割り当てて平準化してみる</a></li>
+          <li><a href="#section-4">4. プロジェクトにかかる費用の構造</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、「WBSの進め 電子書籍（Kindle）を出版するWBS」を作成しました。</p>
+
+        <p>Amazonが提供するKindle Direct Publishingの普及により、個人でも出版社を通さずに自著を電子書籍として全世界へ配信できるようになりました。今回は、構想から販売開始までの全工程を外部委託を行わず自分1人の手番だけで完結させる想定でWBSに分解し、どのようなタスクが存在し、工期やスケジュールがどのように推移するのかを検証していきます。</p>
+
+        <p class="article_note_lead">※そもそも「WBSとは何か？」「平準化とは何か？」について詳しく知りたい方は、こちらの記事「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 想定した書籍の目次構成と前提条件</h2>
+        <p>今回は『WBSの進め』という仮の書籍を想定し、その制作プロセスを元にWBSを作成しました。サンプルのWBSではありますが、目次構成も真剣に検討しています。想定した章構成は以下の通りです。</p>
+
+        <p class="article_book_toc" style="margin-bottom: 2em; line-height: 1.8;">
+          はじめに<br>
+          第1章：プロジェクトとは　マネジメントという舵取り<br>
+          第2章：WBSとは　地図であり、羅針盤である<br>
+          第3章：計画・進捗とは　灯台を灯し、現在地を知る<br>
+          第4章：炎上・デスマーチとは　火種のないところに炎はない<br>
+          第5章：完遂とは　目立つことのない静かな儀式<br>
+          第6章：AIエージェントとは　早く、遠くへ行くために<br>
+          おわりに
+        </p>
+
+        <p>本書は約25,000〜30,000文字程度のボリュームを想定しています。体制は著者1名による完全セルフ出版とし、編集や校正、表紙デザインの外注は行わず、手元の環境や無料ツールを活用して進める前提としました。</p>
+
+        <p>全体の作業工程は、企画や目次設計から始まり、執筆準備、本文執筆、表紙作成、セルフ校正、EPUB変換、KDPへの登録申請、販売開始に至る一連の作業で構成されています。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. 依存関係の定義と全体フロー</h2>
+        <p>洗い出したタスクに対して、先行・後続の論理的な依存関係を設定し、作業担当者を割り当てていない状態のガントチャートを作成しました。</p>
+
+        <figure class="article_figure">
+          <img src="images/kindle_fig1_wbs_unassigned.png" alt="電子書籍出版プロジェクトのWBS（依存関係確定・担当者未設定）" loading="lazy">
+          <figcaption>図1: 電子書籍出版プロジェクトのWBS（依存関係確定・担当者未設定）</figcaption>
+        </figure>
+
+        <p>このチャートからは、各工程がどのような順序でつながっているのかが分かります。</p>
+
+        <p>企画と目次設計が完了した時点で、後続の工程は本文執筆と表紙自作という2つの独立した作業ラインに分岐します。表紙制作は目次とタイトルが決まっていれば本文の執筆完了を待たずに着手できるため、理論上は執筆の初期段階で並行して進めることが可能です。</p>
+
+        <p>本文執筆が完了した後は、セルフ校正、EPUBビルド、KDP登録・申請へと直列に工程が進みます。この段階での全体の所要期間は、本文執筆の15日間に加え、校正における冷却期間の7日間やAmazonの審査待ち3日間などを含め、約27日4時間となっています。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. 全作業を自分1人に割り当てて平準化してみる</h2>
+        <p>次に、すべての作業タスクにリソースとして自分を割り当て、作業の重複を解消するリソース平準化を行いました。</p>
+
+        <figure class="article_figure">
+          <img src="images/kindle_fig2_wbs_final.png" alt="作業者を自分1人に割り当てた完成版WBS（リソース平準化後）" loading="lazy">
+          <figcaption>図2: 作業者を自分1人に割り当てた完成版WBS（リソース平準化後）</figcaption>
+        </figure>
+
+        <p>作業者が1名の場合、同時に複数のタスクを進めることはできないため、並行して走っていたタスクは自動的に直列化されます。</p>
+
+        <p>担当者未設定の状態では目次設計の直後に並行着手されていた表紙自作が、本文執筆の完了後へとスライドしています。執筆期間中は執筆作業に専念し、初稿が完成したタイミングで表紙デザインに着手する現実的なスケジュールへと調整されました。</p>
+
+        <p>ここで注目すべき点は、タスクが直列化したにもかかわらず、プロジェクト全体の工期が<strong>27日4時間のまま変化していない</strong>という点です。表紙作成に必要な所要時間は約10時間程度であり、本文執筆の直後に表紙作成を行っても、後続する校正や申請のクリティカルパスに影響を与えず、全体のスケジュール内に自然に収まることが分かります。</p>
+
+        <hr>
+
+        <h2 id="section-4">4. プロジェクトにかかる費用の構造</h2>
+        <p>最後に、本プロジェクトにかかる費用の構造についてまとめます。</p>
+
+        <p>今回のモデルでは外部委託を行わず、執筆からデザイン、データ変換まで手元の環境や無料ツールを活用して進めるため、制作段階での金銭的な費用はかかりません。また、KDPのアカウント開設や出版申請自体も無料で行えます。</p>
+
+        <p>そのため、本プロジェクトで発生する費用は、リリース後に自分の端末で購入・表示確認を行う実費のみとなります。なお、この約600円という金額は私が決めた販売価格です。外注費や印刷製本といった在庫リスクを抱えずに完結できるため、金銭的な負担を抑えて手軽に挑戦できる点も電子書籍出版の特徴と言えます。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>今回は、電子書籍出版を題材にWBSを作成してみました。</p>
+
+        <p>1人だけで進めるプロジェクトであっても、必要なタスクを分解し、依存関係やリソースの制約を可視化することで、作業の優先順位や現実的な所要期間を論理的に把握することができます。</p>
+
+        <p>日常の個人プロジェクトや業務のタスク整理のヒントになれば幸いです。</p>
+
+        <p>なお、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../wbs-essentials/">WBSの勘所</a>」や「<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../js/blog.js?v=2"></script>
+</body>
+</html>
