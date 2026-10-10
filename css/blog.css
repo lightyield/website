@@ -272,6 +272,13 @@ html {
   max-width: 320px;
 }
 
+/* ガントチャート・スライド等のワイド表示（コンテナ幅いっぱいに拡大） */
+.article_figure.figure_wide img,
+.article_figure.figure_lg img {
+  max-width: 100%;
+  width: 100%;
+}
+
 .article_figure figcaption {
   font-size: 0.85rem;
   color: var(--text-secondary);
