@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>デジタル庁の研修資料に見るWBSの要点 | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="デジタル庁が公開している「標準ガイドライン研修資料」より、政府情報システムにおける作業計画（WBS）の悪い例・良い例、マイルストーン管理の要点を要約してご紹介します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="デジタル庁の研修資料に見るWBSの要点 | 株式会社ライトイールド"/>
+  <meta property="og:description" content="デジタル庁が公開している「標準ガイドライン研修資料」より、政府情報システムにおける作業計画（WBS）の悪い例・良い例、マイルストーン管理の要点を要約してご紹介します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/digital-agency-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/blog.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>デジタル庁の研修資料に見るWBSの要点</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-10">2026.10.10</time>
+        </div>
+        <h1 class="article_title">デジタル庁の研修資料に見るWBSの要点</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. はじめに</a></li>
+          <li><a href="#section-2">2. 作業計画（WBS）の重要性と「悪い例」</a></li>
+          <li><a href="#section-3">3. 良いWBSの条件</a></li>
+          <li><a href="#section-4">4. マイルストーンとクリティカル・パスの管理</a></li>
+          <li><a href="#section-5">5. 所感</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <h2 id="section-1">1. はじめに</h2>
+        <p>デジタル庁では、政府情報システムの整備および管理に関する共通ルールとして「<a href="https://www.digital.go.jp/resources/standard_guidelines" target="_blank" rel="noopener noreferrer">デジタル社会推進標準ガイドライン群</a>」を公開しています。本編や実践ガイドブックなど膨大な文書群で構成されていますが、その要点を現場の職員向けにスライド形式で分かりやすく解説した公式教材が『（参考）標準ガイドライン研修資料』です。</p>
+        <p>本記事では、この研修資料で示されている作業計画（WBS）のポイントについて、実際のガントチャート図を交えて要約してご紹介します。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. 作業計画（WBS）の重要性と「悪い例」</h2>
+        <p>研修資料では、外部事業者の技術力を評価するにあたり、具体的な作業計画（WBS）案の提出を求めて評価することが効果的であると説明されています。その上で、精査すべき対象として「悪い例」のガントチャートが提示されています。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/digital_agency_wbs_fig2_bad_example.png" alt="作業計画（WBS）の悪い例" loading="lazy">
+          <figcaption>図1: 作業計画（WBS）の悪い例（出典：デジタル庁『標準ガイドライン研修資料』P.79）</figcaption>
+        </figure>
+
+        <p>研修資料では、この例が問題とされる理由について、インターネット等で入手できるテンプレート的なWBSであり、調達仕様書の内容を十分に検討することなく機械的に日付を割り当てただけで作成されているためであると説明されています。個々のプロジェクト固有の検討要素や業務内容が反映されておらず、実質的な作業の裏付けに欠けている点が指摘されています。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. 良いWBSの条件</h2>
+        <p>続いて資料では、前述の「悪い例」と対比する形で、「良いWBS」に求められる要件と具体例が示されています。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/digital_agency_wbs_fig3_good_example.png" alt="作業計画（WBS）の良い例" loading="lazy">
+          <figcaption>図2: 作業計画（WBS）の良い例（出典：デジタル庁『標準ガイドライン研修資料』P.80）</figcaption>
+        </figure>
+
+        <p>資料において、良いWBSは単に大まかな工程を並べるのではなく、サブシステムや機能単位に分解され、より細かな粒度で計画されている必要があるとされています。また、一般論としての開発工程だけでなく、プロジェクト固有の検討要素が含まれていることも求められます。</p>
+        <p>さらに、それぞれの単体テスト、結合テスト、総合テストの関係性（依存関係）が可視化されており、開発要員を効率的に稼働させられるよう工夫されていることが重要な要件として挙げられています。</p>
+
+        <hr>
+
+        <h2 id="section-4">4. マイルストーンとクリティカル・パスの管理</h2>
+        <p>また、設計・実施計画書の重要要素であるスケジュール管理において、細かい作業だけでなく「主要な進捗ポイント（マイルストーン）」を明確にすることの重要性が解説されています。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/digital_agency_wbs_fig4_milestone.png" alt="マイルストーンを明確に" loading="lazy">
+          <figcaption>図3: マイルストーンと進捗可視化の例（出典：デジタル庁『標準ガイドライン研修資料』P.89）</figcaption>
+        </figure>
+
+        <p>本スライドでは、マイルストーンを設定した上で、マイルストーン達成に必要な作業の網羅や、各作業の依存関係の誤り、作業の抜け漏れ、そしてクリティカル・パス（作業の最長経路）を把握することの重要性が説かれています。</p>
+        <p>特に、クリティカル・パス上の作業が遅延した場合はプロジェクト全体の期間に直接影響を与えるため重点的な注意が必要であるとされています。また、計画に対する進捗実績を把握する手法として「イナズマ線」を用い、遅延している作業を視覚的に把握する仕組みについても解説されています。</p>
+
+        <hr>
+
+        <h2 id="section-5">5. 所感</h2>
+        <p>今回、デジタル庁が公表している研修資料を拝見し、公的機関の大規模プロジェクトにおいて求められているWBSの要点が、私自身がこれまで実践し発信してきた考え方に非常に近いのだと実感しました。</p>
+
+        <p>当ブログの過去の記事（『<a href="../wbs-essentials/">WBSの勘所</a>』や『<a href="../gantt-chart-leveling/">ガントチャートの決め手は平準化</a>』）でも触れてきた通り、実効性のある計画を立てるためには、作業を具体的かつ適切な粒度まで分解し、作業間の論理的な依存関係を定義した上で、要員の負荷が偏らないよう平準化を行うことが欠かせません。</p>
+
+        <p>国家規模の大規模な情報システムであっても、民間のシステム開発や個人のプロジェクトであっても、スケジュールを形骸化させずに現実的な未来を予測するためのWBSの勘所は共通しているのだと改めて感じました。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../js/blog.js?v=2"></script>
+</body>
+</html>
