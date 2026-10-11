@@ -45,6 +45,8 @@
 │   ├── passport-wbs/              # 「パスポートを作成するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
 │   │   ├── index.html             # 記事本文
 │   │   └── images/                # 記事内画像
+│   ├── yamamoto-isoroku-mentoring/ # 「山本五十六の言葉「やってみせ」」個別記事ディレクトリ（知見・コラム）
+│   │   └── index.html             # 記事本文
 │   ├── digital-agency-wbs/        # 「デジタル庁の研修資料から見たWBSの要点」個別記事ディレクトリ（知見・コラム）
 │   │   ├── index.html             # 記事本文
 │   │   └── images/                # 記事内画像
