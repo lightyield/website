@@ -20,45 +20,47 @@
 ├── js/
 │   └── blog.js                    # ブログ共通スクリプト（画像拡大モーダル等）
 ├── blog/
-│   ├── index.html                 # ブログ・知見 記事一覧ページ（カテゴリ別表示）
-│   ├── kindle-wbs/                # 「WBSのすすめ 電子書籍（Kindle）を出版するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── craft-beer-wbs/            # 「オリジナルクラフトビールを委託醸造するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── camp-wbs/                  # 「夏の琵琶湖ファミリーキャンプ設営のWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── soba-wbs/                  # 「年越し手打ち蕎麦を作るWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── incorporation-wbs/         # 「株式会社を設立するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── ramen-wbs/                 # 「豚骨ラーメンを作るWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── guitar-wbs/                # 「ギターを作るWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── passport-wbs/              # 「パスポートを作成するWBSを作ってみた」個別記事ディレクトリ（WBSで覗いてみた）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── yamamoto-isoroku-mentoring/ # 「山本五十六の言葉「やってみせ」」個別記事ディレクトリ（知見・コラム）
-│   │   └── index.html             # 記事本文
-│   ├── digital-agency-wbs/        # 「デジタル庁の研修資料から見たWBSの要点」個別記事ディレクトリ（知見・コラム）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── wbs-essentials/            # 「WBSの勘所」個別記事ディレクトリ（知見・コラム）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   ├── gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事ディレクトリ（知見・コラム）
-│   │   ├── index.html             # 記事本文
-│   │   └── images/                # 記事内画像
-│   └── software-estimation-accuracy/ # 「ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜」個別記事ディレクトリ（知見・コラム）
-│       ├── index.html             # 記事本文
-│       └── images/                # 記事内画像
+│   ├── index.html                     # ブログ・知見 記事一覧ページ（カテゴリ別表示）
+│   ├── peek-into-wbs/                 # 「WBSで覗いてみた」カテゴリディレクトリ
+│   │   ├── 20261009-kindle-wbs/       # 「WBSのすすめ 電子書籍（Kindle）を出版するWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   ├── 20261004-craft-beer-wbs/   # 「オリジナルクラフトビールを委託醸造するWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   ├── 20261002-camp-wbs/         # 「夏の琵琶湖ファミリーキャンプ設営のWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   ├── 20260926-soba-wbs/         # 「年越し手打ち蕎麦を作るWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   ├── 20181215-ramen-wbs/        # 「豚骨ラーメンを作るWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   ├── 20181206-passport-wbs/     # 「パスポートを作成するWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   ├── 20181201-guitar-wbs/       # 「ギターを作るWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
+│   │   └── 20181123-incorporation-wbs/# 「株式会社を設立するWBSを作ってみた」個別記事
+│   │       ├── index.html
+│   │       └── images/
+│   └── knowledge-column/              # 「知見・コラム」カテゴリディレクトリ
+│       ├── 20261011-yamamoto-isoroku-mentoring/ # 「山本五十六の言葉「やってみせ」」個別記事
+│       │   └── index.html
+│       ├── 20261010-digital-agency-wbs/        # 「デジタル庁の研修資料から見たWBSの要点」個別記事
+│       │   ├── index.html
+│       │   └── images/
+│       ├── 20190318-software-estimation-accuracy/# 「ソフトウェア開発の見積り精度を上げるには」個別記事
+│       │   ├── index.html
+│       │   └── images/
+│       ├── 20181119-gantt-chart-leveling/      # 「ガントチャートの決め手は平準化」個別記事
+│       │   ├── index.html
+│       │   └── images/
+│       └── 20181118-wbs-essentials/            # 「WBSの勘所」個別記事
+│           ├── index.html
+│           └── images/
 ```
 
 ---
@@ -84,10 +86,12 @@ npx serve .
 新しいブログ・知見記事を追加する際は、以下の手順でファイルを配置・更新します。
 
 1. **記事フォルダの作成**:
-   `blog/<article-slug>/` ディレクトリを作成します（例: `blog/gantt-chart-leveling/`）。
+   該当カテゴリのディレクトリ配下に `YYYYMMDD-<article-slug>` 形式で作成します。
+   - WBSで覗いてみた: `blog/peek-into-wbs/YYYYMMDD-<slug>/`（例: `blog/peek-into-wbs/20261009-kindle-wbs/`）
+   - 知見・コラム: `blog/knowledge-column/YYYYMMDD-<slug>/`（例: `blog/knowledge-column/20261010-digital-agency-wbs/`）
 2. **画像・HTMLファイルの作成**:
-   - `blog/<article-slug>/images/` に記事内で使用する画像を配置（命名規則: `<slug>_fig1_xxx.jpg` 等のプレフィックス推奨）。
-   - `blog/<article-slug>/index.html` を作成（既存の `blog/wbs-essentials/index.html` をテンプレートとして活用）。
+   - `images/` サブディレクトリに記事内で使用する画像を配置（命名規則: `<slug>_fig1_xxx.jpg` 等のプレフィックス推奨）。
+   - `index.html` を作成（既存の類似記事の `index.html` をテンプレートとして活用。CSS/JSの相対パスは `../../../css/`、`../../../js/`）。
 3. **ブログ一覧・トップページへの追加**:
    - `blog/index.html` の `.blog_grid` 内に新しい記事カードを追加（全記事を掲載）。
    - トップページ（`index.html`）の `.blog_grid` 内を更新。**トップページは各カテゴリ新着2件のみ表示**するため、新着記事を追加した際は3件目となる最古の記事カードを削除してください。
