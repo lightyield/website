@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ライトイールド向けローカルLLM環境を構築するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="社内データを手元環境で安全に活用するための「ローカルLLM・社内RAG環境」の構築プロジェクトをWBSに分解。ユースケース設計からシステム構成、必要な作業タスクや費用構造について検証します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="ライトイールド向けローカルLLM環境を構築するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="社内データを手元環境で安全に活用するための「ローカルLLM・社内RAG環境」の構築プロジェクトをWBSに分解。ユースケース設計からシステム構成、必要な作業タスクや費用構造について検証します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/peek-into-wbs/20261016-local-llm-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../#peek-into-wbs">WBSで覗いてみた</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>ライトイールド向けローカルLLM環境を構築するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-16">2026.10.16</time>
+        </div>
+        <h1 class="article_title">ライトイールド向けローカルLLM環境を構築するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. ライトイールド向けのLLMを考える</a></li>
+          <li><a href="#section-2">2. システム構成図を決める</a></li>
+          <li><a href="#section-3">3. WBSを作成する</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、「ライトイールド向けローカルLLM環境を構築するWBS」を作成しました。</p>
+
+        <p>大規模言語モデル（LLM）の進化により、ソースコードの生成や設計書の作成、業務ドキュメントの整理など、日々の業務における生成AIの活用は急速に一般化しています。</p>
+
+        <p>そこで今回は、株式会社ライトイールドの実務を前提とし、社内資産を外部のLLMサービスに渡すことなく安全に活用できる「完全ローカルLLM＋社内RAG」の環境構築プロジェクトをWBSに分解し、タスクの依存関係や所要工数、費用構造について検証していきます。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. ライトイールド向けのLLMを考える</h2>
+        <p>まずは、ライトイールドにおいてどのようなLLM環境が必要かを考えます。</p>
+
+        <p>要件としては、社内文書やリポジトリのデータを外部のLLMに渡すことなく手元の環境内で完結させること、そして開発作業の中心となるエディタ（VS Code）から直接スムーズに扱える環境を目指します。</p>
+
+        <p>その上で、ライトイールドにとって必要なユースケースを定義しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/local_llm_fig1_usecase.png" alt="ライトイールド向けローカルLLM ユースケース図" loading="lazy">
+          <figcaption>図1: ライトイールド向けローカルLLM ユースケース図</figcaption>
+        </figure>
+
+        <p>図1の通り、日々の業務の中から「アプリケーション開発」「ブログ・記事執筆」「技術・情報調査」「社内ドキュメント管理・活用」の4つを定義しました。これらは内部的に、ローカルLLMでの推論処理や、社内ナレッジのベクトル検索（RAG）を組み合わせて実現します。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. システム構成図を決める</h2>
+        <p>定義したユースケースを満たすためのシステム構成図を作成しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/local_llm_fig2_architecture.png" alt="ライトイールド向けローカルLLM システム構成図" loading="lazy">
+          <figcaption>図2: ライトイールド向けローカルLLM システム構成図</figcaption>
+        </figure>
+
+        <p>システム構成としては、普段自分が使用しているVS Codeをインターフェースとし、ローカルホスト上で推論エンジン（Ollama）や社内ベクトルDBを稼働させます。社内ドキュメントやコード資産はすべてローカル環境内で保持・処理されるシンプルな構成としています。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. WBSを作成する</h2>
+        <p>ユースケースとシステム構成をもとに、環境構築に必要な作業をWBSに落とし込みました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/local_llm_fig3_wbs.png" alt="ライトイールド向けローカルLLM構築WBS" loading="lazy">
+          <figcaption>図3: ライトイールド向けローカルLLM構築WBS</figcaption>
+        </figure>
+
+        <p>全体の作業は、要件定義とハードウェア調達から始まり、推論基盤のセットアップ、社内ナレッジの前処理（RAG構築）、VS Codeとの連携、受け入れテストまでを6つのグループに分解しました。想定実働工数は合計で約24人日（192時間）となっています。</p>
+
+        <p>費用面については、推論を担うハードウェア（Mac Studio等）の調達費用が発生するのみで、推論ランタイムや各種ツールにはオープンソースを活用するため、月々のライセンス費用やAPI従量課金はかかりません。</p>
+
+        <p>なお、ローカルLLM単体では最新の技術仕様や公式ドキュメントに対応できない場合があるため、今回の構成では加えて、プライバシー保護型のメタサーチエンジン（SearXNG）を経由した外部Web検索の連携もあわせて組み込んでいます。これにより、社内データを保護しながら必要な最新情報のみを安全に補完することができます。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>今回は、ライトイールド向けのローカルLLM環境構築を題材にWBSを作成してみました。</p>
+
+        <p>以前からライトイールド専用のLLM環境を作ってみたいと考えており、今回はその具体的なイメージとして、AIに手伝ってもらいながらユースケースやシステム構成、そしてWBSを整理しました。</p>
+
+        <p>全体の作業の流れや所要工数が見えたので、どこかのタイミングで実際に構築してみようと思います。</p>
+
+        <p>手元環境でのLLM活用や社内ナレッジの整理を検討する際の参考になれば幸いです。</p>
+
+        <p>なお、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../../knowledge-column/20181118-wbs-essentials/">WBSの勘所</a>」や「<a href="../../knowledge-column/20181119-gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../../js/blog.js?v=2"></script>
+</body>
+</html>
