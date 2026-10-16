@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ライトイールド向けローカルLLM環境を構築するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="社内文書やコード資産を完全ローカルで保護しつつ、VS Codeでのバイブコーディングと安全な外部Web検索連携を両立する「ローカルLLM・社内RAG環境」の構築プロジェクトをWBSに分解。ユースケース設計からシステム構成、ハードウェア調達リードタイム、クリティカルパスや費用構造まで淡々と検証・解説します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="ライトイールド向けローカルLLM環境を構築するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="社内文書やコード資産を完全ローカルで保護しつつ、VS Codeでのバイブコーディングと安全な外部Web検索連携を両立する「ローカルLLM・社内RAG環境」の構築プロジェクトをWBSに分解。ユースケース設計からシステム構成、ハードウェア調達リードタイム、クリティカルパスや費用構造まで淡々と検証・解説します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/peek-into-wbs/20261016-local-llm-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../#peek-into-wbs">WBSで覗いてみた</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>ライトイールド向けローカルLLM環境を構築するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-16">2026.10.16</time>
+        </div>
+        <h1 class="article_title">ライトイールド向けローカルLLM環境を構築するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. ライトイールド向けのLLMを考える</a></li>
+          <li><a href="#section-2">2. ユースケースを決める</a></li>
+          <li><a href="#section-3">3. システム構成図を決める</a></li>
+          <li><a href="#section-4">4. WBSを作成する</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、「ライトイールド向けローカルLLM環境を構築するWBS」を作成しました。</p>
+
+        <p>大規模言語モデル（LLM）の進化により、ソースコードの生成や設計書の作成、業務ドキュメントの整理など、日々の業務における生成AIの活用は急速に一般化しています。一方で、機密性の高い社内規程やクライアント関連の文書、設計書やリポジトリのソースコードを外部クラウドや商用AIサービスへ送信することには、セキュリティおよび情報管理上の懸念が伴います。</p>
+
+        <p>そこで今回は、株式会社ライトイールドの実務を前提とし、社内資産を外部へ一切送信せず安全に活用できる「完全ローカルLLM＋社内RAG」と、最新の技術仕様などを参照するための「安全な外部Web検索連携」を統合した環境構築プロジェクトをWBSに分解し、タスクの依存関係や所要工数、ハードウェアの配送リードタイム、費用構造について詳しく検証していきます。</p>
+
+        <p class="article_note_lead">※そもそも「WBSとは何か？」「平準化とは何か？」について詳しく知りたい方は、こちらの記事「<a href="../../knowledge-column/20181118-wbs-essentials/">WBSの勘所</a>」や「<a href="../../knowledge-column/20181119-gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」も合わせてご覧ください。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. ライトイールド向けのLLMを考える</h2>
+        <p>まずは、ライトイールドにおいてどのようなLLM環境が必要とされているのか、その背景と設計思想を整理します。</p>
+
+        <p>社外秘の業務情報やソースコードの漏洩を防ぐため、当初は「社内LAN完結・外部接続ゼロの完全閉域Web UI」を検討していました。しかし、現場の実務視点で検証を進める中で、主に2つの実用上の課題が浮き彫りになりました。</p>
+
+        <p>1つ目は<strong>「情報の鮮度」</strong>です。ローカルLLM単体（モデルの知識カットオフ以降の更新なし）や過去の社内文書だけでは、外部ライブラリの最新仕様や公式ドキュメントの変更に対応できません。実務の開発作業や技術調査においては、最新のWeb情報を安全に参照できる仕組みが不可欠です。</p>
+
+        <p>2つ目は<strong>「コーディング作業のパラダイム変化」</strong>です。従来のAIコーディングは、エディタ上で1行ずつコードを補完する「Tabキー補完」が主流でした。しかし現在では、エンジニアが要件や指示を自然言語で伝え、AIエージェントが複数ファイルを横断して機能実装、テスト実行、Gitコミットまでを自律的に遂行する「バイブコーディング（Vibe Coding）」へと移行しています。専用のWebチャット画面を行き来してコードをコピー＆ペーストする運用は、開発効率の観点から現実的ではありません。</p>
+
+        <p>これらの課題を踏まえ、ライトイールド向けのLLM環境として以下の3つの基本方針を定めました。</p>
+
+        <ul>
+          <li><strong>社内データの完全ローカル隔離:</strong> 業務文書、社内リポジトリ、ベクトルデータ（Embedding）、モデル重み、推論ログはすべて社内の専用ホスト内に保持し、外部クラウドへ一切送信しない。</li>
+          <li><strong>安全なWeb検索連携の統合:</strong> 最新の技術情報や公式ドキュメントを取得するため、クエリの追跡やプロファイリングを行わないプライバシー保護型のローカルメタサーチエンジン（SearXNG）を経由して検索を行う。</li>
+          <li><strong>開発クライアントの集約:</strong> 開発者が常駐するエディタ「VS Code（Roo CodeなどのAIエージェント拡張）」に作業窓口を一本化し、エージェントがエディタ操作やターミナル実行を包括的に代行できるようにする。</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="section-2">2. ユースケースを決める</h2>
+        <p>次に、ライトイールドの開発者が日々遂行する業務シナリオを整理し、システムが果たすべき4つのコアユースケースを定義しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/local_llm_fig1_usecase.png" alt="ライトイールド向けローカルLLM＋社内RAG＋Web検索統合システム ユースケース図" loading="lazy">
+          <figcaption>図1: ライトイールド向けローカルLLM＋社内RAG＋Web検索統合システム ユースケース図</figcaption>
+        </figure>
+
+        <p>図1は、開発者を起点とした業務ゴールと、背後で実行される共通内部処理の関連性を整理したユースケース図です。定義した4つのユースケースの概要は以下の通りです。</p>
+
+        <ul>
+          <li><strong>アプリケーション開発:</strong> 自然言語による機能実装指示、自律デバッグやエラーログ解析、Gitコミット・プルリクエスト文の作成など、VS Code上での開発業務全般（ローカルLLM推論を利用）。</li>
+          <li><strong>ブログ・記事執筆:</strong> 技術ブログ記事の企画立案・プロット作成、WBSや記事構成の壁打ち、本文ドラフト生成や推敲（ローカルLLM推論および外部Web検索を利用）。</li>
+          <li><strong>技術・情報調査:</strong> 外部の最新ライブラリ仕様やエラー解決策のWeb調査、および社内過去知見・コーディング規約との横断照会（外部Web検索および社内RAG検索を利用）。</li>
+          <li><strong>社内ドキュメント管理・活用:</strong> 過去の作業メモ、社内規約、設計書の参照・Q&amp;A、および新規ナレッジの同期・更新（社内RAG検索を利用）。</li>
+        </ul>
+
+        <p>すべてのユースケースは、内部的に「ローカルLLM推論」「外部Web検索」「社内ナレッジのベクトル検索（RAG）」の3つの共通処理の組み合わせによって完結します。目的に応じて処理を適切に組み合わせることで、不要な外部通信を排除しつつ、各業務ゴールを過不足なく達成できる構造としています。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. システム構成図を決める</h2>
+        <p>定義したユースケースを満たすため、各コンポーネントの役割とネットワーク境界を明確にしたシステム構成図を作成しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/local_llm_fig2_architecture.png" alt="ライトイールド向けローカルLLM＋社内RAG＋Web検索連携 システム構成図" loading="lazy">
+          <figcaption>図2: ライトイールド向けローカルLLM＋社内RAG＋Web検索連携 システム構成図</figcaption>
+        </figure>
+
+        <p>本構成の設計における重要なポイントは以下の4点です。</p>
+
+        <p><strong>1. VS Codeへのクライアント一本化</strong><br>
+        クライアント端末側は、開発者が日常的に使用するVS Code（Roo Code等のAIエージェント拡張）のみをフロントエンドとします。エージェントがプロジェクト内のファイル走査、コード編集、ターミナルコマンド実行を自律的に遂行するため、個別のCLIツールやWeb画面を立ち上げる必要がありません。</p>
+
+        <p><strong>2. Open WebUIの「API Gateway」運用</strong><br>
+        ホスト側で稼働するOpen WebUIを、単なるチャット画面としてではなく「OpenAI互換のAPI Gateway（<code>http://localhost:3000/v1</code>）兼オーケストレーター」として利用します。VS CodeからのAPIリクエストを受け取り、背後にある社内ベクトルDB（Chroma）とWeb検索（SearXNG）を自動調停して統合プロンプトを構築し、ローカルLLMへ中継します。</p>
+
+        <p><strong>3. ローカル推論エンジンとハードウェア仕様</strong><br>
+        推論ランタイムにはOllamaを採用し、コーディング特化モデル（Qwen 2.5 Coder等の14B〜32Bクラス）をローカル配備します。32Bクラスモデルの常駐展開（量子化時で約20GB）に加え、長いコンテキスト長（KVキャッシュ）の保持、Dockerコンテナ群（Open WebUI、SearXNG、Chroma）の同時稼働を支えるため、64GBのユニファイドメモリを搭載したApple Mac Studioを専用ホストとして選定しました。広帯域メモリにより、SSDスワップの発生を防ぎながら実用的な生成速度（20〜30+ tokens/s）を維持します。</p>
+
+        <p><strong>4. 厳格なネットワーク境界分離</strong><br>
+        社内ローカルネットワーク（Corporate Local Network）とパブリックインターネット（Public Internet）の境界を明確に分離しています。外部インターネットと通信するのはローカルメタサーチエンジンSearXNGが中継する検索クエリのみであり、社内文書、ソースコード、推論モデルの重みはすべてローカルNVMe SSD内に隔離されます。</p>
+
+        <hr>
+
+        <h2 id="section-4">4. WBSを作成する</h2>
+        <p>ユースケースとシステム構成が確定したところで、本環境を立ち上げるために必要な作業を作業分解構造（WBS）に落とし込みました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/local_llm_fig3_wbs.png" alt="ライトイールド向けローカルLLM構築WBS" loading="lazy">
+          <figcaption>図3: ライトイールド向けローカルLLM構築WBS</figcaption>
+        </figure>
+
+        <p>図3は、プロジェクト全体のタスク分解、依存関係、およびスケジュールを可視化したWBSガントチャートです。全6グループ、21タスクで構成されています。作業者を自分1人に割り当てた場合の想定実働工数は<strong>合計24.0人日（192時間）</strong>となります。</p>
+
+        <p>各作業グループの担当範囲は以下の通りです。</p>
+
+        <ul>
+          <li><strong>1.0 要件定義・ハードウェア調達（3.5人日）:</strong> クライアント環境の定義、Apple Mac Studioの選定・調達発注、コーディングモデルの選定、投入する社内文書・コードのスコープ定義、Web検索ポリシー策定。</li>
+          <li><strong>2.0 推論・検索基盤セットアップ（3.0人日）:</strong> 納品されたマシンの初期キッティング、推論ランタイム（Ollama）導入、モデル重みファイルのダウンロードとディスク配置、SearXNGメタサーチのDockerコンテナ構築。</li>
+          <li><strong>3.0 疎通テスト（3.0人日）:</strong> 推論速度およびMetal GPUアクセラレーションの検証、メモリ消費量とスワップ耐性の計測、SearXNG経由の外部Web検索疎通テスト。</li>
+          <li><strong>4.0 社内ナレッジ調達・前処理（5.0人日）:</strong> 社内ドキュメントおよびリポジトリの棚卸し・文字化け除去、チャンク分割設計（コード構造やトークン長に応じた最適な分割設計に手厚く3人日を確保）、ローカルEmbedding（bge-m3等）によるベクトル化とChromaへのインデックス登録。</li>
+          <li><strong>5.0 API Gateway統合・クライアント連携（5.5人日）:</strong> Open WebUIのAPIモード起動、ChromaおよびSearXNGのAPI結合、VS Code拡張（Roo Code等）の接続設定、エージェントツール権限の最適化、RAG検索とWeb検索のプロンプトルーティング設計。</li>
+          <li><strong>6.0 受け入れテスト・チューニング（4.0人日）:</strong> 社内文書の検索適合率テスト（Recall/Precision）、VS Codeからの自律コーディング動作検証、検索クエリへの機密漏洩耐性テスト（サニタイズ監査）、根拠不在時のハルシネーション耐性テスト。</li>
+        </ul>
+
+        <h3>クリティカルパス分析と並行作業の活用</h3>
+        <p>本プロジェクトには、ハードウェア調達（タスク1.2）に伴う<strong>約14営業日の配送待ちリードタイム</strong>という外部制約が存在します。</p>
+
+        <p>プロジェクト全体の最短完了期間を決定づける最長経路（クリティカルパス）は、「クライアント要件定義 → マシン調達 → 配送待ち → キッティング → モデル配置 → 疎通テスト → DB・検索結合 → プロンプトルーティング → バイブコーディング検証」のラインとなります。</p>
+
+        <p>ここで重要なのは、マシンが手元に届くまでの約14営業日の間に、手元の既存PC環境を用いて「グループ4.0 社内ナレッジ調達・前処理（棚卸し・チャンク分割設計・ベクトル化）」や「Web検索ポリシー策定」を前倒しで並行実施しておくという点です。ナレッジ前処理を配送期間中に完了させておくことで、ハードウェア納品後のスケジュール遅延を抑え、最短期間で全体を立ち上げることができます。</p>
+
+        <h3>費用の構造</h3>
+        <p>最後に、本プロジェクトにかかる費用の構造を整理します。</p>
+
+        <ul>
+          <li><strong>ハードウェア調達費用:</strong> 約400,000円（税込）<br>新規調達するApple Mac Studio（M2/M4 Max、64GB Unified Memory、1TB SSD）の購入費用です。</li>
+          <li><strong>ソフトウェア・ライセンス費用:</strong> 0円<br>Ollama、Open WebUI、SearXNG、Chroma、VS Code拡張機能（Roo Code等）など、採用ツールはすべてオープンソースソフトウェア（OSS）で統一しています。</li>
+          <li><strong>外部API通信・利用料:</strong> 0円 / 月<br>LLM推論はローカル完結であり、Web検索もローカルのメタサーチを経由するため、月額SaaS費用やトークン従量課金は発生しません。</li>
+        </ul>
+
+        <p>初期投資としてハードウェアの購入費用は発生するものの、月々のランニングコストをゼロに抑え、社内資産として長期的に運用できる実務的なコスト構造となっています。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>今回は、ライトイールド向けローカルLLM・社内RAG環境の構築を題材にWBSを作成しました。</p>
+
+        <p>社内文書やコード資産の機密保護と、VS Codeでの自律的なバイブコーディングの利便性は、一見トレードオフのように思われます。しかし、ローカル推論基盤、プライバシー保護型メタサーチ、API Gatewayによるオーケストレーションを適切に組み合わせることで、完全ローカル環境であっても実用的なAI開発環境を安全に構築することができます。</p>
+
+        <p>また、プロジェクトをWBSに分解することで、ハードウェア調達のリードタイムのような外部制約をあらかじめ可視化し、納品待ち期間中に並行して進められる作業を論理的に整理することが可能になります。</p>
+
+        <p>社内へのAI環境導入やセキュリティを考慮した環境構築を検討されている方の参考になれば幸いです。</p>
+
+        <p>なお、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../../knowledge-column/20181118-wbs-essentials/">WBSの勘所</a>」や「<a href="../../knowledge-column/20181119-gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <hr>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../../js/blog.js?v=2"></script>
+</body>
+</html>

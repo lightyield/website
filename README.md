@@ -22,6 +22,9 @@
 ├── blog/
 │   ├── index.html                     # ブログ・知見 記事一覧ページ（カテゴリ別表示）
 │   ├── peek-into-wbs/                 # 「WBSで覗いてみた」カテゴリディレクトリ
+│   │   ├── 20261016-local-llm-wbs/    # 「ライトイールド向けローカルLLM環境を構築するWBSを作ってみた」個別記事
+│   │   │   ├── index.html
+│   │   │   └── images/
 │   │   ├── 20261009-kindle-wbs/       # 「WBSのすすめ 電子書籍（Kindle）を出版するWBSを作ってみた」個別記事
 │   │   │   ├── index.html
 │   │   │   └── images/
