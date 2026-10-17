@@ -715,19 +715,9 @@ html {
   }
 
   .article_pager {
-    flex-direction: column;
-    gap: 16px;
     margin-top: 35px;
     padding-top: 24px;
-  }
-
-  .pager_item {
-    flex: 1 1 100%;
-    width: 100%;
-  }
-
-  .pager_next {
-    text-align: left;
+    gap: 16px;
   }
 }
 
