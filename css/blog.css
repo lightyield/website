@@ -405,11 +405,51 @@ html {
   color: var(--main-color);
 }
 
+/* --- Post Pager (Prev / Next Navigation) --- */
+.article_pager {
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.pager_item {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.pager_prev {
+  text-align: left;
+}
+
+.pager_next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.pager_item a {
+  display: inline-block;
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.pager_item a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
 /* --- Post Footer Actions --- */
 .article_footer_nav {
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -672,6 +712,22 @@ html {
 
   .author_name {
     font-size: 0.98rem;
+  }
+
+  .article_pager {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 35px;
+    padding-top: 24px;
+  }
+
+  .pager_item {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .pager_next {
+    text-align: left;
   }
 }
 
