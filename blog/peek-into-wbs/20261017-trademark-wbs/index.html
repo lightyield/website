@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>社名・ロゴの商標登録出願を行うWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社ライトイールドの社名およびコーポレートロゴを題材に、特許庁への商標登録出願から商標権発生までの全工程をWBSに分解。先行調査、願書作成、特許庁審査待ちの依存関係、所要期間、費用構造について検証します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="社名・ロゴの商標登録出願を行うWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="株式会社ライトイールドの社名およびコーポレートロゴを題材に、特許庁への商標登録出願から商標権発生までの全工程をWBSに分解。先行調査、願書作成、特許庁審査待ちの依存関係、所要期間、費用構造について検証します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/peek-into-wbs/20261017-trademark-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../#peek-into-wbs">WBSで覗いてみた</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>社名・ロゴの商標登録出願を行うWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-17">2026.10.17</time>
+        </div>
+        <h1 class="article_title">社名・ロゴの商標登録出願を行うWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 出願対象の商標と前提条件</a></li>
+          <li><a href="#section-2">2. WBSを作成する</a></li>
+          <li><a href="#section-3">3. プロジェクトにかかる費用構造</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、「社名・ロゴの商標登録出願を行うWBS」を作成しました。</p>
+
+        <p>株式会社ライトイールドの社名およびコーポレートロゴを題材に、特許庁への出願から商標権発生までの工程をWBSに分解し、必要な作業タスクや所要期間、費用構造について検証していきます。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 出願対象の商標と前提条件</h2>
+        <p>まずは、今回出願の対象とする商標と、プロジェクトの前提条件を整理します。</p>
+
+        <p>商標法上、出願対象には文字のみを指定する「文字商標」と、マークや図形を含む「図形商標・結合商標」が存在します。今回は、ライトイールドの社名およびコーポレートロゴを題材とします。</p>
+
+        <figure class="article_figure" style="text-align: center;">
+          <img src="images/trademark_fig1_logo.png" alt="株式会社ライトイールド コーポレートロゴ" loading="lazy" style="max-width: 220px; height: auto; margin: 0 auto; display: block;">
+          <figcaption>図1: 出願対象とする株式会社ライトイールドのコーポレートロゴ</figcaption>
+        </figure>
+
+        <p>図1は、シンボルマークと英字表記「LIGHT YIELD」、日本語表記「株式会社ライトイールド」を組み合わせたロゴです。実際の出願にあたっては、文字商標として「ライトイールド」「lightyield」を登録する形態と、ロゴ画像そのものを登録する形態が考えられます。</p>
+
+        <p>今回は、外部委託を行わず自分1人で特許庁のWEB申請システムから電子出願を行う想定とし、対象区分はライトイールドの主力事業である「第42類（ソフトウェア開発等）」の1区分としました。また、すでに使用している商標であることを前提に「早期審査制度」を活用し、登録料は10年分を一括納付するモデルとしています。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. WBSを作成する</h2>
+        <p>前提条件をもとに、先行調査から商標原簿登録までの全作業を洗い出し、タスク間の依存関係とリソースを定義したガントチャートを作成しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/trademark_fig2_wbs.png" alt="社名・ロゴ商標登録自力出願プロジェクトWBS" loading="lazy">
+          <figcaption>図2: 社名・ロゴ商標登録自力出願プロジェクトのWBS（ガントチャート）</figcaption>
+        </figure>
+
+        <p>図2のガントチャートから、全体の工程とタイムラインの特徴が把握できます。</p>
+
+        <p>プロジェクト全体の所要期間は「64日4時間（実日数で約3ヶ月強）」となっています。このうち、自分自身が手を動かす実作業の工数は合計で「4日2時間（34時間）」程度にとどまります。</p>
+
+        <p>スケジュールの大部分（約50営業日＝約2ヶ月強）は、特許庁による審査待ち時間が占めています。このように、「作業者の工数」と「外部の待機期間」が明確に分離されている点が、官公庁手続き系プロジェクトの典型的な特徴です。</p>
+
+        <p>また、全体の進捗を客観的に管理できるよう、各フェーズの節目に完了マイルストーン（先行調査完了、願書作成完了、出願完了、特許庁審査完了、商標権発生完了）を設定しています。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. プロジェクトにかかる費用構造</h2>
+        <p>本WBSにおける費用の構造について整理します。</p>
+
+        <p>外部の専門家（弁理士）を介さず自社で直接手続きを行う場合、発生する金銭的コストは特許庁への「法定費用（特許印紙代）」のみとなります。</p>
+
+        <div style="overflow-x: auto; margin: 1.5em 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.95em; line-height: 1.6;">
+            <thead>
+              <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; text-align: left;">
+                <th style="padding: 10px 12px;">費目</th>
+                <th style="padding: 10px 12px;">内訳・根拠</th>
+                <th style="padding: 10px 12px; text-align: right;">金額</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;"><strong>出願手数料（特許庁印紙代）</strong></td>
+                <td style="padding: 10px 12px;">1区分（基本料3,400円 ＋ 8,600円×1区分）</td>
+                <td style="padding: 10px 12px; text-align: right;">12,000円</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;"><strong>設定登録料（特許庁印紙代）</strong></td>
+                <td style="padding: 10px 12px;">1区分・10年一括納付（32,900円×1区分）</td>
+                <td style="padding: 10px 12px; text-align: right;">32,900円</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;"><strong>専門家報酬（代理人手数料）</strong></td>
+                <td style="padding: 10px 12px;">自社による直接出願（外部委託なし）</td>
+                <td style="padding: 10px 12px; text-align: right;">0円</td>
+              </tr>
+              <tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #cbd5e1;">
+                <td style="padding: 12px;"><strong>合計法定費用</strong></td>
+                <td style="padding: 12px;">1区分・10年間有効</td>
+                <td style="padding: 12px; text-align: right; color: #1e40af;">44,900円</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>一般的に弁理士や特許事務所へ依頼した場合は、事前調査手数料、出願手数料、登録成功報酬などが加算され、1区分あたり概ね15万円〜22万円程度の総額となることが一般的です。</p>
+
+        <p>自社で手続きを行うことで金銭的な支出を法定実費の44,900円のみに抑えられる一方、出願商標の仕様確定や指定役務の標準名称選定、先行調査などに約34時間（約4.25人日）の社内リソースを投入することになります。自社の稼働状況や調査・書類作成の負担と、外部費用の削減幅を比較して方針を選択することが合理的です。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>今回は、自社の社名およびロゴマークを題材に、特許庁への商標登録出願プロジェクトをWBSに分解しました。</p>
+
+        <p>商標登録は法的な手続きであるため難解な印象を持たれやすいですが、作業を分解してみると、出願人側が対応すべき実作業は「調査」「願書作成」「納付」の約34時間程度であり、全体工程の大半は特許庁の審査待ち時間であることが明確になります。</p>
+
+        <p>区分や指定役務を特許庁の公式な標準名称から選定しておくこと、そして事前調査を適切に行うことで、手戻りを防ぎ、スムーズな権利化を進めることが可能です。</p>
+
+        <p>社名やブランドロゴの権利保護を検討する際の参考になれば幸いです。</p>
+
+        <p>なお、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../../knowledge-column/20181118-wbs-essentials/">WBSの勘所</a>」や「<a href="../../knowledge-column/20181119-gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../../js/blog.js?v=2"></script>
+</body>
+</html>
