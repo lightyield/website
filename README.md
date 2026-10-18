@@ -100,7 +100,7 @@ npx serve .
    - 知見・コラム: `blog/knowledge-column/YYYYMMDD-<slug>/`（例: `blog/knowledge-column/20261010-digital-agency-wbs/`）
 2. **画像・HTMLファイルの作成**:
    - `images/` サブディレクトリに記事内で使用する画像を配置（命名規則: `<slug>_fig1_xxx.jpg` 等のプレフィックス推奨）。
-   - `index.html` を作成（既存の類似記事の `index.html` をテンプレートとして活用。CSS/JSの相対パスは `../../../css/`、`../../../js/`）。
+   - `index.html` を作成（既存の類似記事の `index.html` をテンプレートとして活用。CSS/JSの相対パスは `../../../css/`、`../../../js/`。関連記事への誘導リンク等は冒頭ではなく末尾の「終わりに」セクションに配置）。
 3. **ブログ一覧・トップページへの追加**:
    - `blog/index.html` の `.blog_grid` 内に新しい記事カードを追加（全記事を掲載）。
    - トップページ（`index.html`）の `.blog_grid` 内を更新。**トップページは各カテゴリ新着2件のみ表示**するため、新着記事を追加した際は3件目となる最古の記事カードを削除してください。
