@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>クラフトコーラを自宅で再現するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="奈良県明日香村のクラフトコーラシロップの原材料表示を手がかりに、特製いちごクラフトコーラを自宅で再現・実食するまでの全工程をWBSに分解。スパイス調合・煮出しから、12時間の一晩熟成、濾過、3通りの実食検証までの作業工数、依存関係、所要期間を淡々と検証します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="クラフトコーラを自宅で再現するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="奈良県明日香村のクラフトコーラシロップの原材料表示を手がかりに、特製いちごクラフトコーラを自宅で再現・実食するまでの全工程をWBSに分解。スパイス調合・煮出しから、12時間の一晩熟成、濾過、3通りの実食検証までの作業工数、依存関係、所要期間を淡々と検証します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/peek-into-wbs/20261018-craft-cola-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../#peek-into-wbs">WBSで覗いてみた</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>クラフトコーラを自宅で再現するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-18">2026.10.18</time>
+        </div>
+        <h1 class="article_title">クラフトコーラを自宅で再現するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. 目指すクラフトコーラと前提条件</a></li>
+          <li><a href="#section-2">2. WBSを作成する</a></li>
+          <li><a href="#section-3">3. プロジェクトのポイントと時間構造</a></li>
+          <li><a href="#section-closing">終わりに</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、「クラフトコーラを自宅で再現するWBS」を作成しました。</p>
+
+        <p>奈良県明日香村を訪れた際に購入した『明日香クラフトコーラシロップ』の味を自宅キッチンで再現することを想定し、現物の原材料表示ラベルを手がかりに配合を設計して、仕込み・煮出し、熟成、実食・検証に至る一連のプロセスをWBSに落とし込みました。</p>
+
+        <p>作業タスクの依存関係や所要工数、食品・熟成プロセス特有の時間構造について検証していきます。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. 目指すクラフトコーラと前提条件</h2>
+        <p>まずは、今回再現を目指すクラフトコーラの概要と前提条件を整理します。</p>
+
+        <p>題材とするのは、奈良県明日香村で販売されているクラフトコーラシロップです。パッケージには地域の歴史にちなんだイラストがあしらわれており、特産品を活かした風味が特徴です。</p>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 25px 0;">
+          <figure class="article_figure" style="flex: 1 1 280px; max-width: 340px; margin: 0; text-align: center;">
+            <img src="images/craft-cola_fig1_package.jpg" alt="飛鳥クラフトコーラのイメージイラスト" loading="lazy" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <figcaption>図1: 飛鳥クラフトコーラのイメージイラスト</figcaption>
+          </figure>
+          <figure class="article_figure" style="flex: 1 1 280px; max-width: 340px; margin: 0; text-align: center;">
+            <img src="images/craft-cola_fig2_ingredients.jpg" alt="飛鳥クラフトコーラ 原材料表示ラベル写真" loading="lazy" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <figcaption>図2: 現物の原材料表示ラベル写真</figcaption>
+          </figure>
+        </div>
+
+        <p>図2の原材料表示ラベルを確認すると、食品表示基準に従い使用重量の多い順に原材料が記載されています。</p>
+
+        <p>記載順序は「きび糖、いちご、しょうが、レモン果汁、シナモン、カルダモン、クローブ、ラム酒、ブラックペッパー、コリアンダー、バニラビーンズ」となっています。主原料となる甘味（きび糖）に続き、いちごと生姜、柑橘果汁が主軸を担っており、スパイス類に加えて「ラム酒」が風味付けに使用されている点が特徴です。</p>
+
+        <p>この原材料表示を手がかりに、自宅キッチン（仕上がりシロップ約400〜500ml分）での再現レシピを以下のように設計しました。</p>
+
+        <div style="overflow-x: auto; margin: 1.5em 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.95em; line-height: 1.6;">
+            <thead>
+              <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; text-align: left;">
+                <th style="padding: 10px 12px;">分類</th>
+                <th style="padding: 10px 12px;">原材料</th>
+                <th style="padding: 10px 12px; text-align: right;">分量</th>
+                <th style="padding: 10px 12px;">役割・下処理</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;" rowspan="2"><strong>ベース・甘味</strong></td>
+                <td style="padding: 10px 12px;">きび砂糖</td>
+                <td style="padding: 10px 12px; text-align: right;">250g</td>
+                <td style="padding: 10px 12px;">コクとまろやかな甘味</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">水</td>
+                <td style="padding: 10px 12px; text-align: right;">200ml</td>
+                <td style="padding: 10px 12px;">果汁の水分を見越して控えめに設計</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;" rowspan="3"><strong>フレッシュ素材</strong></td>
+                <td style="padding: 10px 12px;">いちご</td>
+                <td style="padding: 10px 12px; text-align: right;">120g</td>
+                <td style="padding: 10px 12px;">ヘタを取り縦4等分にカット</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">生姜（国産・皮付き）</td>
+                <td style="padding: 10px 12px; text-align: right;">30g</td>
+                <td style="padding: 10px 12px;">薄切りスライス（スパイシーなキレ）</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">レモン果汁</td>
+                <td style="padding: 10px 12px; text-align: right;">大さじ3</td>
+                <td style="padding: 10px 12px;">生レモン搾汁 ＋ ピール少々</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;" rowspan="6"><strong>スパイス・香料</strong></td>
+                <td style="padding: 10px 12px;">シナモンスティック</td>
+                <td style="padding: 10px 12px; text-align: right;">2本</td>
+                <td style="padding: 10px 12px;">手で2〜3つに割る</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">カルダモン（ホール）</td>
+                <td style="padding: 10px 12px; text-align: right;">5g</td>
+                <td style="padding: 10px 12px;">さやを軽く割って種を露出</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">クローブ（ホール）</td>
+                <td style="padding: 10px 12px; text-align: right;">4g</td>
+                <td style="padding: 10px 12px;">コーラ香の主軸</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">ブラックペッパー（ホール）</td>
+                <td style="padding: 10px 12px; text-align: right;">2g</td>
+                <td style="padding: 10px 12px;">後味の引き締め</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">コリアンダーシード</td>
+                <td style="padding: 10px 12px; text-align: right;">2g</td>
+                <td style="padding: 10px 12px;">柑橘系の爽やかな余韻</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">バニラビーンズ</td>
+                <td style="padding: 10px 12px; text-align: right;">1/2本</td>
+                <td style="padding: 10px 12px;">さやを裂き種をこそぎ落とす</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;"><strong>仕上げ・風味</strong></td>
+                <td style="padding: 10px 12px;">ダークラム</td>
+                <td style="padding: 10px 12px; text-align: right;">大さじ1〜1.5</td>
+                <td style="padding: 10px 12px;">火を止める直前に添加（芳醇な香り）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>プロジェクトの前提条件は以下の通りです。</p>
+        <ul>
+          <li><strong>リソース体制</strong>：自分1名（外部リソース：宅配業者）。</li>
+          <li><strong>プロジェクトのスコープ</strong>：レシピ設計・調達から、調理、熟成、濾過、3通りの割り方（炭酸水、牛乳、ウイスキー）による実食評価まで。瓶やパッケージラベルの作成・デザイン等はスコープ外とし、自宅の耐熱ガラス容器・グラスを使用します。</li>
+          <li><strong>成果物</strong>：特製クラフトコーラシロップ原液 約400〜500ml、実食評価。</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="section-2">2. WBSを作成する</h2>
+        <p>前提条件をもとに、全作業項目を洗い出し、タスク間の依存関係と所要期間を定義したガントチャートを作成しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/craft-cola_fig3_wbs.png" alt="クラフトコーラ再現プロジェクトのWBS（ガントチャート）" loading="lazy">
+          <figcaption>図3: クラフトコーラ再現プロジェクトのWBS（ガントチャート）</figcaption>
+        </figure>
+
+        <p>図3のガントチャートから、全体の工程構造と所要期間の特徴が確認できます。</p>
+
+        <p>工程は全体包括グループ「クラフトコーラ再現プロジェクト」配下に、全4フェーズ・計10件のタスクと各フェーズの節目を示す4つの完了マイルストーンで構成されています。</p>
+
+        <div style="overflow-x: auto; margin: 1.5em 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.95em; line-height: 1.6;">
+            <thead>
+              <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; text-align: left;">
+                <th style="padding: 10px 12px;">No.</th>
+                <th style="padding: 10px 12px;">フェーズ</th>
+                <th style="padding: 10px 12px;">タスク名</th>
+                <th style="padding: 10px 12px;">担当</th>
+                <th style="padding: 10px 12px; text-align: right;">工数 / 所要期間</th>
+                <th style="padding: 10px 12px;">先行タスク</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+                <td style="padding: 10px 12px;" colspan="2"><strong>フェーズ1</strong></td>
+                <td style="padding: 10px 12px;" colspan="4"><strong>レシピ設計・調達（所要期間: 3日 / 実作業: 2.0h）</strong></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">1</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">現物ラベル分析＆配合比率設計</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">1.0h</td>
+                <td style="padding: 10px 12px;">-</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">2</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">ホールスパイス・食材の手配</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">1.0h</td>
+                <td style="padding: 10px 12px;">No.1</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">3</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">スパイス・資材の配送待ち</td>
+                <td style="padding: 10px 12px;">宅配業者</td>
+                <td style="padding: 10px 12px; text-align: right;">3日</td>
+                <td style="padding: 10px 12px;">No.2</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #f0fdf4;">
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">マイルストーン</td>
+                <td style="padding: 10px 12px;" colspan="2"><strong>レシピ設計・原料調達 完了</strong></td>
+                <td style="padding: 10px 12px; text-align: right;">0日</td>
+                <td style="padding: 10px 12px;">No.3</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+                <td style="padding: 10px 12px;" colspan="2"><strong>フェーズ2</strong></td>
+                <td style="padding: 10px 12px;" colspan="4"><strong>仕込み・加熱抽出（所要期間: 1.5h / 実作業: 1.5h）</strong></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">4</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">下処理（いちごカット・生姜スライス・スパイス破砕）</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">0.5h</td>
+                <td style="padding: 10px 12px;">マイルストーン1</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">5</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">鍋煮出し（いちご・生姜・スパイス・きび糖）</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">0.5h</td>
+                <td style="padding: 10px 12px;">No.4</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">6</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">火止め・バニラ＆ラム酒投入・粗熱取り</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">0.5h</td>
+                <td style="padding: 10px 12px;">No.5</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #f0fdf4;">
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">マイルストーン</td>
+                <td style="padding: 10px 12px;" colspan="2"><strong>仕込み・加熱抽出 完了</strong></td>
+                <td style="padding: 10px 12px; text-align: right;">0日</td>
+                <td style="padding: 10px 12px;">No.6</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+                <td style="padding: 10px 12px;" colspan="2"><strong>フェーズ3</strong></td>
+                <td style="padding: 10px 12px;" colspan="4"><strong>熟成・濾過（所要期間: 12.5h / 実作業: 0.5h）</strong></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">7</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">冷蔵庫での一晩熟成（寝かせ 12時間）</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px; text-align: right;">12h</td>
+                <td style="padding: 10px 12px;">マイルストーン2</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">8</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">ファインメッシュ/ネルによる濾過</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">0.5h</td>
+                <td style="padding: 10px 12px;">No.7</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #f0fdf4;">
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">マイルストーン</td>
+                <td style="padding: 10px 12px;" colspan="2"><strong>一晩熟成・濾過 完了</strong></td>
+                <td style="padding: 10px 12px; text-align: right;">0日</td>
+                <td style="padding: 10px 12px;">No.8</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+                <td style="padding: 10px 12px;" colspan="2"><strong>フェーズ4</strong></td>
+                <td style="padding: 10px 12px;" colspan="4"><strong>実食・検証（所要期間: 1.5h / 実作業: 1.5h）</strong></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">9</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">炭酸水割り（クラフトコーラ）の実食</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">0.5h</td>
+                <td style="padding: 10px 12px;">マイルストーン3</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 10px 12px;">10</td>
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">牛乳割り（チャイ風）＆ウイスキー割りの実食</td>
+                <td style="padding: 10px 12px;">自分</td>
+                <td style="padding: 10px 12px; text-align: right;">1.0h</td>
+                <td style="padding: 10px 12px;">No.9</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #e2e8f0; background: #f0fdf4;">
+                <td style="padding: 10px 12px;">-</td>
+                <td style="padding: 10px 12px;">マイルストーン</td>
+                <td style="padding: 10px 12px;" colspan="2"><strong>実食・テイスティング 完了</strong></td>
+                <td style="padding: 10px 12px; text-align: right;">0日</td>
+                <td style="padding: 10px 12px;">No.10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>プロジェクト全体の所要期間は「約4日〜5日間」となっています。このうち、自分自身が手を動かす実作業工数は計4.5時間（レシピ設計1.0h、調達手配1.0h、調理1.5h、濾過0.5h、実食1.5hのうち直接作業分）です。</p>
+
+        <p>所要期間の大半は、ネット注文したスパイスの配送待ち時間（3日）と、煮出し後の粗熱を取ったシロップを冷蔵庫で寝かせる「一晩熟成（12時間）」が占めています。</p>
+
+        <hr>
+
+        <h2 id="section-3">3. プロジェクトのポイントと時間構造</h2>
+        <p>本WBSにおける管理上のポイントと、時間構造の特徴について整理します。</p>
+
+        <h3>味覚のクリティカルパス：冷蔵庫での一晩熟成（12時間）</h3>
+        <p>加熱直後のクラフトコーラシロップは、生姜やブラックペッパー、クローブの強い刺激や柑橘の酸味が際立っており、全体の風味がまとまっていません。</p>
+
+        <p>冷蔵庫内で12時間静置することで、スパイスの精油成分ときび糖の糖分、いちごの果汁エキスが馴染み、角の取れたまろやかな味わいへ変化します。この12時間は人的リソースの稼働を伴わない待機時間ですが、後続の濾過および実食へと直結する絶対的なクリティカルパスとなっています。</p>
+
+        <h3>食品・熟成プロセスを忠実に表現する「24時間稼働カレンダー」</h3>
+        <p>プロジェクト管理ツール（OmniPlanなど）を用いてスケジュールをモデリングする際、標準設定の「平日8時間稼働（9:00〜17:00）」カレンダーのままタスクを入力すると、「12時間の熟成」が「1日（8時間）＋翌日4時間」のように営業日ベースで分割換算され、実態と乖離してしまいます。</p>
+
+        <p>配送や冷蔵庫での熟成といった工程は、夜間や休日を問わず24時間連続で推移する物理現象です。そのため、本WBSでは稼働カレンダーおよび時間表示の計算基準を「24時間/日（365日稼働）」に設定しています。これにより、12時間の寝かせや3日間の配送待ちが実態通りに可視化されます。</p>
+
+        <h3>費用構造</h3>
+        <p>今回の自宅再現プロジェクトで発生した費用は、原材料およびスパイス類の購入費用のみとなります。</p>
+
+        <ul>
+          <li><strong>ホールスパイス類</strong>（シナモン、カルダモン、クローブ、コリアンダー、ブラックペッパー、バニラビーンズ）：約1,800円</li>
+          <li><strong>生鮮食材・調味料</strong>（いちご、国産生姜、生レモン、きび砂糖）：約800円</li>
+          <li><strong>ダークラム</strong>（製菓用小瓶）：約400円</li>
+          <li><strong>合計費用</strong>：約3,000円</li>
+        </ul>
+
+        <p>小鍋、茶こし、耐熱容器などの調理器具は自宅の常備品を使用するため、新規の設備投資は発生しません。</p>
+
+        <hr>
+
+        <h2 id="section-closing" class="article_closing_title">終わりに</h2>
+        <p>今回は、奈良県明日香村のクラフトコーラシロップを題材に、自宅キッチンでの再現・実食プロジェクトをWBSに分解しました。</p>
+
+        <p>原材料表示ラベルの記載順序から配合比率を論理的に組み立て、作業工程を分解することで、実作業工数は約4.5時間程度にとどまる一方、スパイス配送のリードタイム（3日）や一晩熟成（12時間）といった外部要因・自然現象が全体スケジュールを決定づける構造が明確になりました。</p>
+
+        <p>クラフトドリンクや自作レシピの工程管理、あるいは食品製造・熟成プロセスを可視化する際の参考になれば幸いです。</p>
+
+        <p>なお、プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../../knowledge-column/20181118-wbs-essentials/">WBSの勘所</a>」や「<a href="../../knowledge-column/20181119-gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <p>最後までお読みいただきありがとうございました。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Post Navigation -->
+      <nav class="article_pager" aria-label="前後の記事">
+        <div class="pager_item pager_prev">
+          <a href="../20261017-trademark-wbs/" rel="prev">&larr; 前の記事</a>
+        </div>
+        <div class="pager_item pager_next"></div>
+      </nav>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../../js/blog.js?v=2"></script>
+</body>
+</html>
