@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>映画「シン・ゴジラ」のヤシオリ作戦を完遂するWBSを作ってみた | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2016年公開の映画『シン・ゴジラ』のクライマックスで遂行される「ヤシオリ作戦」を題材に、決行当日の現地設営から完全凍結までの全工程をWBSに分解。タスクの依存関係や9つの専門部隊による役割分担、完了までの所要時間を検証します。">
+  
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="映画「シン・ゴジラ」のヤシオリ作戦を完遂するWBSを作ってみた | 株式会社ライトイールド"/>
+  <meta property="og:description" content="2016年公開の映画『シン・ゴジラ』のクライマックスで遂行される「ヤシオリ作戦」を題材に、決行当日の現地設営から完全凍結までの全工程をWBSに分解。タスクの依存関係や9つの専門部隊による役割分担、完了までの所要時間を検証します。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/peek-into-wbs/20261030-yashiori-wbs/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+  
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/blog.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb_container">
+    <div class="breadcrumb_inner">
+      <a href="../../../">ホーム</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../">ブログ</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <a href="../../#peek-into-wbs">WBSで覗いてみた</a>
+      <span class="breadcrumb_separator">&gt;</span>
+      <span>映画「シン・ゴジラ」のヤシオリ作戦を完遂するWBSを作ってみた</span>
+    </div>
+  </div>
+
+  <!-- Article Main -->
+  <main class="blog_main">
+    <article class="article_container">
+      <header class="article_header">
+        <div class="article_meta">
+          <time class="article_date" datetime="2026-10-30">2026.10.30</time>
+        </div>
+        <h1 class="article_title">映画「シン・ゴジラ」のヤシオリ作戦を完遂するWBSを作ってみた</h1>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="article_toc">
+        <div class="toc_title">
+          <span>INDEX</span> 目次
+        </div>
+        <ol class="toc_list">
+          <li><a href="#section-1">1. ガントチャートと工程の検証</a></li>
+          <li><a href="#section-2">2. まとめ</a></li>
+        </ol>
+      </nav>
+
+      <!-- Article Body -->
+      <div class="article_body">
+        <p>今回は「WBSで覗いてみた」シリーズとして、「映画『シン・ゴジラ』のヤシオリ作戦を完遂するWBS」を作成しました。</p>
+
+        <p>2016年に公開された映画『シン・ゴジラ』（東宝）のクライマックスでは、東京駅周辺で休眠状態に入ったゴジラに対し、血液凝固剤を経口注入して凍結させる「ヤシオリ作戦」が遂行されます。私自身このヤシオリ作戦のシーンが大好きで何度も観返しているのですが、自衛隊や米軍、JR東日本、民間建設会社の特殊建機小隊など複数の組織が連携するこの作戦をプロジェクトマネジメントの視点で分解し、タスクの依存関係や所要時間を検証してみました。</p>
+
+        <figure class="article_figure" style="max-width: 380px; margin: 25px auto; text-align: center;">
+          <img src="images/yashiori_fig1_godzilla.jpg" alt="シン・ゴジラのイメージイラスト" loading="lazy" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <figcaption>図1: シン・ゴジラのイメージイラスト（Gemini生成）</figcaption>
+        </figure>
+
+        <p>今回の検証では、極限環境微生物の分子構造解析や、全国の化学プラントを動員した血液凝固剤の製造・集結、各部隊の編成と機材改修、および国連安保理による熱核攻撃の一時延期合意については事前準備として完了している前提としました。その上で、決行当日の深夜0時からの現地設営・安全確保と、午前8時の作戦開始から午前10時のゴジラ完全凍結に至るまでの全工程を対象としています。</p>
+
+        <hr>
+
+        <h2 id="section-1">1. ガントチャートと工程の検証</h2>
+        <p>全体の工程は、決行当日の現地設営・作戦直前配置から、実戦の第1段階（放射線流誘発とエネルギー消耗）、第2段階（初期転倒と第1陣凝固剤注入）、第3段階（再転倒と第2・第3陣注入・完全凍結）までの4つのフェーズ・20タスクで構成されています。これらに9つの専門部隊リソースを割り当て、プロジェクト管理ツール（OmniPlan）でガントチャートに展開しました。</p>
+
+        <figure class="article_figure figure_wide">
+          <img src="images/yashiori_fig2_wbs.png" alt="ヤシオリ作戦遂行プロジェクトのWBS（9部隊並行稼働／所要時間10時間）" loading="lazy">
+          <figcaption>図2: ヤシオリ作戦遂行プロジェクトのWBS（9部隊並行稼働／所要時間10時間）</figcaption>
+        </figure>
+
+        <h3>決行当日の現地設営と作戦直前配置（0:00〜8:00）</h3>
+        <p>作戦開始に先立ち、決行当日の深夜0時から早朝8時までの8時間をかけて現地の設営と配置を行います。具体的には、自衛隊・警察による周辺区域の退避完了と封鎖確認（6時間）、JR東日本による無人新幹線および在来線爆弾への爆薬艤装と突入軌道への配置（8時間）、特殊建機第1陣およびローリー群の前進配置（6時間）、そして爆破工作班による東京駅周辺ビル3棟への爆薬設置と起爆装置の点検（8時間）を4部隊で並行して進め、午前8時の作戦開始までに完了させます。</p>
+
+        <h3>第1段階から第3段階までの実戦工程（8:00〜10:00）</h3>
+        <p>午前8時の作戦開始とともに第1段階へ移行し、米軍航空部隊の無人機による陽動（20分）に続いて、大型貫通爆弾（MOP2）の背部投下による放熱線の誘発（30分）と、巨災対・指揮所による放射線量およびエネルギー減衰のリアルタイム計測（30分）を並行して実施します。午前8時50分から10分間で放射線流の完全停止と体内エネルギーの枯渇を確認し、午前9時に地上部隊の接近許可を判定します。</p>
+
+        <p>続く午前9時からの第2段階では、JR東日本の無人新幹線爆弾（N700系）の東京駅突入・起爆（5分）と、爆破工作班による周辺ビル3棟の連動定置爆破（5分）を同時に行い、午前9時05分にゴジラを初期転倒させます。直ちに特殊建機小隊の第1陣が前進してブームを展開（5分）し、タンクローリー群からの圧送供給（15分）と並行して血液凝固剤の第1次経口注入（15分）を行いますが、ゴジラの再起動と熱線放射に伴い午前9時30分までに残存部隊を緊急退避させます。</p>
+
+        <p>午前9時30分からの第3段階では、中央線や山手線、京浜東北線、東海道線の無人在来線爆弾を全路線から同時突入させてゴジラを再転倒（5分）させた後、特殊建機小隊の第2陣・第3陣が前進してブームを再展開（5分）します。午前9時40分から第2陣（15分）、第3陣（15分）、予備ローリー群からの圧送供給（15分）の3ラインを同時稼働させて規定量100%までの注入を完了させ、最終的な凝固反応と活動停止の確認（5分）を経て、午前11時の熱核攻撃タイムリミットの1時間前となる午前10時に完全凍結を達成します。</p>
+
+        <hr>
+
+        <h2 id="section-2">2. まとめ</h2>
+        <p>今回は、映画『シン・ゴジラ』のヤシオリ作戦を題材に、決行当日の現地設営から完全凍結までの工程をWBSに分解し、タスクの依存関係や各部隊の役割分担、所要時間を検証しました。</p>
+
+        <p>大好きなヤシオリ作戦ですが、劇中では次々と展開していく工程も、こうしてWBSとガントチャートに落とし込んで整理してみると、深夜0時から8時間をかけた現地設営のフェーズと、午前8時から2時間で遂行される3段階の実戦フェーズという構成が改めて明確になります。また、自衛隊や米軍、鉄道会社、民間建設会社といった9つの専門部隊がそれぞれの担当工程を並行して進めることで、午前11時の熱核攻撃タイムリミットに対して午前10時に全工程を完了させるスケジュールが成り立っていることを確認できました。</p>
+
+        <p>プロジェクト計画の基礎となるWBSの作り方や平準化の考え方について詳しく知りたい方は、「<a href="../../knowledge-column/20181118-wbs-essentials/">WBSの勘所</a>」や「<a href="../../knowledge-column/20181119-gantt-chart-leveling/">ガントチャートの決め手は平準化</a>」もぜひ合わせてご覧ください。</p>
+
+        <!-- Author -->
+        <div class="article_author">
+          <span class="author_label">この記事の執筆者</span>
+          <span class="author_name">中山 洋一</span>
+        </div>
+      </div>
+
+      <!-- Post Navigation -->
+      <nav class="article_pager" aria-label="前後の記事">
+        <div class="pager_item pager_prev">
+          <a href="../20261028-incorporation-2026-wbs/" rel="prev">&larr; 前の記事</a>
+        </div>
+        <div class="pager_item pager_next"></div>
+      </nav>
+
+      <!-- Footer Navigation -->
+      <div class="article_footer_nav">
+        <a href="../../" class="btn_back_list">&larr; ブログ一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="../../../js/blog.js?v=2"></script>
+</body>
+</html>
+
