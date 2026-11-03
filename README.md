@@ -68,6 +68,9 @@
 │   │       ├── index.html
 │   │       └── images/
 │   └── knowledge-column/              # 「知見・コラム」カテゴリディレクトリ
+│       ├── 20261103-wbs-progress-reporting/     # 「WBSを用いた進捗管理の勘所」個別記事
+│       │   ├── index.html
+│       │   └── images/
 │       ├── 20261011-yamamoto-isoroku-mentoring/ # 「山本五十六の言葉「やってみせ」」個別記事
 │       │   └── index.html
 │       ├── 20261010-digital-agency-wbs/        # 「デジタル庁の研修資料から見たWBSの要点」個別記事

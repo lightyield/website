@@ -286,6 +286,29 @@ html {
   font-style: italic;
 }
 
+/* 複数画像の横並びグリッド表示 */
+.figure_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: -10px 0 40px;
+}
+
+.figure_grid .article_figure {
+  margin: 0;
+}
+
+.figure_grid .article_figure img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.figure_grid figcaption {
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
 /* --- Image Modal / Lightbox --- */
 .image_modal {
   position: fixed;
@@ -683,6 +706,12 @@ html {
   .article_figure.figure_sm img {
     width: 100%;
     max-width: 100%;
+  }
+
+  .figure_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 0;
   }
 
   .blog_card_body {
