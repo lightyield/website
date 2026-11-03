@@ -416,9 +416,9 @@ footer {
   /* 1. 全体の高さを「画面いっぱい」から「中身に合わせる」に変更 */
   #hero { 
     height: auto; 
-    min-height: 550px; /* ある程度の高さは確保 */
-    padding-top: 90px; /* ロゴ・ヘッダーの分だけ上に余白を作る */
-    padding-bottom: 60px;
+    min-height: 520px;
+    padding-top: 54px; /* ロゴ直下の余白をコンパクトに最適化 */
+    padding-bottom: 50px;
   }
 
   .hero_arcs_bg,
@@ -443,10 +443,16 @@ footer {
     width: 38px;
   }
 
-  /* 2. コンテンツ自体の上の余白を削って上に詰める */
+  /* 2. ヘッダーと左端を揃え、余白を削って上に詰める */
   .hero_content { 
-    padding: 0 25px; 
-    margin-top: 20px; /* 80pxから20pxに短縮 */
+    padding: 0 20px; /* ヘッダーパディング（20px）と左端を完全一致 */
+    margin-top: 0; 
+  }
+
+  .hero_eyebrow {
+    font-size: 0.78rem;
+    margin-bottom: 14px;
+    letter-spacing: 0.14em;
   }
 
   .hero_title { font-size: 2.8rem; }
