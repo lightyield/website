@@ -7,42 +7,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* --- Navigation Header for Subpages (Logo Only, Left Aligned) --- */
-.site_header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(44, 62, 80, 0.98);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.site_header .header_inner {
-  max-width: 100%;
-  padding: 16px 50px;
-  display: flex;
-  align-items: center;
-}
-
-.header_brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.header_brand:hover {
-  opacity: 0.85;
-  transform: scale(1.02);
-}
-
-.header_brand svg {
-  width: 44px;
-  height: auto;
-}
+/* --- Navigation Header for All Pages (Centralized in css/base.css) --- */
 
 /* --- Breadcrumbs (Left Aligned / DADS Semantic HTML) --- */
 .breadcrumb_container {
@@ -701,16 +666,8 @@ html {
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-  .site_header .header_inner {
-    padding: 12px 20px;
-  }
-
   .breadcrumb_container {
     padding: 12px 20px;
-  }
-  
-  .header_brand svg {
-    width: 38px;
   }
   
   .blog_main {

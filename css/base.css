@@ -146,15 +146,53 @@ body {
   }
 }
 
-.header_logo_wrapper {
-  position: absolute;
-  top: 40px;
-  left: 50px;
-  z-index: 10;
+/* --- Common Navigation Header --- */
+.site_header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(44, 62, 80, 0.98);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* トップページヒーロー上部の透過ヘッダー */
+.site_header_hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site_header .header_inner {
+  max-width: 100%;
+  padding: 16px 50px;
+  display: flex;
+  align-items: center;
+}
+
+.header_brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header_brand:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.header_brand svg,
 .main_svg_logo {
-  width: 65px;
+  width: 44px;
   height: auto;
 }
 
@@ -330,7 +368,7 @@ footer {
   #hero { 
     height: auto; 
     min-height: 550px; /* ある程度の高さは確保 */
-    padding-top: 100px; /* ロゴの分だけ上に余白を作る */
+    padding-top: 90px; /* ロゴ・ヘッダーの分だけ上に余白を作る */
     padding-bottom: 60px;
   }
 
@@ -343,8 +381,14 @@ footer {
     opacity: 0.4;
   }
 
-  .header_logo_wrapper { top: 25px; left: 25px; }
-  .header_logo_wrapper svg { width: 50px; }
+  .site_header .header_inner {
+    padding: 12px 20px;
+  }
+
+  .header_brand svg,
+  .main_svg_logo {
+    width: 38px;
+  }
 
   /* 2. コンテンツ自体の上の余白を削って上に詰める */
   .hero_content { 
