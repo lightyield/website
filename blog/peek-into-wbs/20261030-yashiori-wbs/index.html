@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <!-- Accessibility: Skip Link (DADS / WCAG 2.1 AA) -->
+  <a href="#main-content" class="skip_link">本文へスキップ</a>
+
   <!-- Header / Nav -->
   <header class="site_header">
     <div class="header_inner">
@@ -46,21 +49,18 @@
     </div>
   </header>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb_container">
-    <div class="breadcrumb_inner">
-      <a href="../../../">ホーム</a>
-      <span class="breadcrumb_separator">&gt;</span>
-      <a href="../../">ブログ</a>
-      <span class="breadcrumb_separator">&gt;</span>
-      <a href="../../#peek-into-wbs">WBSで覗いてみた</a>
-      <span class="breadcrumb_separator">&gt;</span>
-      <span>映画「シン・ゴジラ」のヤシオリ作戦を完遂するWBSを作ってみた</span>
-    </div>
-  </div>
+  <!-- Breadcrumb (DADS Semantic Nav) -->
+  <nav class="breadcrumb_container" aria-label="現在位置">
+    <ol class="breadcrumb_list">
+      <li class="breadcrumb_item"><a href="../../../">ホーム</a></li>
+      <li class="breadcrumb_item"><a href="../../">ブログ</a></li>
+      <li class="breadcrumb_item"><a href="../../#peek-into-wbs">WBSで覗いてみた</a></li>
+      <li class="breadcrumb_item" aria-current="page">映画「シン・ゴジラ」のヤシオリ作戦を完遂するWBSを作ってみた</li>
+    </ol>
+  </nav>
 
   <!-- Article Main -->
-  <main class="blog_main">
+  <main id="main-content" class="blog_main">
     <article class="article_container">
       <header class="article_header">
         <div class="article_meta">
@@ -70,7 +70,7 @@
       </header>
 
       <!-- Table of Contents -->
-      <nav class="article_toc">
+      <nav class="article_toc" aria-label="目次">
         <div class="toc_title">
           <span>INDEX</span> 目次
         </div>

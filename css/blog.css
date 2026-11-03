@@ -44,35 +44,64 @@ html {
   height: auto;
 }
 
-/* --- Breadcrumbs (Left Aligned) --- */
+/* --- Breadcrumbs (Left Aligned / DADS Semantic HTML) --- */
 .breadcrumb_container {
   background-color: var(--bg-light);
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-border-light, #eee);
   padding: 12px 50px;
   font-size: 0.85rem;
 }
 
-.breadcrumb_inner {
+.breadcrumb_inner,
+.breadcrumb_list {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   color: var(--text-secondary);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.breadcrumb_inner a {
+.breadcrumb_item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb_item:not(:last-child)::after {
+  content: ">";
+  color: #767676; /* WCAG 2.1 AA コントラスト比配慮 */
+  font-size: 0.75rem;
+  user-select: none;
+  aria-hidden: true;
+}
+
+.breadcrumb_inner a,
+.breadcrumb_item a {
   color: var(--accent-color);
   text-decoration: none;
+  padding: 4px 2px;
+  border-radius: var(--radius-sm, 2px);
+  transition: color 0.15s ease;
 }
 
-.breadcrumb_inner a:hover {
+.breadcrumb_inner a:hover,
+.breadcrumb_item a:hover {
   text-decoration: underline;
+  color: var(--color-accent-hover, #1e3d5e);
 }
 
 .breadcrumb_separator {
-  color: #bbb;
+  color: #767676;
   font-size: 0.75rem;
+}
+
+.breadcrumb_item[aria-current="page"] {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 /* --- Blog Post Article Layout --- */

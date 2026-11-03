@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <!-- Accessibility: Skip Link (DADS / WCAG 2.1 AA) -->
+  <a href="#main-content" class="skip_link">本文へスキップ</a>
+
   <!-- Header / Nav -->
   <header class="site_header">
     <div class="header_inner">
@@ -46,17 +49,16 @@
     </div>
   </header>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb_container">
-    <div class="breadcrumb_inner">
-      <a href="../">ホーム</a>
-      <span class="breadcrumb_separator">&gt;</span>
-      <span>ブログ</span>
-    </div>
-  </div>
+  <!-- Breadcrumb (DADS Semantic Nav) -->
+  <nav class="breadcrumb_container" aria-label="現在位置">
+    <ol class="breadcrumb_list">
+      <li class="breadcrumb_item"><a href="../">ホーム</a></li>
+      <li class="breadcrumb_item" aria-current="page">ブログ</li>
+    </ol>
+  </nav>
 
   <!-- Main Content -->
-  <main class="blog_main">
+  <main id="main-content" class="blog_main">
     <div class="container">
       <div class="section_title">
         <span class="en">BLOG & KNOWLEDGE</span>
