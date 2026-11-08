@@ -18,7 +18,7 @@
 │   ├── base.css                   # 全体共通ベーススタイル
 │   └── blog.css                   # ブログ・ナレッジ関連スタイル
 ├── js/
-│   └── blog.js                    # ブログ共通スクリプト（画像拡大モーダル等）
+│   └── blog.js                    # ブログ共通スクリプト（画像拡大モーダル、カテゴリ切り替えタブ制御等）
 ├── blog/
 │   ├── index.html                     # ブログ・知見 記事一覧ページ（カテゴリ別表示）
 │   ├── peek-into-wbs/                 # 「WBSで覗いてみた」カテゴリディレクトリ
@@ -121,7 +121,7 @@ npx serve .
    - `index.html` を作成（既存の類似記事の `index.html` をテンプレートとして活用。CSS/JSの相対パスは `../../../css/`、`../../../js/`。関連記事への誘導リンク等は冒頭ではなく末尾の「終わりに」セクションに配置）。
    - **アクセシビリティ対応**: `<body>` 直後にスキップリンク（`.skip_link`）を配置し、`<main id="main-content">` へ遷移可能とすること。パンくずリストは `<nav aria-label="現在位置">` と `<ol class="breadcrumb_list">` を用い、現在地に `aria-current="page"` を付与すること。目次は `<nav class="article_toc" aria-label="目次">` とすること。
 3. **ブログ一覧・トップページへの追加**:
-   - `blog/index.html` の `.blog_grid` 内に新しい記事カードを追加（全記事を掲載）。
+   - `blog/index.html` の該当カテゴリの `.blog_grid` 内に新しい記事カードを追加（全記事を掲載）。タブの件数バッジはJavaScript（`js/blog.js`）により自動集計・同期されますが、HTML上の初期値（`.category_tab_count`）も合わせて更新を推奨します。
    - トップページ（`index.html`）の `.blog_grid` 内を更新。**トップページは各カテゴリ新着2件のみ表示**するため、新着記事を追加した際は3件目となる最古の記事カードを削除してください。
 4. **前後の記事ナビゲーション（`article_pager`）の更新**:
    - 追加した新記事の `index.html` 内の `.article_pager` に、同カテゴリ内の直前の過去記事へのリンク（`pager_prev`）を設定します。
