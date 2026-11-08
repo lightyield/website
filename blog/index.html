@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="株式会社ライトイールド"/>
   
   <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/blog.css?v=2">
+  <link rel="stylesheet" href="../css/blog.css?v=3">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -65,8 +65,47 @@
         <h1 class="ja">ブログ・知見</h1>
       </div>
 
+      <!-- Category Navigation Tabs (DADS / WCAG 2.1 AA Compliant) -->
+      <nav class="blog_category_nav" aria-label="記事カテゴリの絞り込み">
+        <div class="category_tabs" role="tablist" aria-label="記事カテゴリ">
+          <button type="button" 
+                  role="tab" 
+                  id="tab-all" 
+                  aria-selected="true" 
+                  aria-controls="peek-into-wbs knowledge" 
+                  tabindex="0" 
+                  class="category_tab is_active" 
+                  data-target="all">
+            <span class="category_tab_label">すべて</span>
+            <span class="category_tab_count">22</span>
+          </button>
+          <button type="button" 
+                  role="tab" 
+                  id="tab-peek-into-wbs" 
+                  aria-selected="false" 
+                  aria-controls="peek-into-wbs" 
+                  tabindex="-1" 
+                  class="category_tab" 
+                  data-target="peek-into-wbs">
+            <span class="category_tab_label">WBSで覗いてみた</span>
+            <span class="category_tab_count">16</span>
+          </button>
+          <button type="button" 
+                  role="tab" 
+                  id="tab-knowledge" 
+                  aria-selected="false" 
+                  aria-controls="knowledge" 
+                  tabindex="-1" 
+                  class="category_tab" 
+                  data-target="knowledge">
+            <span class="category_tab_label">知見・コラム</span>
+            <span class="category_tab_count">6</span>
+          </button>
+        </div>
+      </nav>
+
       <!-- Category Block 1: WBSで覗いてみた -->
-      <section id="peek-into-wbs" class="category_block">
+      <section id="peek-into-wbs" class="category_block" role="tabpanel" aria-labelledby="tab-peek-into-wbs" tabindex="0">
         <div class="category_block_header">
           <h2 class="category_block_title">WBSで覗いてみた</h2>
           <span class="category_block_en">PEEK INTO WBS</span>
@@ -302,7 +341,7 @@
       </section>
 
       <!-- Category Block 2: 知見・コラム -->
-      <section id="knowledge" class="category_block">
+      <section id="knowledge" class="category_block" role="tabpanel" aria-labelledby="tab-knowledge" tabindex="0">
         <div class="category_block_header">
           <h2 class="category_block_title">知見・コラム</h2>
           <span class="category_block_en">KNOWLEDGE &amp; COLUMN</span>
@@ -409,5 +448,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="../js/blog.js"></script>
 </body>
 </html>

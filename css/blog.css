@@ -619,6 +619,73 @@ html {
   margin: -35px auto 45px;
 }
 
+/* --- Blog Category Navigation & Tabs (DADS / WCAG 2.1 AA Compliant) --- */
+.blog_category_nav {
+  margin-top: -10px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.category_tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 32px;
+  margin-bottom: -2px; /* border-bottom と同期 */
+}
+
+.category_tab {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 12px 4px 14px;
+  font-family: var(--font-base);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  min-height: 48px; /* DADS / WCAG タッチターゲット基準 (44px以上) */
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.category_tab:hover {
+  color: var(--color-primary);
+}
+
+.category_tab.is_active {
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom-color: var(--color-accent);
+}
+
+.category_tab_count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #edf2f7;
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.category_tab.is_active .category_tab_count {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* 確実な非表示スタイル（セマンティックhiddenの補強） */
+.category_block[hidden] {
+  display: none !important;
+}
+
 .category_block {
   margin-bottom: 70px;
 }
@@ -708,6 +775,36 @@ html {
     font-size: 0.9rem;
     margin: -25px auto 35px;
     padding: 0 10px;
+  }
+
+  .blog_category_nav {
+    margin-top: -15px;
+    margin-bottom: 35px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .blog_category_nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category_tabs {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .category_tab {
+    white-space: nowrap;
+    padding: 8px 3px 11px;
+    font-size: 0.88rem;
+    gap: 5px;
+  }
+
+  .category_tab_count {
+    font-size: 0.72rem;
+    padding: 1px 5px;
   }
 
   .category_block_header {
