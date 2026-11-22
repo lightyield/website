@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-1" viewBox="0 0 880 396" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="396" fill="#FFFFFF"/>
+
+            <!-- Top Title + Pillar Badge -->
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図2：システムの前提・要件の書き方の変化</text>
+            <rect x="704" y="14" width="156" height="26" rx="4" fill="#0017C1"/>
+            <text x="782" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">柱① AIを組み込む</text>
+
+            <!-- Left Panel -->
+            <rect x="20" y="50" width="340" height="328" rx="12" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <rect x="36" y="66" width="84" height="28" rx="4" fill="#4D4D4D"/>
+            <text x="78" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">従来型</text>
+            <text x="132" y="85" fill="#1A1A1C" font-size="14.5" font-weight="bold">決定論的（予測可能）</text>
+
+            <rect x="38" y="140" width="74" height="50" rx="8" fill="#FFFFFF" stroke="#666666" stroke-width="1.5"/>
+            <text x="75" y="170" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">入力 A</text>
+            <line x1="112" y1="165" x2="132" y2="165" stroke="#4D4D4D" stroke-width="2"/>
+            <polygon points="130,159 140,165 130,171" fill="#4D4D4D"/>
+
+            <rect x="142" y="128" width="96" height="74" rx="8" fill="#E6E6E6" stroke="#4D4D4D" stroke-width="1.5"/>
+            <text x="190" y="161" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">固定ルール</text>
+            <text x="190" y="183" text-anchor="middle" fill="#333333" font-size="11.5">if / then</text>
+
+            <line x1="238" y1="165" x2="258" y2="165" stroke="#4D4D4D" stroke-width="2"/>
+            <polygon points="256,159 266,165 256,171" fill="#4D4D4D"/>
+            <rect x="268" y="140" width="74" height="50" rx="8" fill="#FFFFFF" stroke="#666666" stroke-width="1.5"/>
+            <text x="305" y="170" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">出力 B</text>
+
+            <rect x="38" y="232" width="304" height="126" rx="8" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1.5"/>
+            <text x="54" y="260" fill="#1A1A1C" font-size="13" font-weight="bold">要件の定義方法</text>
+            <text x="54" y="286" fill="#333333" font-size="12">・「〇〇機能を実装すること」</text>
+            <text x="54" y="312" fill="#333333" font-size="12">・同じ入力には常に同じ結果</text>
+            <text x="54" y="338" fill="#333333" font-size="12">・合否（〇 / ×）で検証できる</text>
+
+            <!-- Arrow -->
+            <line x1="370" y1="214" x2="400" y2="214" stroke="#0017C1" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="396,204 414,214 396,224" fill="#0017C1"/>
+
+            <!-- Right Panel -->
+            <rect x="422" y="50" width="438" height="328" rx="12" fill="#E8F1FE" stroke="#0017C1" stroke-width="2"/>
+            <rect x="438" y="66" width="84" height="28" rx="4" fill="#0017C1"/>
+            <text x="480" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AI時代</text>
+            <text x="534" y="85" fill="#00118F" font-size="14" font-weight="bold">不確実性・フェイルセーフ前提</text>
+
+            <!-- Input -->
+            <rect x="438" y="176" width="70" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="473" y="201" text-anchor="middle" fill="#1A1A1C" font-size="12.5" font-weight="bold">多様な</text>
+            <text x="473" y="221" text-anchor="middle" fill="#1A1A1C" font-size="12.5" font-weight="bold">入力</text>
+
+            <line x1="508" y1="205" x2="528" y2="205" stroke="#0017C1" stroke-width="2"/>
+            <polygon points="526,199 536,205 526,211" fill="#0017C1"/>
+
+            <!-- AI + Control -->
+            <rect x="538" y="146" width="114" height="118" rx="8" fill="#0017C1"/>
+            <text x="595" y="174" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">AI ＋ 制御層</text>
+            <line x1="552" y1="184" x2="638" y2="184" stroke="#9DB7F9" stroke-width="1"/>
+            <text x="595" y="206" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">OOD検知</text>
+            <text x="595" y="228" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">確信度判定</text>
+            <text x="595" y="250" text-anchor="middle" fill="#FFFFFF" font-size="10.5">ハルシネーション</text>
+
+            <!-- 3 Semantic Outputs -->
+            <line x1="652" y1="170" x2="680" y2="138" stroke="#197A4B" stroke-width="2"/>
+            <rect x="682" y="110" width="162" height="56" rx="8" fill="#E6F5EC" stroke="#259D63" stroke-width="1.5"/>
+            <text x="763" y="133" text-anchor="middle" fill="#197A4B" font-size="12.5" font-weight="bold">○ 高確信・低リスク</text>
+            <text x="763" y="153" text-anchor="middle" fill="#1A1A1C" font-size="11.5">根拠文書付きで出力</text>
+
+            <line x1="652" y1="205" x2="680" y2="205" stroke="#B78F00" stroke-width="2"/>
+            <rect x="682" y="176" width="162" height="56" rx="8" fill="#FFF8E1" stroke="#B78F00" stroke-width="1.5"/>
+            <text x="763" y="199" text-anchor="middle" fill="#805B00" font-size="12.5" font-weight="bold">△ 迷った・高リスク</text>
+            <text x="763" y="219" text-anchor="middle" fill="#1A1A1C" font-size="11.5">人間へエスカレーション</text>
+
+            <line x1="652" y1="240" x2="680" y2="272" stroke="#EC0000" stroke-width="2"/>
+            <rect x="682" y="242" width="162" height="56" rx="8" fill="#FDEEEE" stroke="#EC0000" stroke-width="1.5"/>
+            <text x="763" y="265" text-anchor="middle" fill="#C90000" font-size="12.5" font-weight="bold">× 想定外（OOD）</text>
+            <text x="763" y="285" text-anchor="middle" fill="#1A1A1C" font-size="11.5">回答停止＋ログ記録</text>
+
+            <!-- Footer -->
+            <rect x="438" y="320" width="406" height="40" rx="6" fill="#FFFFFF" stroke="#9DB7F9" stroke-width="1"/>
+            <text x="641" y="345" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">「何ができるか」＋「迷った・誤った時の安全な振る舞い」を要件化</text>
+          </svg>

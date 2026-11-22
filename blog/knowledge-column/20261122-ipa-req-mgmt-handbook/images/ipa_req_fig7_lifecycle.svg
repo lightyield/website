@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-7" viewBox="0 0 880 396" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="396" fill="#FFFFFF"/>
+
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図8：要求管理の時間軸と変更の扱い方の変化</text>
+            <rect x="692" y="14" width="168" height="26" rx="4" fill="#1A1A1C"/>
+            <text x="776" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">共通基盤（柱①・②）</text>
+
+            <!-- Left Panel -->
+            <rect x="20" y="50" width="388" height="328" rx="12" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <rect x="36" y="66" width="84" height="28" rx="4" fill="#4D4D4D"/>
+            <text x="78" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">従来型</text>
+            <text x="132" y="85" fill="#1A1A1C" font-size="15" font-weight="bold">一方向・固定型</text>
+
+            <rect x="38" y="128" width="96" height="62" rx="8" fill="#FFFFFF" stroke="#666666" stroke-width="1.5"/>
+            <text x="86" y="155" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">要件定義</text>
+            <text x="86" y="175" text-anchor="middle" fill="#4D4D4D" font-size="11.5">開発前に確定</text>
+
+            <line x1="134" y1="159" x2="152" y2="159" stroke="#4D4D4D" stroke-width="2"/>
+            <polygon points="150,153 160,159 150,165" fill="#4D4D4D"/>
+
+            <rect x="162" y="128" width="96" height="62" rx="8" fill="#FFFFFF" stroke="#666666" stroke-width="1.5"/>
+            <text x="210" y="155" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">開発・検証</text>
+            <text x="210" y="175" text-anchor="middle" fill="#4D4D4D" font-size="11.5">仕様通り実装</text>
+
+            <line x1="258" y1="159" x2="276" y2="159" stroke="#4D4D4D" stroke-width="2"/>
+            <polygon points="274,153 284,159 274,165" fill="#4D4D4D"/>
+
+            <rect x="286" y="128" width="96" height="62" rx="8" fill="#E6E6E6" stroke="#4D4D4D" stroke-width="1.5"/>
+            <text x="334" y="155" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">リリース</text>
+            <text x="334" y="175" text-anchor="middle" fill="#333333" font-size="11.5">文書は完了</text>
+
+            <line x1="388" y1="120" x2="388" y2="198" stroke="#C90000" stroke-width="4" stroke-linecap="round"/>
+
+            <rect x="38" y="218" width="352" height="140" rx="8" fill="#FDEEEE" stroke="#EC0000" stroke-width="1.5"/>
+            <text x="54" y="246" fill="#C90000" font-size="13.5" font-weight="bold">× 静的な文書として固定化される課題</text>
+            <text x="54" y="274" fill="#1A1A1C" font-size="12.5">・「変更は例外」として扱われやすい</text>
+            <text x="54" y="300" fill="#1A1A1C" font-size="12.5">・運用後の業務実態と仕様書が乖離する</text>
+            <text x="54" y="326" fill="#1A1A1C" font-size="12.5">・変化のたびに手作業で影響調査が必要</text>
+
+            <!-- Transition Arrow -->
+            <line x1="418" y1="214" x2="450" y2="214" stroke="#0017C1" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="446,204 464,214 446,224" fill="#0017C1"/>
+
+            <!-- Right Panel -->
+            <rect x="472" y="50" width="388" height="328" rx="12" fill="#E8F1FE" stroke="#0017C1" stroke-width="2"/>
+            <rect x="488" y="66" width="84" height="28" rx="4" fill="#0017C1"/>
+            <text x="530" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AI時代</text>
+            <text x="584" y="85" fill="#00118F" font-size="14.5" font-weight="bold">循環的・ライブな要求管理</text>
+
+            <circle cx="666" cy="212" r="80" fill="none" stroke="#0031D8" stroke-width="6" stroke-dasharray="96 30" stroke-linecap="round"/>
+            <circle cx="666" cy="212" r="42" fill="#0017C1"/>
+            <text x="666" y="208" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">上位目的</text>
+            <text x="666" y="226" text-anchor="middle" fill="#FFFFFF" font-size="11">判断の軸</text>
+
+            <rect x="598" y="108" width="136" height="34" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="2"/>
+            <text x="666" y="130" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">1. 要求・要件定義</text>
+
+            <rect x="728" y="195" width="118" height="34" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="2"/>
+            <text x="787" y="217" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">2. モデル・実装</text>
+
+            <rect x="598" y="282" width="136" height="34" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="2"/>
+            <text x="666" y="304" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">3. 運用・監視</text>
+
+            <rect x="486" y="195" width="118" height="34" rx="8" fill="#FFFFFF" stroke="#197A4B" stroke-width="2"/>
+            <text x="545" y="217" text-anchor="middle" fill="#197A4B" font-size="12" font-weight="bold">4. AI影響分析</text>
+
+            <!-- Connection between Pillar 1 & 2 -->
+            <rect x="488" y="326" width="356" height="40" rx="6" fill="#FFFFFF" stroke="#9DB7F9" stroke-width="1"/>
+            <text x="666" y="343" text-anchor="middle" fill="#00118F" font-size="11.5" font-weight="bold">柱①の速い変化を、柱②のAI影響分析・再検証で回し切る</text>
+            <text x="666" y="360" text-anchor="middle" fill="#333333" font-size="11">（目的自体が変わる場合は中心＝最上流へ戻る）</text>
+          </svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-5" viewBox="0 0 880 390" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="390" fill="#FFFFFF"/>
+
+            <!-- Header + Pillar Badge -->
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図6：要求の集め方の変化（情報源の拡大とAIによる下準備）</text>
+            <rect x="696" y="14" width="164" height="26" rx="4" fill="#197A4B"/>
+            <text x="778" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">柱② AIを使って行う</text>
+
+            <!-- Left Panel: Traditional -->
+            <rect x="20" y="50" width="388" height="322" rx="12" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <rect x="36" y="66" width="84" height="28" rx="4" fill="#4D4D4D"/>
+            <text x="78" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">従来型</text>
+            <text x="132" y="85" fill="#1A1A1C" font-size="14.5" font-weight="bold">人手によるヒアリング中心</text>
+
+            <rect x="38" y="110" width="352" height="58" rx="8" fill="#FFFFFF" stroke="#666666" stroke-width="1.5"/>
+            <text x="214" y="134" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">限られた情報源</text>
+            <text x="214" y="155" text-anchor="middle" fill="#4D4D4D" font-size="12">関係者ヒアリング・会議・既存仕様書</text>
+
+            <line x1="214" y1="168" x2="214" y2="188" stroke="#4D4D4D" stroke-width="2"/>
+            <polygon points="208,186 214,196 220,186" fill="#4D4D4D"/>
+
+            <rect x="38" y="198" width="352" height="56" rx="8" fill="#E6E6E6" stroke="#4D4D4D" stroke-width="1.5"/>
+            <text x="214" y="222" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">担当者が手作業で要約・分類・一覧化</text>
+            <text x="214" y="242" text-anchor="middle" fill="#333333" font-size="11.5">抜け漏れや矛盾も人手レビューに依存</text>
+
+            <rect x="38" y="270" width="352" height="86" rx="8" fill="#FDEEEE" stroke="#EC0000" stroke-width="1.5"/>
+            <text x="54" y="295" fill="#C90000" font-size="12.5" font-weight="bold">× 従来手法の限界</text>
+            <text x="54" y="319" fill="#1A1A1C" font-size="12">・大量のログや問い合わせを分析しきれない</text>
+            <text x="54" y="342" fill="#1A1A1C" font-size="12">・整理作業の負荷が高く、声の大きい意見に偏る</text>
+
+            <!-- Transition Arrow -->
+            <line x1="418" y1="210" x2="450" y2="210" stroke="#197A4B" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="446,200 464,210 446,220" fill="#197A4B"/>
+
+            <!-- Right Panel: AI Era -->
+            <rect x="472" y="50" width="388" height="322" rx="12" fill="#E6F5EC" stroke="#197A4B" stroke-width="2"/>
+            <rect x="488" y="66" width="84" height="28" rx="4" fill="#197A4B"/>
+            <text x="530" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AI時代</text>
+            <text x="584" y="85" fill="#197A4B" font-size="14.5" font-weight="bold">大量データ × AI候補抽出</text>
+
+            <rect x="490" y="110" width="352" height="72" rx="8" fill="#FFFFFF" stroke="#197A4B" stroke-width="1.5"/>
+            <text x="666" y="133" text-anchor="middle" fill="#197A4B" font-size="13" font-weight="bold">拡大した情報源（人 ＋ 蓄積データ）</text>
+            <text x="666" y="154" text-anchor="middle" fill="#1A1A1C" font-size="11.5">ヒアリング・現場観察 ＋ 問い合わせ / クレーム /</text>
+            <text x="666" y="172" text-anchor="middle" fill="#1A1A1C" font-size="11.5">操作ログ / 障害報告 / 監査指摘 / SNS / 社内規則</text>
+
+            <line x1="666" y1="182" x2="666" y2="202" stroke="#197A4B" stroke-width="2.5"/>
+            <polygon points="660,200 666,210 672,200" fill="#197A4B"/>
+
+            <rect x="490" y="212" width="352" height="86" rx="8" fill="#197A4B"/>
+            <text x="666" y="237" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AIによる抽出・整理・チェック支援</text>
+            <text x="510" y="261" fill="#FFFFFF" font-size="12">・対話型ヒアリング補助（不足項目の質問提示）</text>
+            <text x="510" y="283" fill="#FFFFFF" font-size="12">・要求候補の抽出・分類・矛盾や抜け漏れの検知</text>
+
+            <rect x="490" y="312" width="352" height="44" rx="6" fill="#FFFFFF" stroke="#259D63" stroke-width="1.5"/>
+            <text x="666" y="331" text-anchor="middle" fill="#197A4B" font-size="12" font-weight="bold">○ AIが下準備を担い、人間は判断・深掘りに集中</text>
+            <text x="666" y="349" text-anchor="middle" fill="#333333" font-size="11">※出力はすべて「候補」扱い（承認済要求は自動上書き不可）</text>
+          </svg>

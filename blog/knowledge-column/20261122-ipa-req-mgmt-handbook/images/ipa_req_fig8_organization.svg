@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-8" viewBox="0 0 880 396" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="396" fill="#FFFFFF"/>
+
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図9：要求管理の担い手と組織体制の変化</text>
+            <rect x="692" y="14" width="168" height="26" rx="4" fill="#1A1A1C"/>
+            <text x="776" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">共通基盤（柱①・②）</text>
+
+            <!-- Left Panel -->
+            <rect x="20" y="50" width="296" height="328" rx="12" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <rect x="36" y="66" width="84" height="28" rx="4" fill="#4D4D4D"/>
+            <text x="78" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">従来型</text>
+            <text x="132" y="85" fill="#1A1A1C" font-size="14.5" font-weight="bold">個人の職人芸</text>
+
+            <circle cx="168" cy="136" r="22" fill="#4D4D4D"/>
+            <path d="M130 192 C130 168, 206 168, 206 192 Z" fill="#4D4D4D"/>
+            <text x="168" y="218" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">一部担当者・IT部門に依存</text>
+
+            <rect x="40" y="234" width="256" height="126" rx="8" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1.5"/>
+            <text x="56" y="262" fill="#333333" font-size="12">・書き方・粒度が人ごとにバラバラ</text>
+            <text x="56" y="288" fill="#333333" font-size="12">・異動すると暗黙知が消失</text>
+            <text x="56" y="314" fill="#333333" font-size="12">・案件ごとに一から議論し直し</text>
+            <text x="56" y="342" fill="#C90000" font-size="12" font-weight="bold">× 成熟度 Lv.1（属人型）</text>
+
+            <!-- Arrow -->
+            <line x1="326" y1="214" x2="356" y2="214" stroke="#0017C1" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="352,204 370,214 352,224" fill="#0017C1"/>
+
+            <!-- Right Panel -->
+            <rect x="378" y="50" width="482" height="328" rx="12" fill="#E8F1FE" stroke="#0017C1" stroke-width="2"/>
+            <rect x="394" y="66" width="84" height="28" rx="4" fill="#0017C1"/>
+            <text x="436" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AI時代</text>
+            <text x="490" y="85" fill="#00118F" font-size="14.5" font-weight="bold">多部門連携 × 共有知識基盤</text>
+
+            <!-- Top Row Roles -->
+            <rect x="394" y="108" width="142" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="465" y="131" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">経営層・事業責任者</text>
+
+            <rect x="548" y="108" width="142" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="619" y="131" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">業務部門・現場代表</text>
+
+            <rect x="702" y="108" width="142" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="773" y="131" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">IT・AI・データ担当</text>
+
+            <line x1="465" y1="144" x2="465" y2="170" stroke="#0031D8" stroke-width="2"/>
+            <line x1="619" y1="144" x2="619" y2="170" stroke="#0031D8" stroke-width="2"/>
+            <line x1="773" y1="144" x2="773" y2="170" stroke="#0031D8" stroke-width="2"/>
+
+            <!-- Central Knowledge Base -->
+            <rect x="394" y="170" width="322" height="88" rx="8" fill="#0017C1"/>
+            <text x="555" y="198" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="bold">組織の知識基盤（再利用・更新）</text>
+            <text x="555" y="220" text-anchor="middle" fill="#FFFFFF" font-size="11.5">標準プロセス / 要求管理台帳 / モデル</text>
+            <text x="555" y="242" text-anchor="middle" fill="#FFFFFF" font-size="11.5">データ定義 / 構造化ルール / 変更履歴</text>
+
+            <!-- AI Partner (Pillar 2 accent) -->
+            <line x1="716" y1="214" x2="736" y2="214" stroke="#197A4B" stroke-width="2.5"/>
+            <rect x="736" y="170" width="108" height="88" rx="8" fill="#E6F5EC" stroke="#197A4B" stroke-width="2"/>
+            <text x="790" y="198" text-anchor="middle" fill="#197A4B" font-size="13" font-weight="bold">支援AI</text>
+            <text x="790" y="220" text-anchor="middle" fill="#1A1A1C" font-size="11.5">参照・抽出</text>
+            <text x="790" y="240" text-anchor="middle" fill="#1A1A1C" font-size="11.5">影響分析</text>
+
+            <line x1="465" y1="258" x2="465" y2="282" stroke="#0031D8" stroke-width="2"/>
+            <line x1="619" y1="258" x2="619" y2="282" stroke="#0031D8" stroke-width="2"/>
+            <line x1="773" y1="258" x2="773" y2="282" stroke="#0031D8" stroke-width="2"/>
+
+            <!-- Bottom Row Roles -->
+            <rect x="394" y="282" width="142" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="465" y="305" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">法務・コンプライアンス</text>
+
+            <rect x="548" y="282" width="142" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="619" y="305" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">セキュリティ・監査</text>
+
+            <rect x="702" y="282" width="142" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="773" y="305" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">調達・契約担当</text>
+
+            <rect x="394" y="332" width="450" height="30" rx="4" fill="#FFFFFF" stroke="#9DB7F9" stroke-width="1"/>
+            <text x="619" y="352" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">成熟度：Lv.1 属人 → Lv.2 文書化 → Lv.3 管理 → Lv.4 モデル → Lv.5 AI協働</text>
+          </svg>

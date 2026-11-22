@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-3" viewBox="0 0 880 396" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="396" fill="#FFFFFF"/>
+
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図4：品質保証と安全性の担保方法の変化</text>
+            <rect x="704" y="14" width="156" height="26" rx="4" fill="#0017C1"/>
+            <text x="782" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">柱① AIを組み込む</text>
+
+            <!-- Left Panel -->
+            <rect x="20" y="50" width="296" height="328" rx="12" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <rect x="36" y="66" width="84" height="28" rx="4" fill="#4D4D4D"/>
+            <text x="78" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">従来型</text>
+            <text x="132" y="85" fill="#1A1A1C" font-size="14.5" font-weight="bold">開発時テスト中心</text>
+
+            <rect x="40" y="122" width="256" height="68" rx="8" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.5"/>
+            <text x="168" y="150" text-anchor="middle" fill="#1A1A1C" font-size="13" font-weight="bold">リリース前テスト・受入確認</text>
+            <text x="168" y="174" text-anchor="middle" fill="#4D4D4D" font-size="11.5">合格したら運用へ（1回限りの確認）</text>
+
+            <line x1="168" y1="192" x2="168" y2="218" stroke="#4D4D4D" stroke-width="2.5"/>
+            <polygon points="162,216 168,226 174,216" fill="#4D4D4D"/>
+
+            <rect x="40" y="230" width="256" height="128" rx="8" fill="#FDEEEE" stroke="#EC0000" stroke-width="1.5"/>
+            <text x="168" y="256" text-anchor="middle" fill="#C90000" font-size="13" font-weight="bold">× AI運用時の落とし穴</text>
+            <text x="54" y="284" fill="#1A1A1C" font-size="12">・停止しないまま静かに劣化</text>
+            <text x="54" y="310" fill="#1A1A1C" font-size="12">・データ分布・制度変化を検知不可</text>
+            <text x="54" y="336" fill="#1A1A1C" font-size="12">・事故時に安全性の根拠を示せない</text>
+
+            <!-- Arrow -->
+            <line x1="326" y1="214" x2="356" y2="214" stroke="#0017C1" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="352,204 370,214 352,224" fill="#0017C1"/>
+
+            <!-- Right Panel -->
+            <rect x="378" y="50" width="482" height="328" rx="12" fill="#E8F1FE" stroke="#0017C1" stroke-width="2"/>
+            <rect x="394" y="66" width="84" height="28" rx="4" fill="#0017C1"/>
+            <text x="436" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AI時代</text>
+            <text x="490" y="85" fill="#00118F" font-size="14.5" font-weight="bold">継続的アシュアランス</text>
+
+            <rect x="394" y="108" width="218" height="78" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="503" y="133" text-anchor="middle" fill="#00118F" font-size="13" font-weight="bold">1. 事前シミュレーション</text>
+            <text x="503" y="154" text-anchor="middle" fill="#333333" font-size="11.5">デジタルツイン等で例外・</text>
+            <text x="503" y="172" text-anchor="middle" fill="#333333" font-size="11.5">障害・制度変更を事前検証</text>
+
+            <rect x="626" y="108" width="218" height="78" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="735" y="133" text-anchor="middle" fill="#00118F" font-size="13" font-weight="bold">2. 運用中の常時監視</text>
+            <text x="735" y="154" text-anchor="middle" fill="#333333" font-size="11.5">性能劣化・データ分布変化・</text>
+            <text x="735" y="172" text-anchor="middle" fill="#333333" font-size="11.5">苦情・法改正をトリガー検知</text>
+
+            <rect x="394" y="200" width="218" height="162" rx="8" fill="#FFF8E1" stroke="#B78F00" stroke-width="1.8"/>
+            <text x="503" y="226" text-anchor="middle" fill="#805B00" font-size="13" font-weight="bold">3. レジリエンス発動</text>
+            <rect x="410" y="240" width="186" height="32" rx="4" fill="#FFFFFF" stroke="#B78F00"/>
+            <text x="503" y="261" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">安全モード / 手動運用切替</text>
+            <rect x="410" y="280" width="186" height="32" rx="4" fill="#FFFFFF" stroke="#B78F00"/>
+            <text x="503" y="301" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">モデル・データの再評価</text>
+            <rect x="410" y="320" width="186" height="32" rx="4" fill="#FFFFFF" stroke="#B78F00"/>
+            <text x="503" y="341" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">要求台帳へ改善反映</text>
+
+            <rect x="626" y="200" width="218" height="162" rx="8" fill="#0017C1"/>
+            <text x="735" y="226" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">4. アシュアランス・ケース</text>
+            <rect x="642" y="240" width="186" height="32" rx="4" fill="#FFFFFF"/>
+            <text x="735" y="261" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">主張：安全に稼働している</text>
+            <rect x="642" y="280" width="186" height="32" rx="4" fill="#E8F1FE"/>
+            <text x="735" y="301" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">根拠：人間確認・承認文書のみ</text>
+            <rect x="642" y="320" width="186" height="32" rx="4" fill="#E8F1FE"/>
+            <text x="735" y="341" text-anchor="middle" fill="#00118F" font-size="12" font-weight="bold">証拠：ログ・テスト・監査記録</text>
+          </svg>

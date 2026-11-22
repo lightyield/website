@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-0" viewBox="0 0 880 410" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="410" fill="#FFFFFF"/>
+
+            <!-- Header -->
+            <text x="24" y="38" fill="#1A1A1C" font-size="16" font-weight="bold">AI時代の要求管理は「2つの側面」と「共通基盤」で捉える</text>
+            <rect x="756" y="18" width="100" height="26" rx="4" fill="#0017C1"/>
+            <text x="806" y="36" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">全体マップ</text>
+
+            <!-- Pillar 1: Left -->
+            <rect x="24" y="60" width="406" height="214" rx="10" fill="#E8F1FE" stroke="#0017C1" stroke-width="2"/>
+            <rect x="40" y="76" width="154" height="28" rx="4" fill="#0017C1"/>
+            <text x="117" y="95" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">柱① AIを組み込む</text>
+            <text x="206" y="95" fill="#00118F" font-size="13.5" font-weight="bold">AIシステム・業務側の変化</text>
+            <text x="40" y="124" fill="#333333" font-size="11.5">AIシステム開発や既存AIサービスの業務活用で必要な要件</text>
+
+            <rect x="40" y="138" width="374" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.2"/>
+            <text x="54" y="161" fill="#00118F" font-size="12.5" font-weight="bold">図2</text>
+            <text x="86" y="161" fill="#1A1A1C" font-size="12">不確実性・OOD・フェイルセーフを要件化</text>
+
+            <rect x="40" y="182" width="374" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.2"/>
+            <text x="54" y="205" fill="#00118F" font-size="12.5" font-weight="bold">図3</text>
+            <text x="86" y="205" fill="#1A1A1C" font-size="12">データ供給チェーン・倫理・法令/社内ルールまで統合</text>
+
+            <rect x="40" y="226" width="374" height="36" rx="6" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.2"/>
+            <text x="54" y="249" fill="#00118F" font-size="12.5" font-weight="bold">図4</text>
+            <text x="86" y="249" fill="#1A1A1C" font-size="12">リリース後も監視・論証する継続的アシュアランス</text>
+
+            <!-- Pillar 2: Right -->
+            <rect x="450" y="60" width="406" height="214" rx="10" fill="#E6F5EC" stroke="#197A4B" stroke-width="2"/>
+            <rect x="466" y="76" width="164" height="28" rx="4" fill="#197A4B"/>
+            <text x="548" y="95" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">柱② AIを使って行う</text>
+            <text x="642" y="95" fill="#197A4B" font-size="13.5" font-weight="bold">プロセス・作業側の変化</text>
+            <text x="466" y="124" fill="#333333" font-size="11.5">通常システム開発も含め、要求管理自体をAIで高度化する</text>
+
+            <rect x="466" y="138" width="374" height="36" rx="6" fill="#FFFFFF" stroke="#197A4B" stroke-width="1.2"/>
+            <text x="480" y="161" fill="#197A4B" font-size="12.5" font-weight="bold">図5</text>
+            <text x="518" y="161" fill="#1A1A1C" font-size="12">Machine Understandable への構造化</text>
+
+            <rect x="466" y="182" width="374" height="36" rx="6" fill="#FFFFFF" stroke="#197A4B" stroke-width="1.2"/>
+            <text x="480" y="205" fill="#197A4B" font-size="12.5" font-weight="bold">図6</text>
+            <text x="518" y="205" fill="#1A1A1C" font-size="12">要求の集め方（大量データ＋AI候補抽出）</text>
+
+            <rect x="466" y="226" width="374" height="36" rx="6" fill="#FFFFFF" stroke="#197A4B" stroke-width="1.2"/>
+            <text x="480" y="249" fill="#197A4B" font-size="12.5" font-weight="bold">図7</text>
+            <text x="518" y="249" fill="#1A1A1C" font-size="12">役割分担（マスの意見 vs ★光る原石・承認）</text>
+
+            <!-- Connectors to Foundation -->
+            <line x1="227" y1="274" x2="227" y2="298" stroke="#1A1A1C" stroke-width="2"/>
+            <line x1="653" y1="274" x2="653" y2="298" stroke="#1A1A1C" stroke-width="2"/>
+
+            <!-- Common Foundation -->
+            <rect x="24" y="298" width="832" height="94" rx="10" fill="#F2F2F2" stroke="#1A1A1C" stroke-width="2"/>
+            <rect x="40" y="312" width="150" height="26" rx="4" fill="#1A1A1C"/>
+            <text x="115" y="330" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">共通基盤（柱①・②）</text>
+            <text x="204" y="330" fill="#1A1A1C" font-size="13.5" font-weight="bold">両方の柱を支える運用サイクルと組織体制</text>
+
+            <rect x="40" y="346" width="390" height="34" rx="6" fill="#FFFFFF" stroke="#666666" stroke-width="1.2"/>
+            <text x="54" y="368" fill="#1A1A1C" font-size="12.5" font-weight="bold">図8</text>
+            <text x="86" y="368" fill="#1A1A1C" font-size="12">時間軸：一方向・固定型 → 循環的・ライブな管理</text>
+
+            <rect x="448" y="346" width="392" height="34" rx="6" fill="#FFFFFF" stroke="#666666" stroke-width="1.2"/>
+            <text x="462" y="368" fill="#1A1A1C" font-size="12.5" font-weight="bold">図9</text>
+            <text x="494" y="368" fill="#1A1A1C" font-size="12">体制：個人の職人芸 → 多部門連携の組織能力</text>
+          </svg>
