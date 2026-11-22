@@ -72,23 +72,12 @@
                   role="tab" 
                   id="tab-all" 
                   aria-selected="true" 
-                  aria-controls="peek-into-wbs knowledge" 
+                  aria-controls="knowledge peek-into-wbs" 
                   tabindex="0" 
                   class="category_tab is_active" 
                   data-target="all">
             <span class="category_tab_label">すべて</span>
             <span class="category_tab_count">24</span>
-          </button>
-          <button type="button" 
-                  role="tab" 
-                  id="tab-peek-into-wbs" 
-                  aria-selected="false" 
-                  aria-controls="peek-into-wbs" 
-                  tabindex="-1" 
-                  class="category_tab" 
-                  data-target="peek-into-wbs">
-            <span class="category_tab_label">WBSで覗いてみた</span>
-            <span class="category_tab_count">16</span>
           </button>
           <button type="button" 
                   role="tab" 
@@ -101,10 +90,145 @@
             <span class="category_tab_label">知見・コラム</span>
             <span class="category_tab_count">8</span>
           </button>
+          <button type="button" 
+                  role="tab" 
+                  id="tab-peek-into-wbs" 
+                  aria-selected="false" 
+                  aria-controls="peek-into-wbs" 
+                  tabindex="-1" 
+                  class="category_tab" 
+                  data-target="peek-into-wbs">
+            <span class="category_tab_label">WBSで覗いてみた</span>
+            <span class="category_tab_count">16</span>
+          </button>
         </div>
       </nav>
 
-      <!-- Category Block 1: WBSで覗いてみた -->
+      <!-- Category Block 1: 知見・コラム -->
+      <section id="knowledge" class="category_block" role="tabpanel" aria-labelledby="tab-knowledge" tabindex="0">
+        <div class="category_block_header">
+          <h2 class="category_block_title">知見・コラム</h2>
+          <span class="category_block_en">KNOWLEDGE &amp; COLUMN</span>
+        </div>
+        <p class="category_block_desc">
+          プロジェクト管理や見積り、システム開発に関する実践的な知見を発信しています。
+        </p>
+        <div class="blog_grid">
+          <!-- Post: IPA「AI 時代の要求管理ハンドブック」から読み解く変化点 -->
+          <a href="knowledge-column/20261122-ipa-req-mgmt-handbook/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2026.11.22</span>
+              </div>
+              <h3 class="blog_card_title">IPA「AI 時代の要求管理ハンドブック」から読み解く変化点</h3>
+              <p class="blog_card_excerpt">
+                IPAから公開された「AI 時代の要求管理ハンドブック（Version 1.0.0）」を読み解き、従来の要求管理からの変化点を8つの図解とともに整理します。「AIを組み込むための要求管理」と「AIを使って行う要求管理」の2つの側面、および両者を支える共通基盤のポイントを解説します。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post: AI駆動開発におけるWBSとガントチャートの使い所 -->
+          <a href="knowledge-column/20261122-ai-driven-development-wbs/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2026.11.22</span>
+              </div>
+              <h3 class="blog_card_title">AI駆動開発におけるWBSとガントチャートの使い所</h3>
+              <p class="blog_card_excerpt">
+                AIが実装や修正を並列かつ短時間でこなす開発・運用現場において、WBSとガントチャートがどこで活きるのかを考察します。フィーチャー開発・バグ対応・脆弱性対応の計7件のIssueが多重に割り込むDevOps運用のケーススタディを通じ、人間のレビュー帯域の平準化と完了見通しの推移を解説します。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post: WBSを用いた進捗管理の勘所 -->
+          <a href="knowledge-column/20261103-wbs-progress-reporting/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2026.11.03</span>
+              </div>
+              <h3 class="blog_card_title">WBSを用いた進捗管理の勘所</h3>
+              <p class="blog_card_excerpt">
+                ファミリーキャンプ設営のWBSを題材に、プロジェクト開始から完了まで1時間ごとの進捗をWBSへ反映し、その都度報告する過程を解説します。達成率やイナズマ線に頼らず、残作業タスクの追加と完了マイルストーンの推移によって「いつ終わるのか」を示す実践手法をご紹介します。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post: 山本五十六の言葉「やってみせ」 -->
+          <a href="knowledge-column/20261011-yamamoto-isoroku-mentoring/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2026.10.11</span>
+              </div>
+              <h3 class="blog_card_title">山本五十六の言葉「やってみせ」</h3>
+              <p class="blog_card_excerpt">
+                「やってみせ、言って聞かせて、させてみせ、ほめてやらねば、人は動かじ。」――かつて幾度となく実践し、後から知って衝撃を受けた山本五十六の言葉。相手を信頼し「自分を超える人を育てる」ための指導ポリシーと、その実践を通じて感じた想いを綴ります。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post: デジタル庁の研修資料から見たWBSの要点 -->
+          <a href="knowledge-column/20261010-digital-agency-wbs/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2026.10.10</span>
+              </div>
+              <h3 class="blog_card_title">デジタル庁の研修資料から見たWBSの要点</h3>
+              <p class="blog_card_excerpt">
+                今回はデジタル庁が公開している「標準ガイドライン研修資料」より、政府情報システムにおける作業計画（WBS）の悪い例・良い例、マイルストーン管理の要点をご紹介します。サブシステムや機能単位への分解、テスト間の依存関係の可視化、要員の平準化など、公的プロジェクトで求められるWBSの勘所を資料の要約とともに見ていきます。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post 3: ソフトウェア開発の見積り精度を上げるには -->
+          <a href="knowledge-column/20190318-software-estimation-accuracy/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2019.03.18</span>
+              </div>
+              <h3 class="blog_card_title">ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜</h3>
+              <p class="blog_card_excerpt">
+                今回はソフトウェア開発における見積り精度について、Windows 95のチーフアーキテクトなどを務められた中島聡さんのメールマガジンでお伺いしたQAと、それを踏まえたプロジェクトマネジメント実務における考察をご紹介します。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post 2: ガントチャートの決め手は平準化 -->
+          <a href="knowledge-column/20181119-gantt-chart-leveling/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2018.11.19</span>
+              </div>
+              <h3 class="blog_card_title">ガントチャートの決め手は平準化</h3>
+              <p class="blog_card_excerpt">
+                「ガントチャートツールってどれを選べば良いの？」と聞かれたら、私は迷わず「平準化ができること」と答えます。「平準化とは何か」「なぜそれほど重要なのか」が気になっている方に向けて、今回は平準化の基本的な意味やそのメリットについて解説します。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Post 1: WBSの勘所 -->
+          <a href="knowledge-column/20181118-wbs-essentials/" class="blog_card">
+            <div class="blog_card_body">
+              <div class="blog_card_meta">
+                <span class="blog_card_date">2018.11.18</span>
+              </div>
+              <h3 class="blog_card_title">WBSの勘所</h3>
+              <p class="blog_card_excerpt">
+                WBSの勘所として、私がWBS（Work Breakdown Structure：作業分解構造）を作る際に意識している点をまとめました。
+              </p>
+              <span class="blog_card_more">記事を読む &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Category Block 2: WBSで覗いてみた -->
       <section id="peek-into-wbs" class="category_block" role="tabpanel" aria-labelledby="tab-peek-into-wbs" tabindex="0">
         <div class="category_block_header">
           <h2 class="category_block_title">WBSで覗いてみた</h2>
@@ -333,130 +457,6 @@
               <h3 class="blog_card_title">株式会社を設立するWBSを作ってみた</h3>
               <p class="blog_card_excerpt">
                 今回は「WBSで覗いてみた」として、私が株式会社ライトイールドを設立した際の経験を振り返りながら「株式会社を設立するWBS」をご紹介します。役所手続きや法人口座開設など、会社設立に必要な全作業の洗い出しから、1人で作業した場合の工期の変化、実際にかかるリアルな費用まで、WBSを通じて詳しく検証していきます。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- Category Block 2: 知見・コラム -->
-      <section id="knowledge" class="category_block" role="tabpanel" aria-labelledby="tab-knowledge" tabindex="0">
-        <div class="category_block_header">
-          <h2 class="category_block_title">知見・コラム</h2>
-          <span class="category_block_en">KNOWLEDGE &amp; COLUMN</span>
-        </div>
-        <p class="category_block_desc">
-          プロジェクト管理や見積り、システム開発に関する実践的な知見を発信しています。
-        </p>
-        <div class="blog_grid">
-          <!-- Post: IPA「AI 時代の要求管理ハンドブック」から読み解く変化点 -->
-          <a href="knowledge-column/20261122-ipa-req-mgmt-handbook/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2026.11.22</span>
-              </div>
-              <h3 class="blog_card_title">IPA「AI 時代の要求管理ハンドブック」から読み解く変化点</h3>
-              <p class="blog_card_excerpt">
-                IPAから公開された「AI 時代の要求管理ハンドブック（Version 1.0.0）」を読み解き、従来の要求管理からの変化点を8つの図解とともに整理します。「AIを組み込むための要求管理」と「AIを使って行う要求管理」の2つの側面、および両者を支える共通基盤のポイントを解説します。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post: AI駆動開発におけるWBSとガントチャートの使い所 -->
-          <a href="knowledge-column/20261122-ai-driven-development-wbs/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2026.11.22</span>
-              </div>
-              <h3 class="blog_card_title">AI駆動開発におけるWBSとガントチャートの使い所</h3>
-              <p class="blog_card_excerpt">
-                AIが実装や修正を並列かつ短時間でこなす開発・運用現場において、WBSとガントチャートがどこで活きるのかを考察します。フィーチャー開発・バグ対応・脆弱性対応の計7件のIssueが多重に割り込むDevOps運用のケーススタディを通じ、人間のレビュー帯域の平準化と完了見通しの推移を解説します。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post: WBSを用いた進捗管理の勘所 -->
-          <a href="knowledge-column/20261103-wbs-progress-reporting/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2026.11.03</span>
-              </div>
-              <h3 class="blog_card_title">WBSを用いた進捗管理の勘所</h3>
-              <p class="blog_card_excerpt">
-                ファミリーキャンプ設営のWBSを題材に、プロジェクト開始から完了まで1時間ごとの進捗をWBSへ反映し、その都度報告する過程を解説します。達成率やイナズマ線に頼らず、残作業タスクの追加と完了マイルストーンの推移によって「いつ終わるのか」を示す実践手法をご紹介します。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post: 山本五十六の言葉「やってみせ」 -->
-          <a href="knowledge-column/20261011-yamamoto-isoroku-mentoring/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2026.10.11</span>
-              </div>
-              <h3 class="blog_card_title">山本五十六の言葉「やってみせ」</h3>
-              <p class="blog_card_excerpt">
-                「やってみせ、言って聞かせて、させてみせ、ほめてやらねば、人は動かじ。」――かつて幾度となく実践し、後から知って衝撃を受けた山本五十六の言葉。相手を信頼し「自分を超える人を育てる」ための指導ポリシーと、その実践を通じて感じた想いを綴ります。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post: デジタル庁の研修資料から見たWBSの要点 -->
-          <a href="knowledge-column/20261010-digital-agency-wbs/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2026.10.10</span>
-              </div>
-              <h3 class="blog_card_title">デジタル庁の研修資料から見たWBSの要点</h3>
-              <p class="blog_card_excerpt">
-                今回はデジタル庁が公開している「標準ガイドライン研修資料」より、政府情報システムにおける作業計画（WBS）の悪い例・良い例、マイルストーン管理の要点をご紹介します。サブシステムや機能単位への分解、テスト間の依存関係の可視化、要員の平準化など、公的プロジェクトで求められるWBSの勘所を資料の要約とともに見ていきます。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post 3: ソフトウェア開発の見積り精度を上げるには -->
-          <a href="knowledge-column/20190318-software-estimation-accuracy/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2019.03.18</span>
-              </div>
-              <h3 class="blog_card_title">ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜</h3>
-              <p class="blog_card_excerpt">
-                今回はソフトウェア開発における見積り精度について、Windows 95のチーフアーキテクトなどを務められた中島聡さんのメールマガジンでお伺いしたQAと、それを踏まえたプロジェクトマネジメント実務における考察をご紹介します。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post 2: ガントチャートの決め手は平準化 -->
-          <a href="knowledge-column/20181119-gantt-chart-leveling/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2018.11.19</span>
-              </div>
-              <h3 class="blog_card_title">ガントチャートの決め手は平準化</h3>
-              <p class="blog_card_excerpt">
-                「ガントチャートツールってどれを選べば良いの？」と聞かれたら、私は迷わず「平準化ができること」と答えます。「平準化とは何か」「なぜそれほど重要なのか」が気になっている方に向けて、今回は平準化の基本的な意味やそのメリットについて解説します。
-              </p>
-              <span class="blog_card_more">記事を読む &rarr;</span>
-            </div>
-          </a>
-
-          <!-- Post 1: WBSの勘所 -->
-          <a href="knowledge-column/20181118-wbs-essentials/" class="blog_card">
-            <div class="blog_card_body">
-              <div class="blog_card_meta">
-                <span class="blog_card_date">2018.11.18</span>
-              </div>
-              <h3 class="blog_card_title">WBSの勘所</h3>
-              <p class="blog_card_excerpt">
-                WBSの勘所として、私がWBS（Work Breakdown Structure：作業分解構造）を作る際に意識している点をまとめました。
               </p>
               <span class="blog_card_more">記事を読む &rarr;</span>
             </div>
