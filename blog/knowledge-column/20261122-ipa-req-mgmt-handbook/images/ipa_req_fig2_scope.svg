@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-2" viewBox="0 0 880 396" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="396" fill="#FFFFFF"/>
+
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図3：要求管理の対象スコープの拡大</text>
+            <rect x="704" y="14" width="156" height="26" rx="4" fill="#0017C1"/>
+            <text x="782" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">柱① AIを組み込む</text>
+
+            <!-- Left Panel -->
+            <rect x="20" y="50" width="296" height="328" rx="12" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <rect x="36" y="66" width="84" height="28" rx="4" fill="#4D4D4D"/>
+            <text x="78" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">従来型</text>
+            <text x="132" y="85" fill="#1A1A1C" font-size="14.5" font-weight="bold">ソフト中心</text>
+
+            <rect x="42" y="124" width="252" height="132" rx="8" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.5"/>
+            <text x="168" y="152" text-anchor="middle" fill="#1A1A1C" font-size="13.5" font-weight="bold">ソフトウェア要件</text>
+            <rect x="60" y="168" width="216" height="34" rx="6" fill="#F2F2F2" stroke="#CCCCCC"/>
+            <text x="168" y="190" text-anchor="middle" fill="#1A1A1C" font-size="12">機能要件（画面・処理）</text>
+            <rect x="60" y="210" width="216" height="34" rx="6" fill="#F2F2F2" stroke="#CCCCCC"/>
+            <text x="168" y="232" text-anchor="middle" fill="#1A1A1C" font-size="12">非機能要件（性能・可用性）</text>
+
+            <rect x="42" y="276" width="252" height="82" rx="8" fill="#FFFFFF" stroke="#666666" stroke-dasharray="4 3" stroke-width="1.5"/>
+            <text x="168" y="306" text-anchor="middle" fill="#4D4D4D" font-size="12.5" font-weight="bold">法令・社内ルール・データ</text>
+            <text x="168" y="332" text-anchor="middle" fill="#4D4D4D" font-size="11.5">「法令遵守」など抽象記述で別管理</text>
+
+            <!-- Arrow -->
+            <line x1="326" y1="214" x2="356" y2="214" stroke="#0017C1" stroke-width="4" stroke-linecap="round"/>
+            <polygon points="352,204 370,214 352,224" fill="#0017C1"/>
+
+            <!-- Right Panel -->
+            <rect x="378" y="50" width="482" height="328" rx="12" fill="#E8F1FE" stroke="#0017C1" stroke-width="2"/>
+            <rect x="394" y="66" width="84" height="28" rx="4" fill="#0017C1"/>
+            <text x="436" y="85" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">AI時代</text>
+            <text x="490" y="85" fill="#00118F" font-size="14.5" font-weight="bold">6領域をIDで一体管理</text>
+
+            <!-- Hub lines (Center: 619, 232) -->
+            <line x1="619" y1="232" x2="480" y2="146" stroke="#0031D8" stroke-width="1.8"/>
+            <line x1="619" y1="232" x2="758" y2="146" stroke="#0031D8" stroke-width="1.8"/>
+            <line x1="619" y1="232" x2="466" y2="232" stroke="#0031D8" stroke-width="1.8"/>
+            <line x1="619" y1="232" x2="772" y2="232" stroke="#0031D8" stroke-width="1.8"/>
+            <line x1="619" y1="232" x2="480" y2="318" stroke="#0031D8" stroke-width="1.8"/>
+            <line x1="619" y1="232" x2="758" y2="318" stroke="#0031D8" stroke-width="1.8"/>
+
+            <circle cx="619" cy="232" r="44" fill="#0017C1"/>
+            <text x="619" y="228" text-anchor="middle" fill="#FFFFFF" font-size="13" font-weight="bold">上位目的</text>
+            <text x="619" y="247" text-anchor="middle" fill="#FFFFFF" font-size="11.5">ミッション</text>
+
+            <rect x="394" y="112" width="168" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="478" y="136" text-anchor="middle" fill="#00118F" font-size="12.5" font-weight="bold">1. 機能・非機能要件</text>
+            <text x="478" y="157" text-anchor="middle" fill="#333333" font-size="11.5">業務・ビルディングブロック</text>
+
+            <rect x="676" y="112" width="168" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="760" y="136" text-anchor="middle" fill="#00118F" font-size="12.5" font-weight="bold">2. データ供給チェーン</text>
+            <text x="760" y="157" text-anchor="middle" fill="#333333" font-size="11.5">出自・権利・品質・加工履歴</text>
+
+            <rect x="394" y="203" width="154" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="471" y="227" text-anchor="middle" fill="#00118F" font-size="12.5" font-weight="bold">3. AI・プロンプト</text>
+            <text x="471" y="248" text-anchor="middle" fill="#333333" font-size="11.5">利用/禁止範囲・版管理</text>
+
+            <rect x="690" y="203" width="154" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="767" y="227" text-anchor="middle" fill="#00118F" font-size="12.5" font-weight="bold">4. 社会的受容・倫理</text>
+            <text x="767" y="248" text-anchor="middle" fill="#333333" font-size="11.5">公平性・説明・異議申立</text>
+
+            <rect x="394" y="294" width="168" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="478" y="318" text-anchor="middle" fill="#00118F" font-size="12.5" font-weight="bold">5. 法令・社内ルール</text>
+            <text x="478" y="339" text-anchor="middle" fill="#333333" font-size="11.5">社内規則・マニュアル等の構造化</text>
+
+            <rect x="676" y="294" width="168" height="58" rx="8" fill="#FFFFFF" stroke="#0017C1" stroke-width="1.5"/>
+            <text x="760" y="318" text-anchor="middle" fill="#00118F" font-size="12.5" font-weight="bold">6. 評価・運用監視</text>
+            <text x="760" y="339" text-anchor="middle" fill="#333333" font-size="11.5">指標・ログ・更新トリガー</text>
+          </svg>

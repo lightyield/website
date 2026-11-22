@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-4" viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="380" fill="#FFFFFF"/>
+
+            <text x="24" y="36" fill="#1A1A1C" font-size="15" font-weight="bold">図5：人間が読む文書から、AI・ツールも意味を扱える構造化基盤へ</text>
+            <rect x="692" y="16" width="164" height="26" rx="4" fill="#197A4B"/>
+            <text x="774" y="34" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">柱② AIを使って行う</text>
+
+            <!-- Step 1 -->
+            <rect x="24" y="216" width="194" height="96" rx="8" fill="#F2F2F2" stroke="#666666" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <text x="38" y="240" fill="#4D4D4D" font-size="11.5" font-weight="bold">STEP 1（従来中心）</text>
+            <text x="38" y="262" fill="#1A1A1C" font-size="13.5" font-weight="bold">Human Readable</text>
+            <text x="38" y="284" fill="#333333" font-size="12">人間が読める</text>
+            <text x="38" y="302" fill="#4D4D4D" font-size="11.5">Word・自然言語の仕様書</text>
+
+            <!-- Step 2 -->
+            <rect x="236" y="174" width="194" height="138" rx="8" fill="#FFFFFF" stroke="#4D4D4D" stroke-width="1.5"/>
+            <text x="250" y="198" fill="#4D4D4D" font-size="11.5" font-weight="bold">STEP 2</text>
+            <text x="250" y="220" fill="#1A1A1C" font-size="13.5" font-weight="bold">Human Understandable</text>
+            <text x="250" y="242" fill="#333333" font-size="12">人間が共通理解できる</text>
+            <text x="250" y="270" fill="#333333" font-size="11.5">・図解・業務フロー</text>
+            <text x="250" y="292" fill="#333333" font-size="11.5">・一覧表・用語集</text>
+
+            <!-- Step 3 -->
+            <rect x="448" y="128" width="194" height="184" rx="8" fill="#E6F5EC" stroke="#197A4B" stroke-width="1.8"/>
+            <text x="462" y="152" fill="#197A4B" font-size="11.5" font-weight="bold">STEP 3</text>
+            <text x="462" y="174" fill="#197A4B" font-size="13.5" font-weight="bold">Machine Readable</text>
+            <text x="462" y="196" fill="#1A1A1C" font-size="12">機械が読み取れる</text>
+            <text x="462" y="226" fill="#1A1A1C" font-size="11.5">・要求ID・メタデータ</text>
+            <text x="462" y="248" fill="#1A1A1C" font-size="11.5">・Markdown / XML構造化</text>
+            <text x="462" y="270" fill="#1A1A1C" font-size="11.5">・義務 / 禁止の明確化</text>
+            <text x="462" y="292" fill="#1A1A1C" font-size="11.5">・Git等での版管理</text>
+
+            <!-- Step 4 -->
+            <rect x="660" y="76" width="196" height="236" rx="8" fill="#197A4B" stroke="#14532D" stroke-width="2"/>
+            <text x="674" y="102" fill="#FFFFFF" font-size="11.5" font-weight="bold">STEP 4（AI支援の到達点）</text>
+            <text x="674" y="126" fill="#FFFFFF" font-size="14" font-weight="bold">Machine</text>
+            <text x="674" y="146" fill="#FFFFFF" font-size="14" font-weight="bold">Understandable</text>
+            <text x="674" y="170" fill="#FFFFFF" font-size="12">機械が意味・関係を扱える</text>
+            <line x1="674" y1="182" x2="840" y2="182" stroke="#FFFFFF" stroke-width="1"/>
+            <text x="674" y="206" fill="#FFFFFF" font-size="11.5">・データモデル / SysML</text>
+            <text x="674" y="228" fill="#FFFFFF" font-size="11.5">・オントロジー / ルール表</text>
+            <text x="674" y="250" fill="#FFFFFF" font-size="11.5">・ReqIF / OSLC連携</text>
+            <rect x="674" y="264" width="168" height="36" rx="4" fill="#FFFFFF"/>
+            <text x="758" y="286" text-anchor="middle" fill="#197A4B" font-size="11.5" font-weight="bold">AI影響分析・再検証へ</text>
+
+            <!-- Bottom Axis Bars -->
+            <rect x="24" y="328" width="406" height="30" rx="4" fill="#E6E6E6" stroke="#666666" stroke-width="1"/>
+            <text x="227" y="348" text-anchor="middle" fill="#1A1A1C" font-size="12" font-weight="bold">人間の合意形成・説明責任の基盤（引き続き必須）</text>
+            <rect x="448" y="328" width="408" height="30" rx="4" fill="#197A4B"/>
+            <text x="652" y="348" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">AI・ツールが自動解析・影響追跡できる領域</text>
+          </svg>

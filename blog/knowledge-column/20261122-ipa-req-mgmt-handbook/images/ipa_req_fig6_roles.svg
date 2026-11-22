@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-6" viewBox="0 0 880 370" xmlns="http://www.w3.org/2000/svg" font-family="'BIZ UDPGothic','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+            <rect width="880" height="370" fill="#FFFFFF"/>
+
+            <!-- Header + Pillar Badge -->
+            <text x="20" y="34" fill="#1A1A1C" font-size="15" font-weight="bold">図7：AIと人間の役割分担（AI任せにしないための見極め）</text>
+            <rect x="696" y="14" width="164" height="26" rx="4" fill="#197A4B"/>
+            <text x="778" y="32" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="bold">柱② AIを使って行う</text>
+
+            <!-- Left Card: AI Role (Mass Opinions) -->
+            <rect x="20" y="54" width="408" height="202" rx="12" fill="#E6F5EC" stroke="#197A4B" stroke-width="2"/>
+            <rect x="38" y="72" width="100" height="28" rx="4" fill="#197A4B"/>
+            <text x="88" y="91" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">AIの得意領域</text>
+            <text x="150" y="91" fill="#197A4B" font-size="15" font-weight="bold">マスの意見（多数派）の整理</text>
+
+            <rect x="38" y="114" width="372" height="74" rx="8" fill="#FFFFFF" stroke="#259D63" stroke-width="1.2"/>
+            <text x="54" y="139" fill="#1A1A1C" font-size="12.5" font-weight="bold">・頻出する問い合わせやクレームを高速集計</text>
+            <text x="54" y="163" fill="#1A1A1C" font-size="12.5" font-weight="bold">・多くの利用者に共通する不満・傾向を可視化</text>
+
+            <rect x="38" y="198" width="372" height="42" rx="6" fill="#FFFFFF" stroke="#666666" stroke-dasharray="4 3" stroke-width="1.2"/>
+            <text x="54" y="224" fill="#4D4D4D" font-size="12">※ 過去データ・一般的な平均解に寄りやすい弱点がある</text>
+
+            <!-- Right Card: Human Role (Hidden Gem) -->
+            <rect x="452" y="54" width="408" height="202" rx="12" fill="#FFF8E1" stroke="#B78F00" stroke-width="2"/>
+            <rect x="470" y="72" width="108" height="28" rx="4" fill="#805B00"/>
+            <text x="524" y="91" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="bold">人間の専門性</text>
+            <text x="590" y="91" fill="#805B00" font-size="15" font-weight="bold">★ 光る原石と潜在要求の発掘</text>
+
+            <rect x="470" y="114" width="372" height="74" rx="8" fill="#FFFFFF" stroke="#B78F00" stroke-width="1.2"/>
+            <text x="486" y="139" fill="#1A1A1C" font-size="12.5" font-weight="bold">・少数（例：1%）でも重大リスクの兆候を発見</text>
+            <text x="486" y="163" fill="#1A1A1C" font-size="12.5" font-weight="bold">・「なぜ必要か」の良い問いで潜在要求を深掘り</text>
+
+            <rect x="470" y="198" width="372" height="42" rx="6" fill="#FFFFFF" stroke="#B78F00" stroke-width="1.2"/>
+            <text x="486" y="224" fill="#805B00" font-size="11.5" font-weight="bold">例：「PDF提出したい」→ 本質は「申請負担を減らしたい」</text>
+
+            <!-- Arrows Down to Final Approval -->
+            <line x1="224" y1="256" x2="224" y2="278" stroke="#0017C1" stroke-width="2.5"/>
+            <polygon points="218,276 224,286 230,276" fill="#0017C1"/>
+            <line x1="656" y1="256" x2="656" y2="278" stroke="#0017C1" stroke-width="2.5"/>
+            <polygon points="650,276 656,286 662,276" fill="#0017C1"/>
+
+            <!-- Bottom Full-Width Bar: Human Final Responsibility -->
+            <rect x="20" y="286" width="840" height="66" rx="10" fill="#0017C1"/>
+            <text x="440" y="314" text-anchor="middle" fill="#FFFFFF" font-size="14.5" font-weight="bold">人間の最終責務：○ 要求の正式承認・ベースライン化</text>
+            <text x="440" y="338" text-anchor="middle" fill="#FFFFFF" font-size="12.5">妥当性判断 ／ 優先順位付け ／ リスク受容 ／ 法的判断は必ず人間が責任を負う</text>
+          </svg>
