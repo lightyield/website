@@ -71,6 +71,9 @@
 │   │       ├── index.html
 │   │       └── images/
 │   └── knowledge-column/              # 「知見・コラム」カテゴリディレクトリ
+│       ├── 20261122-ai-driven-development-wbs/ # 「AI駆動開発におけるWBSとガントチャートの使い所」個別記事
+│       │   ├── index.html
+│       │   └── images/
 │       ├── 20261103-wbs-progress-reporting/     # 「WBSを用いた進捗管理の勘所」個別記事
 │       │   ├── index.html
 │       │   └── images/
