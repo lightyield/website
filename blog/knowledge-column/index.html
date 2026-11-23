@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>知見・コラム | 株式会社ライトイールド (Light Yield Co., Ltd.)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="プロジェクト管理、WBS・ガントチャートの運用、AI時代の要求管理や見積り精度など、システム開発の現場に根ざした実践的な考察を発信しています。">
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="知見・コラム | 株式会社ライトイールド"/>
+  <meta property="og:description" content="プロジェクト管理、WBS・ガントチャートの運用、AI時代の要求管理や見積り精度など、システム開発の現場に根ざした実践的な考察を発信しています。" />
+  <meta property="og:url" content="https://lightyield.co.jp/blog/knowledge-column/" />
+  <meta property="og:site_name" content="株式会社ライトイールド"/>
+
+  <link rel="stylesheet" href="../../css/base.css?v=8">
+  <link rel="stylesheet" href="../../css/blog.css?v=4">
+  <link rel="stylesheet" href="../../css/top.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="page_series">
+  <!-- Accessibility: Skip Link (DADS / WCAG 2.1 AA) -->
+  <a href="#main-content" class="skip_link">本文へスキップ</a>
+
+  <!-- Header / Nav -->
+  <header class="site_header">
+    <div class="header_inner">
+      <a href="../../" class="header_brand" aria-label="トップページへ戻る">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="456.5 0 87 97" class="main_svg_logo">
+          <g>
+            <path class="logo_path" d="M458.3,33.2v-33l48.3,16.5L458.3,33.2z M462.1,5.6V28l32.8-11.2L462.1,5.6z"/>
+            <path class="logo_path" d="M543.5,33.2l-48.3-16.5l48.3-16.5V33.2z M506.9,16.8l32.8,11.2V5.6L506.9,16.8z"/>
+            <g>
+              <path class="logo_path" d="M470.8,63.1h-11.5V37.6h4.1v21.6h7.4V63.1z"/>
+              <path class="logo_path" d="M478.5,63.1h-4.1V37.6h4.1V63.1z"/>
+              <path class="logo_path" d="M493.6,63.6c-3.5,0-6.6-1.3-9.2-3.9c-2.5-2.6-3.8-5.7-3.8-9.3c0-3.7,1.3-6.8,3.9-9.4s5.7-3.9,9.4-3.9c2,0,3.9,0.4,5.6,1.2c1.6,0.8,3.3,2.1,4.9,4 l0.1,0.1l-2.9,2.8l-0.1-0.1c-2-2.7-4.5-4.1-7.4-4.1c-2.6,0-4.8,0.9-6.6,2.7c-1.8,1.8-2.7,4-2.7,6.7c0,2.7,1,5,3,6.8c1.8,1.6,3.9,2.5,6,2.5c1.8,0,3.5-0.6,4.9-1.9c1.4-1.2,2.2-2.6,2.4-4.3h-6.3v-3.9h10.7v1c0,1.9-0.2,3.6-0.7,5.1c-0.4,1.4-1.2,2.7-2.2,3.8C500.3,62.2,497.3,63.6,493.6,63.6z"/>
+              <path class="logo_path" d="M526.4,63.1h-4.1V51.4h-10.5v11.7h-4.1V37.6h4.1v9.8h10.5v-9.8h4.1V63.1z"/>
+              <path class="logo_path" d="M537.7,63.1h-4.1V41.5h-5.8v-3.9h15.7v3.9h-5.8V63.1z"/>
+            </g>
+            <g>
+              <path class="logo_path" d="M469,96.8h-4.2v-11l-8.3-14.5h4.7l5.7,9.9l5.7-9.9h4.7l-8.4,14.5L469,96.8L469,96.8z"/>
+              <path class="logo_path" d="M483.8,96.8h-4.1V71.2h4.1V96.8z"/>
+              <path class="logo_path" d="M503.1,96.8h-14.2V71.2h14.2v3.9H493v5.7h9.8v3.9H493v8.1h10.1V96.8z"/>
+              <path class="logo_path" d="M518.6,96.8h-11.5V71.2h4.1v21.6h7.4V96.8z"/>
+              <path class="logo_path" d="M526.6,96.8h-5.4V71.2h5.4c2.5,0,4.6,0.3,6,0.8c1.6,0.5,3,1.3,4.3,2.5c2.6,2.4,3.9,5.6,3.9,9.5s-1.4,7.1-4.1,9.5c-1.4,1.2-2.8,2.1-4.3,2.5C531.2,96.6,529.2,96.8,526.6,96.8z M525.3,92.9h1.6c1.7,0,3.1-0.2,4.2-0.5c1.1-0.4,2.1-1,3-1.8c1.8-1.7,2.8-3.9,2.8-6.5c0-2.7-0.9-4.9-2.7-6.6c-1.6-1.5-4.1-2.3-7.2-2.3h-1.6L525.3,92.9L525.3,92.9z"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <nav class="header_nav" aria-label="メインメニュー">
+        <a href="./" class="header_nav_link" aria-current="page">知見・コラム</a>
+        <a href="../peek-into-wbs/" class="header_nav_link">WBSで覗いてみた</a>
+        <a href="../../#about" class="header_nav_link is_mono hide_sm">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb (DADS Semantic Nav) -->
+  <nav class="breadcrumb_container" aria-label="現在位置">
+    <ol class="breadcrumb_list">
+      <li class="breadcrumb_item"><a href="../../">ホーム</a></li>
+      <li class="breadcrumb_item" aria-current="page">知見・コラム</li>
+    </ol>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section id="knowledge" class="editorial_section" aria-labelledby="heading-knowledge">
+      <div class="top_container">
+        <div class="asym_grid">
+          <aside class="pillar_aside">
+            <span class="pillar_num">SERIES 01</span>
+            <h1 id="heading-knowledge" class="pillar_title">知見・コラム</h1>
+            <span class="pillar_en">KNOWLEDGE &amp; COLUMN</span>
+            <p class="pillar_desc">
+              プロジェクト管理、WBS・ガントチャートの運用、AI時代の要求管理や見積り精度など、システム開発の現場に根ざした実践的な考察を発信しています。
+            </p>
+          </aside>
+
+          <div>
+            <!-- Latest Featured -->
+            <a href="20261122-ipa-req-mgmt-handbook/" class="featured_article">
+              <div class="meta_row">
+                <span class="tag_pill">LATEST / 知見・コラム</span>
+                <span class="date_mono">2026.11.22</span>
+              </div>
+              <h2 class="featured_h3">IPA「AI 時代の要求管理ハンドブック」から読み解く変化点</h2>
+              <p class="featured_excerpt">
+                IPAから公開された「AI 時代の要求管理ハンドブック（Version 1.0.0）」を読み解き、従来の要求管理からの変化点を8つの図解とともに整理します。「AIを組み込むための要求管理」と「AIを使って行う要求管理」の2つの側面、および両者を支える共通基盤のポイントを解説します。
+              </p>
+              <span class="read_more">記事を読む &rarr;</span>
+            </a>
+
+            <!-- All Articles -->
+            <ul class="article_list">
+              <li>
+                <a href="20261122-ai-driven-development-wbs/" class="article_row">
+                  <span class="date_mono">2026.11.22</span>
+                  <span>
+                    <span class="row_title">AI駆動開発におけるWBSとガントチャートの使い所</span>
+                    <span class="row_desc">7件のIssueが多重に割り込むDevOps運用のケーススタディを通じ、人間のレビュー帯域の平準化と完了見通しの推移を解説します。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+              <li>
+                <a href="20261103-wbs-progress-reporting/" class="article_row">
+                  <span class="date_mono">2026.11.03</span>
+                  <span>
+                    <span class="row_title">WBSを用いた進捗管理の勘所</span>
+                    <span class="row_desc">達成率やイナズマ線に頼らず、残作業タスクの追加と完了マイルストーンの推移によって「いつ終わるのか」を示す実践手法をご紹介します。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+              <li>
+                <a href="20261011-yamamoto-isoroku-mentoring/" class="article_row">
+                  <span class="date_mono">2026.10.11</span>
+                  <span>
+                    <span class="row_title">山本五十六の言葉「やってみせ」</span>
+                    <span class="row_desc">「やってみせ、言って聞かせて、させてみせ、ほめてやらねば、人は動かじ。」相手を信頼し「自分を超える人を育てる」ための指導ポリシーと実践を綴ります。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+              <li>
+                <a href="20261010-digital-agency-wbs/" class="article_row">
+                  <span class="date_mono">2026.10.10</span>
+                  <span>
+                    <span class="row_title">デジタル庁の研修資料から見たWBSの要点</span>
+                    <span class="row_desc">政府情報システムにおける作業計画（WBS）の悪い例・良い例、マイルストーン管理や要員の平準化など公的プロジェクトの勘所を要約。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+              <li>
+                <a href="20190318-software-estimation-accuracy/" class="article_row">
+                  <span class="date_mono">2019.03.18</span>
+                  <span>
+                    <span class="row_title">ソフトウェア開発の見積り精度を上げるには 〜中島聡氏へのQAと考察〜</span>
+                    <span class="row_desc">Windows 95のチーフアーキテクトなどを務められた中島聡さんのメールマガジンでお伺いしたQAと、プロジェクトマネジメント実務における考察をご紹介します。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+              <li>
+                <a href="20181119-gantt-chart-leveling/" class="article_row">
+                  <span class="date_mono">2018.11.19</span>
+                  <span>
+                    <span class="row_title">ガントチャートの決め手は平準化</span>
+                    <span class="row_desc">ガントチャートツール選びで最も重要な「平準化」とは何か、なぜそれほど重要なのか、基本的な意味とメリットを解説します。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+              <li>
+                <a href="20181118-wbs-essentials/" class="article_row">
+                  <span class="date_mono">2018.11.18</span>
+                  <span>
+                    <span class="row_title">WBSの勘所</span>
+                    <span class="row_desc">WBS（Work Breakdown Structure：作業分解構造）を作成する際に意識しておきたい基本原則をまとめました。</span>
+                  </span>
+                  <span class="row_arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Light Yield Co., Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
