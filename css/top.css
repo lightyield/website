@@ -507,10 +507,9 @@ body.page_series {
   text-align: right;
 }
 
-/* --- Company & Access (Unified Asymmetric Grid) --- */
+/* --- Company (Unified Asymmetric Grid) --- */
 .top_info_table {
   border-top: 1px solid var(--top-border);
-  margin-bottom: 32px;
 }
 
 .top_info_row {
@@ -531,19 +530,6 @@ body.page_series {
 
 .top_info_v {
   flex: 1;
-}
-
-.top_map_wrap {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--top-border);
-}
-
-.top_map_wrap iframe {
-  width: 100%;
-  height: 320px;
-  border: 0;
-  display: block;
 }
 
 /* --- Responsive Adjustments --- */
