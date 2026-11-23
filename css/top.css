@@ -3,7 +3,8 @@
    Depends on css/base.css (Design Tokens, Reset, DADS / WCAG 2.1 AA)
    ========================================================================== */
 
-body.page_top {
+body.page_top,
+body.page_series {
   --top-ink: #141920;
   --top-ink-sub: #4c5664;
   --top-ink-muted: #6e7885;
@@ -18,6 +19,50 @@ body.page_top {
   color: var(--top-ink);
   background-color: var(--color-bg-body);
   -webkit-font-smoothing: antialiased;
+}
+
+/* --- Series Archive Pages (Same Editorial Layout as Top) --- */
+.page_series .site_header .header_nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.page_series .site_header .header_nav_link {
+  font-family: var(--font-base);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page_series .site_header .header_nav_link.is_mono {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.page_series .site_header .header_nav_link:hover,
+.page_series .site_header .header_nav_link[aria-current="page"] {
+  color: #ffffff;
+}
+
+.page_series .site_header .header_nav_link[aria-current="page"]::after {
+  width: 100%;
+  background-color: #93c5fd;
+}
+
+.page_series.page_series_peek .site_header .header_nav_link[aria-current="page"]::after {
+  background-color: #5eead4;
+}
+
+.page_series .editorial_section {
+  padding: 64px 50px 104px;
+  border-bottom: none;
+}
+
+.page_series .pillar_aside {
+  top: 100px;
 }
 
 /* --- Top Header Overlay --- */
@@ -616,17 +661,24 @@ body.page_top {
     padding: 12px 20px;
   }
 
-  .page_top .header_nav {
+  .page_top .header_nav,
+  .page_series .site_header .header_nav {
     display: flex;
     gap: 16px;
   }
 
-  .page_top .header_nav_link.hide_sm {
+  .page_top .header_nav_link.hide_sm,
+  .page_series .site_header .header_nav_link.hide_sm {
     display: none;
   }
 
-  .page_top .header_nav_link {
+  .page_top .header_nav_link,
+  .page_series .site_header .header_nav_link {
     font-size: 0.8rem;
+  }
+
+  .page_series .editorial_section {
+    padding: 40px 20px 72px;
   }
 
   .page_top #hero {
