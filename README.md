@@ -182,5 +182,19 @@ npx serve .
   - 下層ページからロゴをクリックしてトップへ戻った際にも、サイズ拡大や位置ジャンプが発生せず、シームレスかつ安定したUI体験を提供。
   - ヒーローコンテンツ上部にアイブロウ（`.hero_eyebrow`）を配置し、垂直方向の余白を最適化して画面全体の調和と視線誘導を強化。
 
+---
+
+## 6. セキュリティ運用（Dependabot alerts の自動 Issue 化）
+
+[.github/workflows/dependabot-alerts-to-issues.yml](.github/workflows/dependabot-alerts-to-issues.yml) により、毎日 09:00 JST（または手動実行 `workflow_dispatch`）にオープン中の Dependabot alerts を取得し、パッケージ単位で GitHub Issue（ラベル: `security`, `dependabot`）を自動作成・更新します。対象パッケージのアラートがすべて解消されると該当 Issue を自動的にクローズします。
+
+### 必要な GitHub Secrets
+リポジトリの Settings > Secrets and variables > Actions に以下を登録してください。
+
+| Secret名 | 内容 |
+| :--- | :--- |
+| `DEPENDABOT_ALERTS_TOKEN` | `Dependabot alerts: Read-only` 権限を付与した Fine-grained Personal Access Token |
+
+
 
 
